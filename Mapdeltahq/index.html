@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MapDelta — MAP Enforcement for Consumer Brands</title>
+  <meta name="description" content="Done-for-you MAP enforcement. We find sellers undercutting your price on Amazon, Walmart and Google Shopping, enforce your policy, and report who stopped.">
+  <link rel="canonical" href="https://mapdeltahq.com/">
+  <meta name="theme-color" content="#FAFAF9">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MapDelta">
+  <meta property="og:title" content="MapDelta — MAP Enforcement for Consumer Brands">
+  <meta property="og:description" content="Done-for-you MAP enforcement. We find sellers undercutting your price on Amazon, Walmart and Google Shopping, enforce your policy, and report who stopped.">
+  <meta property="og:url" content="https://mapdeltahq.com/">
+  <meta property="og:image" content="https://mapdeltahq.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MapDelta MAP report showing sellers advertising below a $129.00 MAP.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MapDelta — MAP Enforcement for Consumer Brands">
+  <meta name="twitter:description" content="Done-for-you MAP enforcement. We find sellers undercutting your price on Amazon, Walmart and Google Shopping, enforce your policy, and report who stopped.">
+  <meta name="twitter:image" content="https://mapdeltahq.com/og-image.png">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <!-- Lucide icon sprite (1.5px stroke set in CSS) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16"/><path d="M4 16h16"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></symbol>
+    <symbol id="i-trending-down" viewBox="0 0 24 24"><path d="M22 17 13.5 8.5l-5 5L2 7"/><path d="M16 17h6v-6"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="nav-sentinel" aria-hidden="true"></div>
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="wordmark" href="#top" aria-label="MapDelta home">MapDelta</a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#how">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a class="btn btn-primary btn-sm" href="#snapshot">Get a free snapshot</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="i" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
+      <div class="container">
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow rise" style="--i:0">MAP enforcement for consumer brands</p>
+          <h1 class="rise" style="--i:1">Your price.<br>Held.</h1>
+          <p class="lead rise" style="--i:2">We find every seller advertising below your MAP on Amazon, Walmart and Google Shopping, enforce your policy on your behalf, and show you who stopped. Every month.</p>
+          <div class="cta-row rise" style="--i:3">
+            <a class="btn btn-primary" href="#snapshot">Get a free violation snapshot <svg class="i i-sm btn-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-secondary" href="#pricing">See pricing</a>
+          </div>
+          <p class="fineprint rise" style="--i:4">Free snapshot in 48 hours. No access to your accounts needed.</p>
+        </div>
+
+        <figure class="hero-visual rise" style="--i:3" role="img" aria-label="Illustrative MAP report: a price chart showing several sellers advertising below a $129.00 MAP, and a table of sellers with statuses Escalated, Notified and Resolved.">
+          <div class="rc card">
+            <div class="rc-head">
+              <div>
+                <p class="rc-kicker">MAP report · Last 30 days</p>
+                <p class="rc-title"><span class="blur">Trailhead 45L Pack</span></p>
+              </div>
+              <span class="live"><span class="live-dot"></span>Scanning</span>
+            </div>
+
+            <div class="rc-chart">
+              <svg viewBox="0 0 520 220" aria-hidden="true">
+                <polygon class="rc-area" points="116,64 166,84 216,108 266,96 316,130 366,152 416,122 466,138 504,126 504,64"/>
+                <line class="rc-map" x1="8" y1="64" x2="512" y2="64"/>
+                <polyline class="rc-line draw" pathLength="1" points="16,58 66,64 116,64 166,84 216,108 266,96 316,130 366,152 416,122 466,138 504,126"/>
+                <g class="rc-ok">
+                  <circle cx="16" cy="58" r="4"/><circle cx="66" cy="64" r="4"/><circle cx="116" cy="64" r="4"/>
+                </g>
+                <g class="rc-dots">
+                  <circle style="--i:0" cx="166" cy="84" r="4.5"/>
+                  <circle style="--i:1" cx="216" cy="108" r="4.5"/>
+                  <circle style="--i:2" cx="266" cy="96" r="4.5"/>
+                  <circle style="--i:3" cx="316" cy="130" r="4.5"/>
+                  <circle style="--i:4" cx="366" cy="152" r="4.5"/>
+                  <circle style="--i:5" cx="416" cy="122" r="4.5"/>
+                  <circle style="--i:6" cx="466" cy="138" r="4.5"/>
+                  <circle style="--i:7" cx="504" cy="126" r="4.5"/>
+                </g>
+              </svg>
+              <span class="rc-map-label">Your MAP <strong>$129.00</strong></span>
+              <span class="rc-low-label">$104.95</span>
+            </div>
+            <div class="rc-axis"><span>30 days ago</span><span class="rc-legend"><i class="lg-line"></i>Lowest advertised <i class="lg-dot"></i>Below MAP</span><span>Today</span></div>
+
+            <table class="mini-table">
+              <thead>
+                <tr><th scope="col">Seller</th><th scope="col" class="num">Advertised</th><th scope="col" class="end">Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="blur">Peakline Outfitters</span><span class="market">Amazon</span></td><td class="num">$104.95</td><td class="end"><span class="pill pill-escalated">Escalated</span></td></tr>
+                <tr><td><span class="blur">Harbor Goods Direct</span><span class="market">Walmart</span></td><td class="num">$112.49</td><td class="end"><span class="pill pill-notified">Notified</span></td></tr>
+                <tr><td><span class="blur">Ridgeway Supply</span><span class="market">Google Shopping</span></td><td class="num">$118.00</td><td class="end"><span class="pill pill-resolved">Resolved</span></td></tr>
+                <tr><td><span class="blur">Cobalt Trading</span><span class="market">eBay</span></td><td class="num">$121.99</td><td class="end"><span class="pill pill-notified">Notified</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CREDIBILITY STRIP -->
+    <section class="strip" aria-label="Channels monitored">
+      <div class="container">
+        <p>Monitoring across <span>Amazon</span><i aria-hidden="true">·</i><span>Walmart</span><i aria-hidden="true">·</i><span>Google Shopping</span><i aria-hidden="true">·</i><span>eBay</span><i aria-hidden="true">·</i><span>independent storefronts</span></p>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="section" id="problem" aria-labelledby="problem-title">
+      <div class="container split">
+        <div class="split-head reveal">
+          <h2 id="problem-title">Every undercut costs you twice.</h2>
+        </div>
+        <div class="card-stack">
+          <article class="card problem reveal" style="--i:0">
+            <span class="icon-wrap"><svg class="i" aria-hidden="true"><use href="#i-store"/></svg></span>
+            <div>
+              <h3>Your retailers notice.</h3>
+              <p>Authorized dealers can’t compete with sellers breaking your policy, and they start asking why they should carry you.</p>
+            </div>
+          </article>
+          <article class="card problem reveal" style="--i:1">
+            <span class="icon-wrap"><svg class="i" aria-hidden="true"><use href="#i-trending-down"/></svg></span>
+            <div>
+              <h3>Your margin erodes.</h3>
+              <p>One seller drops the price, others follow, and your price floor quietly becomes a suggestion.</p>
+            </div>
+          </article>
+          <article class="card problem reveal" style="--i:2">
+            <span class="icon-wrap"><svg class="i" aria-hidden="true"><use href="#i-cart"/></svg></span>
+            <div>
+              <h3>Your Buy Box slips.</h3>
+              <p>Unauthorized sellers take control of your Amazon listing, your reviews, and your customer experience.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section-mint" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="how-title">We do the work.<br>You see the results.</h2>
+        <ol class="steps">
+          <li class="step reveal" style="--i:0">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>We map your catalog.</h3>
+            <p>Share your MAP policy and product list. We match every product across marketplaces, even when listings are renamed.</p>
+          </li>
+          <li class="step reveal" style="--i:1">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>We find and enforce.</h3>
+            <p>We scan continuously, verify every violation by hand before acting, and send policy notices on your behalf with evidence attached.</p>
+          </li>
+          <li class="step reveal" style="--i:2">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>You see who stopped.</h3>
+            <p>Each month you get a clear report: violations found, sellers notified, sellers who complied, and who needs escalation.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SAMPLE REPORT -->
+    <section class="section dark" id="report" aria-labelledby="report-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="report-title">See exactly what you’re paying for.</h2>
+          <p class="lead">Every client gets a monthly compliance report like this. Seller names below are blurred.</p>
+        </div>
+
+        <figure class="report reveal" aria-label="Sample monthly compliance report with illustrative data">
+          <div class="report-top">
+            <div class="report-id"><span class="wordmark-sm">MapDelta</span><span class="sep" aria-hidden="true"></span><span>Monthly compliance report · Month 3</span></div>
+            <span class="sample-tag">Sample report. Illustrative data.</span>
+          </div>
+
+          <dl class="kpis">
+            <div class="kpi"><dt>Violations found</dt><dd class="kpi-value">38</dd><dd class="kpi-note">Down from 61 in month 1</dd></div>
+            <div class="kpi"><dt>Sellers notified</dt><dd class="kpi-value">21</dd><dd class="kpi-note">Evidence attached to each notice</dd></div>
+            <div class="kpi"><dt>Compliance rate</dt><dd class="kpi-value">83.8<span>%</span></dd><dd class="kpi-note up">Up from 47.2%</dd></div>
+            <div class="kpi"><dt>Buy Box share</dt><dd class="kpi-value">91.4<span>%</span></dd><dd class="kpi-note up">Up from 72.6%</dd></div>
+          </dl>
+
+          <div class="report-body">
+            <div class="panel">
+              <div class="panel-head"><h3>Violations this month</h3><span>6 of 38 shown</span></div>
+              <div class="table-scroll" tabindex="0" aria-label="Violations table">
+                <table class="report-table">
+                  <thead>
+                    <tr><th scope="col">Seller</th><th scope="col">Channel</th><th scope="col" class="num">Advertised</th><th scope="col" class="num">Below MAP</th><th scope="col" class="end">Status</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><span class="blur">Peakline Outfitters</span></td><td>Amazon</td><td class="num">$104.95</td><td class="num gap">−18.6%</td><td class="end"><span class="pill pill-escalated">Escalated</span></td></tr>
+                    <tr><td><span class="blur">Northfork Deals</span></td><td>Amazon</td><td class="num">$109.99</td><td class="num gap">−14.7%</td><td class="end"><span class="pill pill-resolved">Resolved</span></td></tr>
+                    <tr><td><span class="blur">Harbor Goods Direct</span></td><td>Walmart</td><td class="num">$112.49</td><td class="num gap">−12.8%</td><td class="end"><span class="pill pill-notified">Notified</span></td></tr>
+                    <tr><td><span class="blur">Summit &amp; Stone</span></td><td>Walmart</td><td class="num">$116.50</td><td class="num gap">−9.7%</td><td class="end"><span class="pill pill-resolved">Resolved</span></td></tr>
+                    <tr><td><span class="blur">Ridgeway Supply</span></td><td>Google Shopping</td><td class="num">$118.00</td><td class="num gap">−8.5%</td><td class="end"><span class="pill pill-resolved">Resolved</span></td></tr>
+                    <tr><td><span class="blur">Cobalt Trading</span></td><td>eBay</td><td class="num">$121.99</td><td class="num gap">−5.4%</td><td class="end"><span class="pill pill-notified">Notified</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head"><h3>Compliance rate</h3><span>Last 3 months</span></div>
+              <div class="trend">
+                <svg viewBox="0 0 360 200" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="trend-fill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0" stop-color="#0E9F6E" stop-opacity=".28"/>
+                      <stop offset="1" stop-color="#0E9F6E" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <line class="grid" x1="0" y1="20" x2="360" y2="20"/>
+                  <line class="grid" x1="0" y1="60" x2="360" y2="60"/>
+                  <line class="grid" x1="0" y1="100" x2="360" y2="100"/>
+                  <line class="grid" x1="0" y1="140" x2="360" y2="140"/>
+                  <line class="grid base" x1="0" y1="180" x2="360" y2="180"/>
+                  <path class="trend-area" d="M40 104.5 L180 68.8 L320 45.9 L320 180 L40 180 Z" fill="url(#trend-fill)"/>
+                  <polyline class="trend-line draw" pathLength="1" points="40,104.5 180,68.8 320,45.9"/>
+                  <circle class="trend-pt" cx="40" cy="104.5" r="4"/>
+                  <circle class="trend-pt" cx="180" cy="68.8" r="4"/>
+                  <circle class="trend-pt" cx="320" cy="45.9" r="4"/>
+                </svg>
+                <span class="trend-val" style="left:11.11%;top:52.25%">47.2%</span>
+                <span class="trend-val" style="left:50%;top:34.4%">69.5%</span>
+                <span class="trend-val strong" style="left:88.89%;top:22.95%">83.8%</span>
+                <span class="trend-x" style="left:11.11%">Month 1</span>
+                <span class="trend-x" style="left:50%">Month 2</span>
+                <span class="trend-x" style="left:88.89%">Month 3</span>
+              </div>
+              <p class="panel-foot">Share of monitored sellers advertising at or above MAP.</p>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- WHY MAPDELTA -->
+    <section class="section" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <h2 class="section-title reveal" id="why-title">Why MapDelta</h2>
+        <div class="compare card reveal">
+          <table>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col">Monitoring software</th>
+                <th scope="col">Enterprise enforcement firms</th>
+                <th scope="col" class="us">MapDelta</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Who does the enforcement work</th>
+                <td data-label="Monitoring software">You</td>
+                <td data-label="Enterprise enforcement firms">Them</td>
+                <td data-label="MapDelta" class="us">Us</td>
+              </tr>
+              <tr>
+                <th scope="row">Pricing</th>
+                <td data-label="Monitoring software">Low, but you do the work</td>
+                <td data-label="Enterprise enforcement firms">Custom quotes</td>
+                <td data-label="MapDelta" class="us">Flat, published pricing</td>
+              </tr>
+              <tr>
+                <th scope="row">Built for</th>
+                <td data-label="Monitoring software">Any size</td>
+                <td data-label="Enterprise enforcement firms">Large enterprises</td>
+                <td data-label="MapDelta" class="us">$5M–$100M brands</td>
+              </tr>
+              <tr>
+                <th scope="row">Every violation verified by a human before action</th>
+                <td data-label="Monitoring software">Varies</td>
+                <td data-label="Enterprise enforcement firms">Yes</td>
+                <td data-label="MapDelta" class="us">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section section-surface" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2 id="pricing-title">Simple pricing. Month&#8209;to&#8209;month to start.</h2>
+          <p class="lead">No long contracts for your first 3 months. Cancel anytime.</p>
+        </div>
+
+        <div class="plans">
+          <article class="plan card reveal" style="--i:0">
+            <header>
+              <h3 class="plan-name">Starter</h3>
+              <p class="plan-price"><span class="amt">$750</span><span class="per">/month</span></p>
+              <p class="plan-desc">For brands with a focused catalog.</p>
+            </header>
+            <a class="btn btn-secondary btn-block" href="#snapshot">Start with a free snapshot</a>
+            <ul class="features">
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Up to 100 products</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Amazon, Walmart and Google Shopping</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Weekly scans</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Every violation verified before action</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Policy notices sent on your behalf</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Monthly compliance report</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Email support</li>
+            </ul>
+          </article>
+
+          <article class="plan plan-featured card reveal" style="--i:1">
+            <span class="plan-badge">Recommended</span>
+            <header>
+              <h3 class="plan-name">Growth</h3>
+              <p class="plan-price"><span class="amt">$1,750</span><span class="per">/month</span></p>
+              <p class="plan-desc">For brands with an active reseller problem.</p>
+            </header>
+            <a class="btn btn-primary btn-block" href="#snapshot">Start with a free snapshot</a>
+            <ul class="features">
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Up to 500 products</li>
+              <li class="inherit">Everything in Starter, plus:</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Daily scans</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>eBay and independent websites</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Seller identification (who’s behind anonymous storefronts)</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>4-step escalation ladder</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Do-Not-Sell list management</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Amazon Brand Registry complaints filed for you</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Bi-weekly reports</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Priority support</li>
+            </ul>
+          </article>
+
+          <article class="plan card reveal" style="--i:2">
+            <header>
+              <h3 class="plan-name">Scale</h3>
+              <p class="plan-price"><span class="from">from</span><span class="amt">$3,500</span><span class="per">/month</span></p>
+              <p class="plan-desc">For larger catalogs and wide dealer networks.</p>
+            </header>
+            <a class="btn btn-secondary btn-block" href="mailto:hello@mapdeltahq.com?subject=MapDelta%20Scale%20plan">Talk to us</a>
+            <ul class="features">
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>500+ products</li>
+              <li class="inherit">Everything in Growth, plus:</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Custom channels and retailers</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Compliance reports you can share with your retailers</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Quarterly channel review call</li>
+              <li><svg class="i i-sm" aria-hidden="true"><use href="#i-check"/></svg>Coordination with your legal counsel for formal action</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="plans-note reveal">One-time onboarding: $500. Waived for our first 10 founding brands.</p>
+
+        <aside class="founding reveal" aria-label="Founding brands offer">
+          <span class="founding-mark"><span class="dot" aria-hidden="true"></span>Founding brands</span>
+          <p>We’re onboarding our first 10 founding brands. Onboarding waived, pricing locked for 12 months, and direct access to the founder.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container split">
+        <div class="split-head reveal">
+          <h2 id="faq-title">Frequently asked questions</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Do you need access to our Amazon or retail accounts?<svg class="i faq-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq-a"><p>Not for monitoring or your free snapshot. To file Brand Registry complaints on Growth and Scale, you add us as a user with limited permissions.</p></div>
+          </details>
+          <details>
+            <summary>Who do the notices come from?<svg class="i faq-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq-a"><p>From your brand, using your MAP policy. We send them on your behalf and log every step.</p></div>
+          </details>
+          <details>
+            <summary>What if we don’t have a MAP policy yet?<svg class="i faq-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq-a"><p>We’ll share a policy framework you can review with your legal counsel before enforcement begins.</p></div>
+          </details>
+          <details>
+            <summary>Can you guarantee sellers will stop?<svg class="i faq-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq-a"><p>No one honestly can. We guarantee every violation is found, verified, and acted on, and that you see exactly who complied and who didn’t.</p></div>
+          </details>
+          <details>
+            <summary>Are you a law firm?<svg class="i faq-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq-a"><p>No. We handle monitoring and policy enforcement. Formal legal action goes through your counsel.</p></div>
+          </details>
+          <details>
+            <summary>How is the free snapshot different from the paid service?<svg class="i faq-icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq-a"><p>The snapshot is a one-time scan of your top products showing current violations. The service is continuous monitoring plus enforcement.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section final" id="snapshot" aria-labelledby="snapshot-title">
+      <div class="container">
+        <div class="section-head center reveal">
+          <h2 id="snapshot-title">See who’s undercutting you today.</h2>
+          <p class="lead">Tell us your brand. We’ll send a free violation snapshot within 48 hours.</p>
+        </div>
+
+        <div class="form-wrap card reveal">
+          <!-- Set data-endpoint to your form backend (e.g. Formspree, Basin, your own API).
+               If left empty, submissions fall back to opening a pre-filled email. -->
+          <form class="snapshot-form" id="snapshot-form" data-endpoint="" data-email="hello@mapdeltahq.com" novalidate>
+            <div class="field-grid">
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+                <p class="field-error" id="f-name-err"></p>
+              </div>
+              <div class="field">
+                <label for="f-email">Work email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
+                <p class="field-error" id="f-email-err"></p>
+              </div>
+              <div class="field">
+                <label for="f-brand">Brand name</label>
+                <input id="f-brand" name="brand" type="text" autocomplete="organization" required aria-describedby="f-brand-err">
+                <p class="field-error" id="f-brand-err"></p>
+              </div>
+              <div class="field">
+                <label for="f-site">Brand website</label>
+                <input id="f-site" name="website" type="text" inputmode="url" autocomplete="url" placeholder="yourbrand.com" required aria-describedby="f-site-err">
+                <p class="field-error" id="f-site-err"></p>
+              </div>
+              <div class="field field-full">
+                <label for="f-concern">Main marketplace concern</label>
+                <select id="f-concern" name="concern" required aria-describedby="f-concern-err">
+                  <option value="" selected disabled>Select one</option>
+                  <option>Amazon</option>
+                  <option>Walmart</option>
+                  <option>Google Shopping</option>
+                  <option>Multiple</option>
+                  <option>Not sure</option>
+                </select>
+                <p class="field-error" id="f-concern-err"></p>
+              </div>
+            </div>
+            <div class="hp" aria-hidden="true">
+              <label for="f-company">Company</label>
+              <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <button class="btn btn-primary btn-block btn-lg" type="submit"><span class="btn-label">Get my free snapshot</span></button>
+            <p class="fineprint center">We only use public listing data for your snapshot.</p>
+            <p class="form-status" role="alert"></p>
+          </form>
+
+          <div class="form-success" id="form-success" hidden tabindex="-1">
+            <span class="success-mark"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <h3>Request received.</h3>
+            <p id="success-msg">We’ll send your free violation snapshot within 48 hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a class="wordmark" href="#top">MapDelta</a>
+        <nav class="footer-links" aria-label="Footer">
+          <span>Contact: <a href="mailto:hello@mapdeltahq.com">hello@mapdeltahq.com</a></span>
+          <a href="privacy/">Privacy Policy</a>
+          <a href="terms/">Terms</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 MapDelta.</p>
+        <p>MapDelta is not a law firm and does not provide legal advice.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
