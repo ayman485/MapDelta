@@ -273,7 +273,7 @@ h3 {
 }
 .mobile-menu a:last-child { border-bottom: 0; }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .nav-links { display: flex; }
   .menu-toggle, .mobile-menu { display: none !important; }
 }
@@ -1323,3 +1323,104 @@ h3 {
 .prose strong { color: var(--ink); font-weight: 600; }
 .prose .caps { font-size: 15px; letter-spacing: 0.01em; }
 .prose .summary h2 { margin-top: 0; }
+
+/* ==========================================================================
+   Positioning update: hero checks, why grid, 30-day timeline,
+   source tracing, comparison border
+   ========================================================================== */
+.eyebrow-green { color: var(--green-700); }
+
+.hero-checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.hero-checks li { display: inline-flex; align-items: center; gap: 6px; }
+.hero-checks .i { color: var(--green-700); stroke-width: 2; }
+
+/* Why MapDelta: 2x2 */
+.section-head .eyebrow + h2 { margin-top: 16px; }
+.why-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: clamp(40px, 6vw, 64px);
+}
+@media (min-width: 760px) { .why-grid { grid-template-columns: 1fr 1fr; gap: 20px; } }
+.why-card {
+  padding: clamp(26px, 3.5vw, 36px);
+  background: var(--bg);
+  transition: border-color 0.25s var(--ease);
+}
+.why-card:hover { border-color: var(--green-200); }
+.why-card .icon-wrap { margin-bottom: 24px; background: var(--surface); }
+.why-card p { margin-top: 10px; color: var(--ink-2); max-width: 34em; }
+
+/* First 30 days: 4-step timeline */
+.step-day {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0.02em;
+  color: var(--green-700);
+  font-variant-numeric: tabular-nums;
+}
+.steps-4 .step h3 { padding-top: 0; }
+.steps-4 .step p:not(.step-day) { margin-top: 8px; }
+@media (min-width: 900px) and (max-width: 1023px) {
+  .steps-4 { grid-template-columns: none; gap: 40px; }
+  .steps-4 .step { padding: 0 0 0 56px; }
+  .steps-4 .step::before { left: 15.5px; right: auto; top: 44px; bottom: -32px; width: 1px; height: auto; }
+  .steps-4 .step:last-child::before { display: none; }
+}
+@media (min-width: 1024px) {
+  .steps-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .steps-4 .step { padding-right: 32px; }
+  .steps-4 .step-day { line-height: 1.4; margin-bottom: 6px; }
+}
+
+/* Sample report: clearer label, source tracing panel */
+.sample-tag {
+  background: var(--dark-ink);
+  border-color: var(--dark-ink);
+  color: var(--dark);
+  font-weight: 600;
+}
+.report-col { display: grid; gap: 16px; min-width: 0; align-content: start; }
+.trace-list { list-style: none; margin: 0; padding: 0; }
+.trace-list li {
+  display: grid;
+  grid-template-columns: minmax(0, auto) 1fr auto;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--dark-line);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--dark-ink-2);
+}
+.trace-list li:first-child { border-top: 0; padding-top: 0; }
+.trace-list li:last-child { padding-bottom: 0; }
+.trace-list .blur { color: var(--dark-ink); font-weight: 500; white-space: nowrap; }
+.trace-text { display: flex; align-items: flex-start; gap: 8px; color: var(--dark-ink); }
+.trace-text .i { margin-top: 2px; color: var(--dark-ink-2); }
+@media (max-width: 599px) {
+  .trace-list li { grid-template-columns: 1fr auto; }
+  .trace-text { grid-column: 1 / -1; grid-row: 2; }
+}
+
+/* Comparison: MapDelta column outlined in Ink */
+.compare .us { box-shadow: inset 1px 0 0 var(--ink), inset -1px 0 0 var(--ink); }
+.compare tbody tr:last-child .us { box-shadow: inset 1px 0 0 var(--ink), inset -1px 0 0 var(--ink), inset 0 -1px 0 var(--ink); }
+.compare thead .us::before { background: var(--ink); height: 1px; }
+.compare-note { margin-top: 16px; font-size: 13px; color: var(--ink-2); }
+@media (max-width: 719px) {
+  .compare .us, .compare tbody tr:last-child .us { box-shadow: none; }
+}
+
+.plans-note a { color: var(--green-700); text-underline-offset: 3px; }

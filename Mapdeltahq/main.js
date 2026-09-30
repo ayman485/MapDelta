@@ -59,6 +59,7 @@
     brand: (v) => (v ? '' : 'Enter your brand name.'),
     website: (v) => (/^(https?:\/\/)?[^\s/.]+(\.[^\s/.]+)*\.[a-z]{2,}(\/\S*)?$/i.test(v) ? '' : 'Enter your brand’s website, e.g. yourbrand.com.'),
     concern: (v) => (v ? '' : 'Choose one option.'),
+    size: (v) => (v ? '' : 'Choose your company size.'),
   };
 
   const validateField = (field) => {
@@ -113,6 +114,7 @@
         `Brand: ${data.brand}`,
         `Website: ${data.website}`,
         `Main marketplace concern: ${data.concern}`,
+        `Company size: ${data.size}`,
       ].join('\n');
       window.location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Free violation snapshot: ' + data.brand)}&body=${encodeURIComponent(body)}`;
       showSuccess('Your email app should open with these details. Send it and we’ll reply with your snapshot within 48 hours.');
