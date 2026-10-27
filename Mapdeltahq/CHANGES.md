@@ -33,7 +33,7 @@ Every wording change from the previous live site, for your review. "Removed" mea
 ## Owner TODOs (must be done before launch)
 
 1. **Mailbox:** confirm `ayman@mapdeltahq.com` receives mail. It's the only contact address on the site, the legal pages and the form fallback. (`index.html` footer, `#snapshot-form` `data-email`, privacy, terms)
-2. **What happens after month 3:** the pricing section currently says *"After the first three months, plans continue month to month and can be cancelled with 30 days’ notice."* This is a placeholder. Confirm or replace it. (`index.html`, search `TODO(owner)`)
+2. ~~**What happens after month 3**~~ Done (round 5): the pricing section now says *"After the first three months, we agree ongoing terms with you. Where it suits your business, that’s a fixed-term contract setting out scope, pricing and notice period in writing."* This matches Terms §4, which already defers term and cancellation to the signed services agreement.
 3. **Form endpoint:** set `data-endpoint` on `#snapshot-form` to a real backend (Formspree, Basin or your own API). Until then, submitting opens the visitor's email app with a pre-filled message, and the success screen says so. Nothing is silently dropped. (`index.html`, `main.js`)
 4. **Case study:** a commented-out slot sits under "What we hold ourselves to". Fill it only with a real, approved client case study.
 5. **Domain:** the canonical URL, OG URL and OG image use `https://mapdeltahq.com/`. Point the domain at Vercel before sharing links, or link previews won't find the image.
