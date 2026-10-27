@@ -4,14 +4,22 @@ Every wording change from the previous live site, for your review. "Removed" mea
 
 ---
 
+## Round 2 (October 2026): owner feedback
+
+- **Look:** replaced the beige ledger design with a smoother, continuous page. The numbered margin column, vertical rule and section dividers are gone. Content sits in soft rounded panels, with pill buttons. New palette: off-white, green-black ink, deep green brand (#0F5B46); red is kept for below-MAP prices only. Numbers now use Plex Sans tabular figures instead of mono.
+- **Email:** all contact addresses are now `ayman@mapdeltahq.com` (footer, form, privacy, terms).
+- **Location:** every mention of the team's location was removed. The FAQ "Where is your team based?" became "How quickly do you reply?". The Privacy Policy now says information "may be processed in the United States and in other countries where we and our service providers operate". The Terms governing-law clause no longer names a country or city (see TODO 7).
+- Small kicker labels were added above headings: How it works · Anatomy of a flag · Sample report · Comparison · Pricing · Our evidence standard · FAQ · Free snapshot.
+
 ## Owner TODOs (must be done before launch)
 
-1. **Business mailbox:** confirm `hello@mapdeltahq.com` receives mail. It's the only contact address on the site, the legal pages and the form fallback. (`index.html` footer, `#snapshot-form` `data-email`, privacy, terms)
+1. **Mailbox:** confirm `ayman@mapdeltahq.com` receives mail. It's the only contact address on the site, the legal pages and the form fallback. (`index.html` footer, `#snapshot-form` `data-email`, privacy, terms)
 2. **What happens after month 3:** the pricing section currently says *"After the first three months, plans continue month to month and can be cancelled with 30 days’ notice."* This is a placeholder. Confirm or replace it. (`index.html`, search `TODO(owner)`)
 3. **Form endpoint:** set `data-endpoint` on `#snapshot-form` to a real backend (Formspree, Basin or your own API). Until then, submitting opens the visitor's email app with a pre-filled message, and the success screen says so. Nothing is silently dropped. (`index.html`, `main.js`)
 4. **Case study:** a commented-out slot sits under "What we hold ourselves to". Fill it only with a real, approved client case study.
 5. **Domain:** the canonical URL, OG URL and OG image use `https://mapdeltahq.com/`. Point the domain at Vercel before sharing links, or link previews won't find the image.
 6. **Deploy:** upload the new `fonts/` folder and `vercel.json` along with the changed files.
+7. **Governing law (Terms §12):** it now reads "the laws of the jurisdiction in which MapDelta is established". That avoids naming a location but is legally vague. Have counsel name a specific law and venue once your entity is set up. (`terms/index.html`, search `TODO(owner)`)
 
 ---
 
@@ -145,7 +153,7 @@ Every wording change from the previous live site, for your review. "Removed" mea
 | Can you guarantee sellers will stop? No one honestly can. What we commit to: every channel you’re on is scanned on schedule, every violation is verified by a person before we act… | **Q:** Can you guarantee sellers will come back to MAP? **A:** No. No one honestly can. What we commit to: every channel in your plan is checked on schedule, every flag is checked by a person before anything is sent, and you see exactly who changed their price and who didn’t. |
 | Are you a law firm? No. We handle monitoring and policy enforcement. Formal legal action goes through your counsel. | No. We handle monitoring, verification and policy follow-up. Formal legal action goes through your counsel. |
 | How do you avoid flagging our own dealers by mistake? You share your authorized dealer list at onboarding, and a person checks every flagged listing against it before any notice is sent. | **Q:** How do you keep your own dealers from being flagged by mistake? **A:** …before it reaches you. Anything we can’t match comes to you as a flag to verify, never as a notice. |
-| Where is your team based? MapDelta is run from Hyderabad, India, and works with US brands. We reply within one US business day. | Hyderabad, India. We work with US brands and reply within one US business day. |
+| Where is your team based? | Removed (the site does not name a location). Replaced by: **How quickly do you reply?** Within one US business day, and your snapshot arrives within 48 hours of your request. |
 | We already use a monitoring tool or vendor. Why talk to you? | Removed |
 | What happens with sellers who ignore notices? | Removed |
 | How is the free snapshot different from the paid service? | Removed |
@@ -160,12 +168,12 @@ Every wording change from the previous live site, for your review. "Removed" mea
 | Button: Get my free snapshot | Request my snapshot |
 | We only use public listing data for your snapshot. | Folded into the sub ("Public listing data only.") |
 | Success: Request received. We’ll send your free violation snapshot within 48 hours. | Request received. Thanks. We’ll reply within one US business day. |
-| Email-app fallback success: Your email app should open with these details… | One more step. Your email app should have opened with these details. Send that email to hello@mapdeltahq.com and we’ll reply within one US business day. |
+| Email-app fallback success: Your email app should open with these details… | One more step. Your email app should have opened with these details. Send that email to ayman@mapdeltahq.com and we’ll reply within one US business day. |
 
 ## Privacy Policy
 
 - Effective date: September 28, 2026 → October 27, 2026.
-- All contact addresses: founder@mapdeltahq.com → hello@mapdeltahq.com.
+- All contact addresses: founder@mapdeltahq.com → ayman@mapdeltahq.com.
 - "request a free violation snapshot" → "request a free snapshot" (meta description and section 1).
 - Short version: "(name, work email, brand details)" → "(name, work email, brand website and the product you send us)".
 - Snapshot requests: "…brand name, brand website, main marketplace concern and company size." → "…brand website and, if you choose to share them, a product and its MAP price."
@@ -178,7 +186,7 @@ Every wording change from the previous live site, for your review. "Removed" mea
 ## Terms
 
 - Effective date: September 28, 2026 → October 27, 2026.
-- All contact addresses: founder@mapdeltahq.com → hello@mapdeltahq.com.
+- All contact addresses: founder@mapdeltahq.com → ayman@mapdeltahq.com.
 - "free violation snapshot" → "free snapshot" (meta description, section 1, section 2 heading, contents list).
 - "The snapshot is a one-time scan of a sample of your products…" → "The snapshot is a set of targeted marketplace observations on a sample of your products, built from publicly available listing data at the time we check."
 - "your violation of these Terms" → "your breach of these Terms"

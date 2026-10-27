@@ -7,8 +7,8 @@
   <meta name="description" content="MAP enforcement for US consumer brands: below-MAP listings verified by hand, follow-up handled with you, evidence before you pay.">
   <link rel="canonical" href="https://mapdeltahq.com/">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#141210" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FBFCFB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B100E" media="(prefers-color-scheme: dark)">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MapDelta">
@@ -60,253 +60,256 @@
 
   <main id="main">
 
-    <!-- 01 HERO -->
-    <section class="sec sec-hero" id="top" aria-labelledby="hero-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">01</span><span class="mlabel">MAP enforcement for US consumer brands</span></div>
-        <div class="main hero">
+    <!-- Hero -->
+    <section class="block hero" id="top" aria-labelledby="hero-h">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">MAP enforcement for US consumer brands</p>
           <h1 id="hero-h">Your MAP policy is only as good as the follow&#8209;through.</h1>
-          <div class="hero-copy">
-            <p class="lead">MapDelta checks Amazon, Walmart, Google Shopping and eBay for listings below your minimum advertised price, verifies each one by hand against your dealer list, and handles the follow-up with you. You see the evidence before you pay anything.</p>
-            <div class="cta-row">
-              <a class="btn" href="#snapshot">Send us one product</a>
-              <a class="text-link" href="#report">See a sample report <span aria-hidden="true">→</span></a>
-            </div>
-            <p class="meta-line">Snapshot in 48 hours · no account access needed · replies within one US business day</p>
+          <p class="lead">MapDelta checks Amazon, Walmart, Google Shopping and eBay for listings below your minimum advertised price, verifies each one by hand against your dealer list, and handles the follow-up with you. You see the evidence before you pay anything.</p>
+          <div class="cta-row">
+            <a class="btn" href="#snapshot">Send us one product</a>
+            <a class="btn btn-ghost" href="#report">See a sample report</a>
           </div>
+          <ul class="assurances">
+            <li>Snapshot in 48 hours</li>
+            <li>No account access needed</li>
+            <li>Replies within one US business day</li>
+          </ul>
+        </div>
 
-          <figure class="plot">
-            <div class="plot-head">
-              <span>One SKU · 12 offers observed</span>
+        <figure class="panel plot">
+          <div class="panel-head">
+            <span>One SKU · 12 offers observed</span>
+            <span class="tag">Illustrative data</span>
+          </div>
+          <div class="plot-area">
+            <svg viewBox="0 0 560 280" role="img" aria-labelledby="plot-t plot-d">
+              <title id="plot-t">Seller offers plotted against a MAP of $129.00</title>
+              <desc id="plot-d">Illustrative data. Twelve seller offers for one product. Nine are at or above the $129.00 MAP. Three are below it: $104.95 (24.05 dollars or 18.6 percent below), $118.00 (11.00 dollars or 8.5 percent below) and $112.49 (16.51 dollars or 12.8 percent below).</desc>
+              <rect class="below-zone" x="0" y="116.4" width="560" height="163.6"/>
+              <line class="map-line" x1="0" y1="116.4" x2="560" y2="116.4"/>
+              <g class="dots">
+                <circle class="at" cx="36" cy="90" r="5.5" style="--from:26.4px;--i:0"/>
+                <circle class="at opt" cx="80.4" cy="116.4" r="5.5" style="--from:0px;--i:1"/>
+                <circle class="at" cx="124.7" cy="105.4" r="5.5" style="--from:11px;--i:2"/>
+                <circle class="below" cx="169.1" cy="222.2" r="5.5" style="--from:-105.8px;--i:3"/>
+                <circle class="at opt" cx="213.5" cy="72.4" r="5.5" style="--from:44px;--i:4"/>
+                <circle class="at" cx="257.8" cy="112" r="5.5" style="--from:4.4px;--i:5"/>
+                <circle class="at opt" cx="302.2" cy="103.2" r="5.5" style="--from:13.2px;--i:6"/>
+                <circle class="below" cx="346.5" cy="164.8" r="5.5" style="--from:-48.4px;--i:7"/>
+                <circle class="at" cx="390.9" cy="116.4" r="5.5" style="--from:0px;--i:8"/>
+                <circle class="at opt" cx="435.3" cy="83.4" r="5.5" style="--from:33px;--i:9"/>
+                <circle class="below" cx="479.6" cy="189" r="5.5" style="--from:-72.6px;--i:10"/>
+                <circle class="at" cx="524" cy="110.9" r="5.5" style="--from:5.5px;--i:11"/>
+              </g>
+            </svg>
+            <span class="map-label" style="top:41.57%">MAP $129.00</span>
+            <span class="tick" style="top:24.29%">$140</span>
+            <span class="tick" style="top:71.43%">$110</span>
+            <span class="delta" style="left:30.2%;top:79.36%"><span>−$24.05</span><span class="sep"> / </span><span>−18.6%</span></span>
+            <span class="delta" style="left:61.88%;top:58.86%"><span>−$11.00</span><span class="sep"> / </span><span>−8.5%</span></span>
+            <span class="delta flip" style="left:85.64%;top:67.5%"><span>−$16.51</span><span class="sep"> / </span><span>−12.8%</span></span>
+          </div>
+          <figcaption class="plot-key">
+            <span><i class="key-dot"></i>At or above MAP</span>
+            <span><i class="key-dot below"></i>Below MAP</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="block" id="problem" aria-labelledby="problem-h">
+      <div class="wrap">
+        <h2 id="problem-h" class="statement reveal">When one seller drops below MAP, the others follow, your authorized dealers complain, and the price floor stops meaning anything.</h2>
+        <ol class="points">
+          <li class="reveal"><span class="pnum">1</span><h3>Dealers lose trust.</h3><p>Dealers who hold your price lose sales to listings that don’t, and start asking why they should.</p></li>
+          <li class="reveal"><span class="pnum">2</span><h3>Margin erodes.</h3><p>Each undercut becomes the new reference price, for shoppers and for the next seller.</p></li>
+          <li class="reveal"><span class="pnum">3</span><h3>The Amazon listing suffers.</h3><p>The Buy Box can shift to the lowest offer, and with it control of how your product is presented.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="block" id="how" aria-labelledby="how-h">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="kicker">How it works</p>
+          <h2 id="how-h">You see the evidence before you pay anything.</h2>
+        </div>
+        <ol class="timeline">
+          <li class="reveal">
+            <span class="stop" aria-hidden="true"></span>
+            <p class="stop-meta">Within 48 hours · free</p>
+            <h3>Free snapshot</h3>
+            <p>Targeted marketplace observations on your top products, with screenshots and timestamps, sorted into flags to verify.</p>
+          </li>
+          <li class="reveal">
+            <span class="stop" aria-hidden="true"></span>
+            <p class="stop-meta">Growth plan · month-to-month</p>
+            <h3>30-day pilot</h3>
+            <p>We load your policy and dealer list, scan on schedule, verify every flag by hand, send notices in your name using templates your counsel approves, and escalate repeat cases.</p>
+          </li>
+          <li class="reveal">
+            <span class="stop" aria-hidden="true"></span>
+            <p class="stop-meta">Day 30 onward</p>
+            <h3>Keep it or walk away</h3>
+            <p>A monthly report shows who was found, who was notified and who came back to MAP. No contract for the first three months.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Anatomy of a flag -->
+    <section class="block" id="anatomy" aria-labelledby="anatomy-h">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="kicker">Anatomy of a flag</p>
+          <h2 id="anatomy-h">What a flag looks like before it reaches you.</h2>
+          <p class="lead">One illustrative listing and the five checks a person runs on it. Select a number to read its note.</p>
+        </div>
+
+        <div class="anatomy reveal">
+          <figure class="panel listing" aria-label="Illustrative marketplace listing, drawn as a wireframe">
+            <div class="panel-head">
+              <span>Marketplace listing · wireframe</span>
               <span class="tag">Illustrative data</span>
             </div>
-            <div class="plot-area">
-              <svg viewBox="0 0 560 280" role="img" aria-labelledby="plot-t plot-d" preserveAspectRatio="xMidYMid meet">
-                <title id="plot-t">Seller offers plotted against a MAP of $129.00</title>
-                <desc id="plot-d">Illustrative data. Twelve seller offers for one product. Nine are at or above the $129.00 MAP. Three are below it: $104.95 (24.05 dollars or 18.6 percent below), $118.00 (11.00 dollars or 8.5 percent below) and $112.49 (16.51 dollars or 12.8 percent below).</desc>
-                <line class="map-line" x1="0" y1="116.4" x2="560" y2="116.4"/>
+            <div class="listing-body">
+              <div class="l-img" aria-hidden="true">
+                <svg viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100"/><line x1="100" y1="0" x2="0" y2="100"/></svg>
+              </div>
+              <div class="l-info">
+                <div class="l-title" aria-hidden="true"><span class="bar" style="width:92%"></span><span class="bar" style="width:64%"></span></div>
+                <div class="l-row" data-note="1">
+                  <span><span class="l-price">$104.95</span><span class="l-sub">MAP $129.00 · <span class="neg">−$24.05 / −18.6%</span></span></span>
+                  <a class="hot" href="#note-1" aria-label="Note 1: Price captured">1</a>
+                </div>
+                <div class="l-row" data-note="2">
+                  <span>Sold by <span class="mono">Seller A</span></span>
+                  <a class="hot" href="#note-2" aria-label="Note 2: Seller checked against your dealer list">2</a>
+                </div>
+                <div class="l-row" data-note="3">
+                  <span>Condition: New · Pack of 1 · No coupon shown</span>
+                  <a class="hot" href="#note-3" aria-label="Note 3: Condition and bundle checked">3</a>
+                </div>
+                <div class="l-row l-unknown" data-note="4">
+                  <span>Agreement with brand: <span class="mono">not public</span><br>Stock origin: <span class="mono">not public</span></span>
+                  <a class="hot" href="#note-4" aria-label="Note 4: What public data can’t tell us">4</a>
+                </div>
+                <div class="l-row" data-note="5">
+                  <span>Lot / expiry code: <span class="mono">not visible in listing</span></span>
+                  <a class="hot" href="#note-5" aria-label="Note 5: Next step, with your approval">5</a>
+                </div>
+                <p class="l-stamp mono">Captured 21 Oct 2026, 14:02 ET</p>
+              </div>
+            </div>
+          </figure>
+
+          <ol class="notes" aria-label="Notes on this listing">
+            <li id="note-1" class="is-active">
+              <span class="nnum">1</span>
+              <div><h3>Price captured</h3><p>$104.95 against a MAP of $129.00: <span class="neg mono">−$24.05 / −18.6%</span>. Timestamp recorded, screenshot kept.</p></div>
+            </li>
+            <li id="note-2">
+              <span class="nnum">2</span>
+              <div><h3>Seller checked against your dealer list</h3><p>Result: not found on your authorized list. That is a fact about your list, not a verdict on the seller.</p></div>
+            </li>
+            <li id="note-3">
+              <span class="nnum">3</span>
+              <div><h3>Condition and bundle checked</h3><p>New or used, single unit or multi-pack, coupon or cart-only price. Any of these can explain a low price, so we check before flagging.</p></div>
+            </li>
+            <li id="note-4">
+              <span class="nnum">4</span>
+              <div><h3>What public data can’t tell us</h3><p>Whether this seller has a private agreement with you, or where the stock came from.</p></div>
+            </li>
+            <li id="note-5">
+              <span class="nnum">5</span>
+              <div><h3>Next step, with your approval</h3><p>A test purchase at cost, lot and expiry code capture, and a match against your shipment records, where records allow.</p></div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sample report -->
+    <section class="block" id="report" aria-labelledby="report-h">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="kicker">Sample report</p>
+          <h2 id="report-h">See exactly what you’re paying for.</h2>
+          <p class="lead">Every client gets a monthly report like this one. The data below is illustrative, and seller names are placeholders.</p>
+        </div>
+
+        <figure class="panel report reveal" aria-labelledby="report-cap">
+          <div class="panel-head">
+            <p id="report-cap"><span class="wordmark-sm">MapDelta</span> Monthly report · Month 3</p>
+            <span class="tag">Illustrative data</span>
+          </div>
+
+          <dl class="kpis">
+            <div><dt>Below-MAP listings found</dt><dd class="kpi">38</dd><dd class="kpi-note">61 in month 1</dd></div>
+            <div><dt>Sellers notified</dt><dd class="kpi">21</dd><dd class="kpi-note">In your name, with your approval</dd></div>
+            <div><dt>Sellers at or above MAP</dt><dd class="kpi">83.8%</dd><dd class="kpi-note ok">47.2% in month 1</dd></div>
+            <div><dt>Source checks opened</dt><dd class="kpi">3</dd><dd class="kpi-note">Test purchases you approved</dd></div>
+          </dl>
+
+          <div class="table-scroll" role="region" aria-labelledby="flags-cap" tabindex="0">
+            <table class="ledger">
+              <caption id="flags-cap">Six of this month’s 38 below-MAP listings</caption>
+              <thead>
+                <tr><th scope="col">Seller</th><th scope="col">Channel</th><th scope="col" class="num">Captured price</th><th scope="col" class="num">vs MAP $129.00</th><th scope="col">Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="mono">Seller A</td><td>Amazon</td><td class="num">$104.95</td><td class="num neg">−$24.05 / −18.6%</td><td><span class="status">Source check in progress</span></td></tr>
+                <tr><td class="mono">Seller B</td><td>Amazon</td><td class="num">$109.99</td><td class="num neg">−$19.01 / −14.7%</td><td><span class="status st-ok">Back at MAP</span></td></tr>
+                <tr><td class="mono">Seller C</td><td>Walmart</td><td class="num">$112.49</td><td class="num neg">−$16.51 / −12.8%</td><td><span class="status">Notified</span></td></tr>
+                <tr><td class="mono">Seller D</td><td>Walmart</td><td class="num">$116.50</td><td class="num neg">−$12.50 / −9.7%</td><td><span class="status st-ok">Back at MAP</span></td></tr>
+                <tr><td class="mono">Seller E</td><td>Google Shopping</td><td class="num">$118.00</td><td class="num neg">−$11.00 / −8.5%</td><td><span class="status">Flagged</span></td></tr>
+                <tr><td class="mono">Seller F</td><td>eBay</td><td class="num">$121.99</td><td class="num neg">−$7.01 / −5.4%</td><td><span class="status">Escalated</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="trend">
+            <p class="trend-title">One SKU over three months</p>
+            <div class="trend-area">
+              <svg viewBox="0 0 600 240" role="img" aria-labelledby="trend-t trend-d">
+                <title id="trend-t">Offers for one SKU against the MAP line, months 1 to 3</title>
+                <desc id="trend-d">Illustrative data. Fifteen month-end offers per month for one SKU. Month 1: 7 of 15 below MAP. Month 2: 4 of 15 below. Month 3: 2 of 15 below.</desc>
+                <rect class="below-zone" x="0" y="95.8" width="600" height="144.2"/>
+                <line class="col-rule" x1="200" y1="8" x2="200" y2="232"/>
+                <line class="col-rule" x1="400" y1="8" x2="400" y2="232"/>
+                <line class="map-line" x1="0" y1="95.8" x2="600" y2="95.8"/>
                 <g class="dots">
-                  <circle class="at" cx="36" cy="90" r="5" style="--from:26.4px;--i:0"/>
-                  <circle class="at opt" cx="80.4" cy="116.4" r="5" style="--from:0px;--i:1"/>
-                  <circle class="at" cx="124.7" cy="105.4" r="5" style="--from:11px;--i:2"/>
-                  <circle class="below" cx="169.1" cy="222.2" r="5" style="--from:-105.8px;--i:3"/>
-                  <circle class="at opt" cx="213.5" cy="72.4" r="5" style="--from:44px;--i:4"/>
-                  <circle class="at" cx="257.8" cy="112" r="5" style="--from:4.4px;--i:5"/>
-                  <circle class="at opt" cx="302.2" cy="103.2" r="5" style="--from:13.2px;--i:6"/>
-                  <circle class="below" cx="346.5" cy="164.8" r="5" style="--from:-48.4px;--i:7"/>
-                  <circle class="at" cx="390.9" cy="116.4" r="5" style="--from:0px;--i:8"/>
-                  <circle class="at opt" cx="435.3" cy="83.4" r="5" style="--from:33px;--i:9"/>
-                  <circle class="below" cx="479.6" cy="189" r="5" style="--from:-72.6px;--i:10"/>
-                  <circle class="at" cx="524" cy="110.9" r="5" style="--from:5.5px;--i:11"/>
+                  <circle class="below" cx="34" cy="152.8" r="4.5"/><circle class="at" cx="43.4" cy="73" r="4.5"/><circle class="at" cx="52.9" cy="57.8" r="4.5"/><circle class="at" cx="62.3" cy="95.8" r="4.5"/><circle class="at" cx="71.7" cy="84.4" r="4.5"/><circle class="below" cx="81.1" cy="143.3" r="4.5"/><circle class="at" cx="90.6" cy="67.3" r="4.5"/><circle class="at" cx="100" cy="92" r="4.5"/><circle class="at" cx="109.4" cy="95.8" r="4.5"/><circle class="below" cx="118.9" cy="168" r="4.5"/><circle class="below" cx="128.3" cy="187.2" r="4.5"/><circle class="at" cx="137.7" cy="86.3" r="4.5"/><circle class="below" cx="147.1" cy="122.4" r="4.5"/><circle class="below" cx="156.6" cy="158.5" r="4.5"/><circle class="below" cx="166" cy="137.6" r="4.5"/>
+                  <circle class="at" cx="234" cy="73" r="4.5"/><circle class="at" cx="243.4" cy="95.8" r="4.5"/><circle class="below" cx="252.9" cy="143.3" r="4.5"/><circle class="at" cx="262.3" cy="84.4" r="4.5"/><circle class="at" cx="271.7" cy="92" r="4.5"/><circle class="at" cx="281.1" cy="95.8" r="4.5"/><circle class="at" cx="290.6" cy="86.3" r="4.5"/><circle class="below" cx="300" cy="187.2" r="4.5"/><circle class="at" cx="309.4" cy="67.3" r="4.5"/><circle class="at" cx="318.9" cy="91" r="4.5"/><circle class="at" cx="328.3" cy="73" r="4.5"/><circle class="below" cx="337.7" cy="122.4" r="4.5"/><circle class="below" cx="347.1" cy="158.5" r="4.5"/><circle class="at" cx="356.6" cy="57.8" r="4.5"/><circle class="at" cx="366" cy="95.8" r="4.5"/>
+                  <circle class="at" cx="434" cy="95.8" r="4.5"/><circle class="at" cx="443.4" cy="95.8" r="4.5"/><circle class="at" cx="452.9" cy="73" r="4.5"/><circle class="at" cx="462.3" cy="67.3" r="4.5"/><circle class="below" cx="471.7" cy="122.4" r="4.5"/><circle class="at" cx="481.1" cy="82.5" r="4.5"/><circle class="at" cx="490.6" cy="91" r="4.5"/><circle class="at" cx="500" cy="95.8" r="4.5"/><circle class="at" cx="509.4" cy="86.3" r="4.5"/><circle class="at" cx="518.9" cy="73" r="4.5"/><circle class="at" cx="528.3" cy="95.8" r="4.5"/><circle class="below" cx="537.7" cy="187.2" r="4.5"/><circle class="at" cx="547.1" cy="92" r="4.5"/><circle class="at" cx="556.6" cy="57.8" r="4.5"/><circle class="at" cx="566" cy="84.4" r="4.5"/>
                 </g>
               </svg>
-              <span class="map-label" style="top:41.57%">MAP $129.00</span>
-              <span class="tick" style="top:24.29%">$140</span>
-              <span class="tick" style="top:71.43%">$110</span>
-              <span class="delta" style="left:30.2%;top:79.36%"><span>−$24.05</span><span class="sep"> / </span><span>−18.6%</span></span>
-              <span class="delta" style="left:61.88%;top:58.86%"><span>−$11.00</span><span class="sep"> / </span><span>−8.5%</span></span>
-              <span class="delta flip" style="left:85.64%;top:67.5%"><span>−$16.51</span><span class="sep"> / </span><span>−12.8%</span></span>
+              <span class="map-label" style="top:39.92%">MAP $129.00</span>
             </div>
-            <figcaption class="plot-key">
-              <span><i class="key-dot"></i>At or above MAP</span>
-              <span><i class="key-dot below"></i>Below MAP</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 PROBLEM -->
-    <section class="sec" id="problem" aria-labelledby="problem-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">02</span><span class="mlabel">The problem</span></div>
-        <div class="main">
-          <h2 id="problem-h" class="reveal">When one seller drops below MAP, the others follow, your authorized dealers complain, and the price floor stops meaning anything.</h2>
-          <ol class="points">
-            <li class="reveal"><span class="pnum">1.</span><p><strong>Dealers lose trust.</strong> Dealers who hold your price lose sales to listings that don’t, and start asking why they should.</p></li>
-            <li class="reveal"><span class="pnum">2.</span><p><strong>Margin erodes.</strong> Each undercut becomes the new reference price, for shoppers and for the next seller.</p></li>
-            <li class="reveal"><span class="pnum">3.</span><p><strong>The Amazon listing suffers.</strong> The Buy Box can shift to the lowest offer, and with it control of how your product is presented.</p></li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03 HOW IT WORKS -->
-    <section class="sec" id="how" aria-labelledby="how-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">03</span><span class="mlabel">How it works</span></div>
-        <div class="main">
-          <h2 id="how-h" class="reveal">You see the evidence before you pay anything.</h2>
-          <ol class="timeline">
-            <li class="reveal">
-              <span class="stop" aria-hidden="true"></span>
-              <p class="stop-meta">Within 48 hours · free</p>
-              <h3>Free snapshot</h3>
-              <p>Targeted marketplace observations on your top products, with screenshots and timestamps, sorted into flags to verify.</p>
-            </li>
-            <li class="reveal">
-              <span class="stop" aria-hidden="true"></span>
-              <p class="stop-meta">Growth plan · month-to-month</p>
-              <h3>30-day pilot</h3>
-              <p>We load your policy and dealer list, scan on schedule, verify every flag by hand, send notices in your name using templates your counsel approves, and escalate repeat cases.</p>
-            </li>
-            <li class="reveal">
-              <span class="stop" aria-hidden="true"></span>
-              <p class="stop-meta">Day 30 onward</p>
-              <h3>Keep it or walk away</h3>
-              <p>A monthly report shows who was found, who was notified and who came back to MAP. No contract for the first three months.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 ANATOMY OF A FLAG -->
-    <section class="sec" id="anatomy" aria-labelledby="anatomy-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">04</span><span class="mlabel">Anatomy of a flag</span></div>
-        <div class="main">
-          <h2 id="anatomy-h" class="reveal">What a flag looks like before it reaches you.</h2>
-          <p class="lead reveal">One illustrative listing and the five checks a person runs on it. Select a number to read its note.</p>
-
-          <div class="anatomy reveal">
-            <figure class="listing" aria-label="Illustrative marketplace listing, drawn as a wireframe">
-              <div class="listing-head">
-                <span>Marketplace listing · wireframe</span>
-                <span class="tag">Illustrative data</span>
-              </div>
-              <div class="listing-body">
-                <div class="l-img" aria-hidden="true">
-                  <svg viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="0" x2="100" y2="100"/><line x1="100" y1="0" x2="0" y2="100"/></svg>
-                </div>
-                <div class="l-info">
-                  <div class="l-title" aria-hidden="true"><span class="bar" style="width:92%"></span><span class="bar" style="width:64%"></span></div>
-                  <div class="l-row" data-note="1">
-                    <span><span class="l-price">$104.95</span><span class="l-sub">MAP $129.00 · <span class="neg">−$24.05 / −18.6%</span></span></span>
-                    <a class="hot" href="#note-1" aria-label="Note 1: Price captured">1</a>
-                  </div>
-                  <div class="l-row" data-note="2">
-                    <span>Sold by <span class="mono">Seller A</span></span>
-                    <a class="hot" href="#note-2" aria-label="Note 2: Seller checked against your dealer list">2</a>
-                  </div>
-                  <div class="l-row" data-note="3">
-                    <span>Condition: New · Pack of 1 · No coupon shown</span>
-                    <a class="hot" href="#note-3" aria-label="Note 3: Condition and bundle checked">3</a>
-                  </div>
-                  <div class="l-row l-unknown" data-note="4">
-                    <span>Agreement with brand: <span class="mono">not public</span><br>Stock origin: <span class="mono">not public</span></span>
-                    <a class="hot" href="#note-4" aria-label="Note 4: What public data can’t tell us">4</a>
-                  </div>
-                  <div class="l-row" data-note="5">
-                    <span>Lot / expiry code: <span class="mono">not visible in listing</span></span>
-                    <a class="hot" href="#note-5" aria-label="Note 5: Next step, with your approval">5</a>
-                  </div>
-                  <p class="l-stamp mono">Captured 21 Oct 2026, 14:02 ET</p>
-                </div>
-              </div>
-            </figure>
-
-            <ol class="notes" aria-label="Notes on this listing">
-              <li id="note-1" class="is-active">
-                <span class="nnum">1</span>
-                <div><h3>Price captured</h3><p>$104.95 against a MAP of $129.00: <span class="neg mono">−$24.05 / −18.6%</span>. Timestamp recorded, screenshot kept.</p></div>
-              </li>
-              <li id="note-2">
-                <span class="nnum">2</span>
-                <div><h3>Seller checked against your dealer list</h3><p>Result: not found on your authorized list. That is a fact about your list, not a verdict on the seller.</p></div>
-              </li>
-              <li id="note-3">
-                <span class="nnum">3</span>
-                <div><h3>Condition and bundle checked</h3><p>New or used, single unit or multi-pack, coupon or cart-only price. Any of these can explain a low price, so we check before flagging.</p></div>
-              </li>
-              <li id="note-4">
-                <span class="nnum">4</span>
-                <div><h3>What public data can’t tell us</h3><p>Whether this seller has a private agreement with you, or where the stock came from.</p></div>
-              </li>
-              <li id="note-5">
-                <span class="nnum">5</span>
-                <div><h3>Next step, with your approval</h3><p>A test purchase at cost, lot and expiry code capture, and a match against your shipment records, where records allow.</p></div>
-              </li>
-            </ol>
+            <div class="trend-axis" aria-hidden="true">
+              <span>Month 1<b>7 of 15 below</b></span>
+              <span>Month 2<b>4 of 15 below</b></span>
+              <span>Month 3<b>2 of 15 below</b></span>
+            </div>
+            <p class="trend-cap">Each dot is one seller’s month-end offer for the same SKU. Dots under the line are below MAP.</p>
           </div>
-        </div>
+        </figure>
       </div>
     </section>
 
-    <!-- 05 SAMPLE REPORT -->
-    <section class="sec" id="report" aria-labelledby="report-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">05</span><span class="mlabel">Sample report</span></div>
-        <div class="main">
-          <h2 id="report-h" class="reveal">See exactly what you’re paying for.</h2>
-          <p class="lead reveal">Every client gets a monthly report like this one. The data below is illustrative, and seller names are placeholders.</p>
-
-          <figure class="report reveal" aria-labelledby="report-cap">
-            <div class="report-head">
-              <p id="report-cap"><span class="wordmark-sm">MapDelta</span> Monthly report · Month 3</p>
-              <span class="tag">Illustrative data</span>
-            </div>
-
-            <dl class="kpis">
-              <div><dt>Below-MAP listings found</dt><dd class="kpi">38</dd><dd class="kpi-note">61 in month 1</dd></div>
-              <div><dt>Sellers notified</dt><dd class="kpi">21</dd><dd class="kpi-note">In your name, with your approval</dd></div>
-              <div><dt>Sellers at or above MAP</dt><dd class="kpi">83.8%</dd><dd class="kpi-note ok">47.2% in month 1</dd></div>
-              <div><dt>Source checks opened</dt><dd class="kpi">3</dd><dd class="kpi-note">Test purchases you approved</dd></div>
-            </dl>
-
-            <div class="table-scroll" role="region" aria-labelledby="flags-cap" tabindex="0">
-              <table class="ledger">
-                <caption id="flags-cap">Six of this month’s 38 below-MAP listings</caption>
-                <thead>
-                  <tr><th scope="col">Seller</th><th scope="col">Channel</th><th scope="col" class="num">Captured price</th><th scope="col" class="num">vs MAP $129.00</th><th scope="col">Status</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td class="mono">Seller A</td><td>Amazon</td><td class="num">$104.95</td><td class="num neg">−$24.05 / −18.6%</td><td><span class="status">Source check in progress</span></td></tr>
-                  <tr><td class="mono">Seller B</td><td>Amazon</td><td class="num">$109.99</td><td class="num neg">−$19.01 / −14.7%</td><td><span class="status st-ok">Back at MAP</span></td></tr>
-                  <tr><td class="mono">Seller C</td><td>Walmart</td><td class="num">$112.49</td><td class="num neg">−$16.51 / −12.8%</td><td><span class="status">Notified</span></td></tr>
-                  <tr><td class="mono">Seller D</td><td>Walmart</td><td class="num">$116.50</td><td class="num neg">−$12.50 / −9.7%</td><td><span class="status st-ok">Back at MAP</span></td></tr>
-                  <tr><td class="mono">Seller E</td><td>Google Shopping</td><td class="num">$118.00</td><td class="num neg">−$11.00 / −8.5%</td><td><span class="status">Flagged</span></td></tr>
-                  <tr><td class="mono">Seller F</td><td>eBay</td><td class="num">$121.99</td><td class="num neg">−$7.01 / −5.4%</td><td><span class="status">Escalated</span></td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="trend">
-              <p class="trend-title">One SKU over three months</p>
-              <div class="trend-area">
-                <svg viewBox="0 0 600 240" role="img" aria-labelledby="trend-t trend-d">
-                  <title id="trend-t">Offers for one SKU against the MAP line, months 1 to 3</title>
-                  <desc id="trend-d">Illustrative data. Fifteen month-end offers per month for one SKU. Month 1: 7 of 15 below MAP. Month 2: 4 of 15 below. Month 3: 2 of 15 below.</desc>
-                  <line class="col-rule" x1="200" y1="8" x2="200" y2="232"/>
-                  <line class="col-rule" x1="400" y1="8" x2="400" y2="232"/>
-                  <line class="map-line" x1="0" y1="95.8" x2="600" y2="95.8"/>
-                  <g class="dots">
-                    <circle class="below" cx="34" cy="152.8" r="4"/><circle class="at" cx="43.4" cy="73" r="4"/><circle class="at" cx="52.9" cy="57.8" r="4"/><circle class="at" cx="62.3" cy="95.8" r="4"/><circle class="at" cx="71.7" cy="84.4" r="4"/><circle class="below" cx="81.1" cy="143.3" r="4"/><circle class="at" cx="90.6" cy="67.3" r="4"/><circle class="at" cx="100" cy="92" r="4"/><circle class="at" cx="109.4" cy="95.8" r="4"/><circle class="below" cx="118.9" cy="168" r="4"/><circle class="below" cx="128.3" cy="187.2" r="4"/><circle class="at" cx="137.7" cy="86.3" r="4"/><circle class="below" cx="147.1" cy="122.4" r="4"/><circle class="below" cx="156.6" cy="158.5" r="4"/><circle class="below" cx="166" cy="137.6" r="4"/>
-                    <circle class="at" cx="234" cy="73" r="4"/><circle class="at" cx="243.4" cy="95.8" r="4"/><circle class="below" cx="252.9" cy="143.3" r="4"/><circle class="at" cx="262.3" cy="84.4" r="4"/><circle class="at" cx="271.7" cy="92" r="4"/><circle class="at" cx="281.1" cy="95.8" r="4"/><circle class="at" cx="290.6" cy="86.3" r="4"/><circle class="below" cx="300" cy="187.2" r="4"/><circle class="at" cx="309.4" cy="67.3" r="4"/><circle class="at" cx="318.9" cy="91" r="4"/><circle class="at" cx="328.3" cy="73" r="4"/><circle class="below" cx="337.7" cy="122.4" r="4"/><circle class="below" cx="347.1" cy="158.5" r="4"/><circle class="at" cx="356.6" cy="57.8" r="4"/><circle class="at" cx="366" cy="95.8" r="4"/>
-                    <circle class="at" cx="434" cy="95.8" r="4"/><circle class="at" cx="443.4" cy="95.8" r="4"/><circle class="at" cx="452.9" cy="73" r="4"/><circle class="at" cx="462.3" cy="67.3" r="4"/><circle class="below" cx="471.7" cy="122.4" r="4"/><circle class="at" cx="481.1" cy="82.5" r="4"/><circle class="at" cx="490.6" cy="91" r="4"/><circle class="at" cx="500" cy="95.8" r="4"/><circle class="at" cx="509.4" cy="86.3" r="4"/><circle class="at" cx="518.9" cy="73" r="4"/><circle class="at" cx="528.3" cy="95.8" r="4"/><circle class="below" cx="537.7" cy="187.2" r="4"/><circle class="at" cx="547.1" cy="92" r="4"/><circle class="at" cx="556.6" cy="57.8" r="4"/><circle class="at" cx="566" cy="84.4" r="4"/>
-                  </g>
-                </svg>
-                <span class="map-label" style="top:39.92%">MAP $129.00</span>
-              </div>
-              <div class="trend-axis" aria-hidden="true">
-                <span>Month 1<b>7 of 15 below</b></span>
-                <span>Month 2<b>4 of 15 below</b></span>
-                <span>Month 3<b>2 of 15 below</b></span>
-              </div>
-              <p class="trend-cap">Each dot is one seller’s month-end offer for the same SKU. Dots under the line are below MAP.</p>
-            </div>
-          </figure>
+    <!-- Comparison -->
+    <section class="block" id="compare" aria-labelledby="compare-h">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="kicker">Comparison</p>
+          <h2 id="compare-h">How we compare</h2>
         </div>
-      </div>
-    </section>
-
-    <!-- 06 COMPARISON -->
-    <section class="sec" id="compare" aria-labelledby="compare-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">06</span><span class="mlabel">Comparison</span></div>
-        <div class="main">
-          <h2 id="compare-h" class="reveal">How we compare</h2>
-          <div class="table-scroll reveal" role="region" aria-labelledby="compare-h" tabindex="0">
+        <div class="panel panel-flush reveal">
+          <div class="table-scroll" role="region" aria-labelledby="compare-h" tabindex="0">
             <table class="ledger compare">
               <thead>
                 <tr>
@@ -327,151 +330,151 @@
               </tbody>
             </table>
           </div>
-          <p class="footnote reveal">Based on publicly available information. Individual vendors vary.</p>
+        </div>
+        <p class="footnote reveal">Based on publicly available information. Individual vendors vary.</p>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="block" id="pricing" aria-labelledby="pricing-h">
+      <div class="wrap">
+        <div class="head center reveal">
+          <p class="kicker">Pricing</p>
+          <h2 id="pricing-h">Simple pricing. Month&#8209;to&#8209;month to start.</h2>
+          <p class="lead">No contract for the first three months.</p>
+        </div>
+
+        <div class="plans">
+          <section class="panel plan reveal" aria-labelledby="plan-starter">
+            <h3 id="plan-starter">Starter</h3>
+            <p class="price"><span class="amt">$750</span><span class="per">/month</span></p>
+            <p class="plan-for">For brands with a focused catalog.</p>
+            <ul>
+              <li>Every flag checked by a person before it reaches you</li>
+              <li>Up to 100 products</li>
+              <li>Amazon, Walmart and Google Shopping</li>
+              <li>Weekly scans</li>
+              <li>Notices sent in your name, with your approval</li>
+              <li>Monthly report</li>
+              <li>Email support</li>
+            </ul>
+          </section>
+
+          <section class="panel plan plan-rec reveal" aria-labelledby="plan-growth">
+            <p class="rec">Recommended</p>
+            <h3 id="plan-growth">Growth</h3>
+            <p class="price"><span class="amt">$1,750</span><span class="per">/month</span></p>
+            <p class="plan-for">For brands with an active reseller problem.</p>
+            <ul>
+              <li>Up to 500 products</li>
+              <li class="inherit">Everything in Starter, plus:</li>
+              <li>Daily scans</li>
+              <li>Source checks on repeat cases, with your approval</li>
+              <li>eBay and independent websites</li>
+              <li>Seller identification for anonymous storefronts, from public sources</li>
+              <li>4-step escalation ladder</li>
+              <li>Do-Not-Sell list management</li>
+              <li>IP reports filed where genuine infringement exists (counterfeits, copied images, trademark misuse)</li>
+              <li>Bi-weekly reports</li>
+              <li>Priority support</li>
+            </ul>
+          </section>
+
+          <section class="panel plan reveal" aria-labelledby="plan-scale">
+            <h3 id="plan-scale">Scale</h3>
+            <p class="price"><span class="from">from</span><span class="amt">$3,500</span><span class="per">/month</span></p>
+            <p class="plan-for">For larger catalogs and wide dealer networks.</p>
+            <ul>
+              <li>500+ products</li>
+              <li class="inherit">Everything in Growth, plus:</li>
+              <li>Custom channels and retailers</li>
+              <li>Reports you can share with your retailers</li>
+              <li>Quarterly channel review call</li>
+              <li>Coordination with your legal counsel for formal action</li>
+            </ul>
+          </section>
+        </div>
+
+        <div class="plan-terms reveal">
+          <p>Onboarding is $500, waived for our first 10 founding brands, who also keep their pricing locked for 12 months. Test purchases are billed at cost and made only with your approval.</p>
+          <!-- TODO(owner): confirm what happens after month 3. Replace this sentence if the terms differ. -->
+          <p>After the first three months, plans continue month to month and can be cancelled with 30 days’ notice.</p>
+          <a class="btn" href="#snapshot">Start with a free snapshot</a>
         </div>
       </div>
     </section>
 
-    <!-- 07 PRICING -->
-    <section class="sec" id="pricing" aria-labelledby="pricing-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">07</span><span class="mlabel">Pricing</span></div>
-        <div class="main">
-          <h2 id="pricing-h" class="reveal">Simple pricing. Month&#8209;to&#8209;month to start.</h2>
-          <p class="lead reveal">No contract for the first three months.</p>
+    <!-- Evidence standard -->
+    <section class="block" id="standard" aria-labelledby="standard-h">
+      <div class="wrap standard">
+        <div class="head reveal">
+          <p class="kicker">Our evidence standard</p>
+          <h2 id="standard-h">What we hold ourselves to.</h2>
+        </div>
+        <ol class="checks">
+          <li class="reveal"><h3>Every flag has a timestamp and a screenshot.</h3><p>If we can’t show you the listing as it appeared, we don’t report it.</p></li>
+          <li class="reveal"><h3>A person checks every flag against your dealer list before it reaches you.</h3><p>Automated matching gets bundles, used items and your own dealers wrong often enough to matter.</p></li>
+          <li class="reveal"><h3>Nothing is sent to a seller without your approval.</h3><p>Notices go out in your name, using templates your counsel signs off.</p></li>
+          <li class="reveal"><h3>We tell you what public data can’t establish.</h3><p>Authorization and stock origin need your records or a test purchase. We say which, and what it would cost.</p></li>
+          <li class="reveal"><h3>Monthly reports show what changed, including what didn’t work.</h3><p>Sellers who ignored a notice are listed next to the ones who came back to MAP.</p></li>
+        </ol>
 
-          <div class="plans reveal">
-            <section class="plan" aria-labelledby="plan-starter">
-              <h3 id="plan-starter">Starter</h3>
-              <p class="price"><span class="amt">$750</span><span class="per">/month</span></p>
-              <p class="plan-for">For brands with a focused catalog.</p>
-              <ul>
-                <li>Every flag checked by a person before it reaches you</li>
-                <li>Up to 100 products</li>
-                <li>Amazon, Walmart and Google Shopping</li>
-                <li>Weekly scans</li>
-                <li>Notices sent in your name, with your approval</li>
-                <li>Monthly report</li>
-                <li>Email support</li>
-              </ul>
-            </section>
+        <!-- CASE STUDY SLOT: add only a real, approved client case study here.
+        <article class="panel case-study">
+          <p class="kicker">Case study</p>
+          <h3>[Brand, with written permission]</h3>
+          <p>[What we found, what was done, what changed. Real numbers only.]</p>
+        </article>
+        -->
+      </div>
+    </section>
 
-            <section class="plan plan-rec" aria-labelledby="plan-growth">
-              <p class="rec">Recommended</p>
-              <h3 id="plan-growth">Growth</h3>
-              <p class="price"><span class="amt">$1,750</span><span class="per">/month</span></p>
-              <p class="plan-for">For brands with an active reseller problem.</p>
-              <ul>
-                <li>Up to 500 products</li>
-                <li class="inherit">Everything in Starter, plus:</li>
-                <li>Daily scans</li>
-                <li>Source checks on repeat cases, with your approval</li>
-                <li>eBay and independent websites</li>
-                <li>Seller identification for anonymous storefronts, from public sources</li>
-                <li>4-step escalation ladder</li>
-                <li>Do-Not-Sell list management</li>
-                <li>IP reports filed where genuine infringement exists (counterfeits, copied images, trademark misuse)</li>
-                <li>Bi-weekly reports</li>
-                <li>Priority support</li>
-              </ul>
-            </section>
-
-            <section class="plan" aria-labelledby="plan-scale">
-              <h3 id="plan-scale">Scale</h3>
-              <p class="price"><span class="from">from</span><span class="amt">$3,500</span><span class="per">/month</span></p>
-              <p class="plan-for">For larger catalogs and wide dealer networks.</p>
-              <ul>
-                <li>500+ products</li>
-                <li class="inherit">Everything in Growth, plus:</li>
-                <li>Custom channels and retailers</li>
-                <li>Reports you can share with your retailers</li>
-                <li>Quarterly channel review call</li>
-                <li>Coordination with your legal counsel for formal action</li>
-              </ul>
-            </section>
-          </div>
-
-          <div class="plan-terms reveal">
-            <p>Onboarding is $500, waived for our first 10 founding brands, who also keep their pricing locked for 12 months. Test purchases are billed at cost and made only with your approval.</p>
-            <!-- TODO(owner): confirm what happens after month 3. Replace this sentence if the terms differ. -->
-            <p>After the first three months, plans continue month to month and can be cancelled with 30 days’ notice.</p>
-          </div>
-          <a class="btn reveal" href="#snapshot">Start with a free snapshot</a>
+    <!-- FAQ -->
+    <section class="block" id="faq" aria-labelledby="faq-h">
+      <div class="wrap faq-wrap">
+        <div class="head reveal">
+          <p class="kicker">FAQ</p>
+          <h2 id="faq-h">Questions</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Do you need access to our Amazon or retail accounts?</summary>
+            <p>Not for monitoring or your free snapshot. On Growth and Scale, if we find genuine IP infringement (counterfeits, copied images, trademark misuse), you can add us as a Brand Registry user with limited permissions so we can report it. A low price alone is never reported as infringement.</p>
+          </details>
+          <details>
+            <summary>Who do the notices come from?</summary>
+            <p>From your brand, under your MAP policy, using templates your counsel approves. We send them on your behalf only after you approve, and we log every step.</p>
+          </details>
+          <details>
+            <summary>What if we don’t have a MAP policy yet?</summary>
+            <p>We’ll share a policy framework you can review with your counsel before anything is sent.</p>
+          </details>
+          <details>
+            <summary>Can you guarantee sellers will come back to MAP?</summary>
+            <p>No. No one honestly can. What we commit to: every channel in your plan is checked on schedule, every flag is checked by a person before anything is sent, and you see exactly who changed their price and who didn’t.</p>
+          </details>
+          <details>
+            <summary>Are you a law firm?</summary>
+            <p>No. We handle monitoring, verification and policy follow-up. Formal legal action goes through your counsel.</p>
+          </details>
+          <details>
+            <summary>How do you keep your own dealers from being flagged by mistake?</summary>
+            <p>You share your authorized dealer list at onboarding, and a person checks every flagged listing against it before it reaches you. Anything we can’t match comes to you as a flag to verify, never as a notice.</p>
+          </details>
+          <details>
+            <summary>How quickly do you reply?</summary>
+            <p>Within one US business day, and your snapshot arrives within 48 hours of your request.</p>
+          </details>
         </div>
       </div>
     </section>
 
-    <!-- 08 EVIDENCE STANDARD -->
-    <section class="sec" id="standard" aria-labelledby="standard-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">08</span><span class="mlabel">Evidence standard</span></div>
-        <div class="main">
-          <h2 id="standard-h" class="reveal">What we hold ourselves to.</h2>
-          <ol class="ledger-list">
-            <li class="reveal"><span class="lnum">1</span><div><h3>Every flag has a timestamp and a screenshot.</h3><p>If we can’t show you the listing as it appeared, we don’t report it.</p></div></li>
-            <li class="reveal"><span class="lnum">2</span><div><h3>A person checks every flag against your dealer list before it reaches you.</h3><p>Automated matching gets bundles, used items and your own dealers wrong often enough to matter.</p></div></li>
-            <li class="reveal"><span class="lnum">3</span><div><h3>Nothing is sent to a seller without your approval.</h3><p>Notices go out in your name, using templates your counsel signs off.</p></div></li>
-            <li class="reveal"><span class="lnum">4</span><div><h3>We tell you what public data can’t establish.</h3><p>Authorization and stock origin need your records or a test purchase. We say which, and what it would cost.</p></div></li>
-            <li class="reveal"><span class="lnum">5</span><div><h3>Monthly reports show what changed, including what didn’t work.</h3><p>Sellers who ignored a notice are listed next to the ones who came back to MAP.</p></div></li>
-          </ol>
-
-          <!-- CASE STUDY SLOT: add only a real, approved client case study here.
-          <article class="case-study">
-            <p class="mlabel">Case study</p>
-            <h3>[Brand, with written permission]</h3>
-            <p>[What we found, what was done, what changed. Real numbers only.]</p>
-          </article>
-          -->
-        </div>
-      </div>
-    </section>
-
-    <!-- 09 FAQ -->
-    <section class="sec" id="faq" aria-labelledby="faq-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">09</span><span class="mlabel">FAQ</span></div>
-        <div class="main">
-          <h2 id="faq-h" class="reveal">Questions</h2>
-          <div class="faq reveal">
-            <details>
-              <summary>Do you need access to our Amazon or retail accounts?</summary>
-              <p>Not for monitoring or your free snapshot. On Growth and Scale, if we find genuine IP infringement (counterfeits, copied images, trademark misuse), you can add us as a Brand Registry user with limited permissions so we can report it. A low price alone is never reported as infringement.</p>
-            </details>
-            <details>
-              <summary>Who do the notices come from?</summary>
-              <p>From your brand, under your MAP policy, using templates your counsel approves. We send them on your behalf only after you approve, and we log every step.</p>
-            </details>
-            <details>
-              <summary>What if we don’t have a MAP policy yet?</summary>
-              <p>We’ll share a policy framework you can review with your counsel before anything is sent.</p>
-            </details>
-            <details>
-              <summary>Can you guarantee sellers will come back to MAP?</summary>
-              <p>No. No one honestly can. What we commit to: every channel in your plan is checked on schedule, every flag is checked by a person before anything is sent, and you see exactly who changed their price and who didn’t.</p>
-            </details>
-            <details>
-              <summary>Are you a law firm?</summary>
-              <p>No. We handle monitoring, verification and policy follow-up. Formal legal action goes through your counsel.</p>
-            </details>
-            <details>
-              <summary>How do you keep your own dealers from being flagged by mistake?</summary>
-              <p>You share your authorized dealer list at onboarding, and a person checks every flagged listing against it before it reaches you. Anything we can’t match comes to you as a flag to verify, never as a notice.</p>
-            </details>
-            <details>
-              <summary>Where is your team based?</summary>
-              <p>Hyderabad, India. We work with US brands and reply within one US business day.</p>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 10 SNAPSHOT REQUEST -->
-    <section class="sec sec-snapshot" id="snapshot" aria-labelledby="snapshot-h">
-      <div class="wrap grid">
-        <div class="margin"><span class="num">10</span><span class="mlabel">Snapshot</span></div>
-        <div class="main snapshot">
-          <div class="snapshot-copy reveal">
+    <!-- Snapshot request -->
+    <section class="block" id="snapshot" aria-labelledby="snapshot-h">
+      <div class="wrap">
+        <div class="panel cta-panel">
+          <div class="cta-copy reveal">
+            <p class="kicker">Free snapshot</p>
             <h2 id="snapshot-h">Send us one product.</h2>
             <p class="lead">We’ll check where it’s listed below MAP and send back what we find within 48 hours, with screenshots. Public listing data only.</p>
           </div>
@@ -480,7 +483,7 @@
             <!-- TODO(owner): set data-endpoint to your form backend (e.g. Formspree, Basin or your own API).
                  Until then, submitting opens the visitor's email app with a pre-filled message to data-email,
                  so no request is silently dropped. -->
-            <form id="snapshot-form" data-endpoint="" data-email="hello@mapdeltahq.com" novalidate>
+            <form id="snapshot-form" data-endpoint="" data-email="ayman@mapdeltahq.com" novalidate>
               <div class="field">
                 <label for="f-name">Name</label>
                 <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
@@ -522,9 +525,8 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <a class="wordmark" href="#top">MapDelta</a>
-      <!-- TODO(owner): confirm hello@mapdeltahq.com receives mail before launch. -->
       <nav class="footer-links" aria-label="Footer">
-        <a href="mailto:hello@mapdeltahq.com">hello@mapdeltahq.com</a>
+        <a href="mailto:ayman@mapdeltahq.com">ayman@mapdeltahq.com</a>
         <a href="privacy/">Privacy</a>
         <a href="terms/">Terms</a>
       </nav>

@@ -3,6 +3,16 @@
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Nav: hairline appears once the page scrolls */
+  const nav = document.getElementById('nav');
+  if (nav && 'IntersectionObserver' in window) {
+    const sentinel = document.createElement('div');
+    sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:8px;pointer-events:none';
+    sentinel.setAttribute('aria-hidden', 'true');
+    document.body.prepend(sentinel);
+    new IntersectionObserver(([entry]) => nav.classList.toggle('is-scrolled', !entry.isIntersecting)).observe(sentinel);
+  }
+
   /* Mobile menu */
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('mobile-menu');
@@ -11,6 +21,7 @@
       toggle.setAttribute('aria-expanded', String(open));
       toggle.textContent = open ? 'Close' : 'Menu';
       menu.hidden = !open;
+      if (nav) nav.classList.toggle('is-open', open);
     };
     toggle.addEventListener('click', () => setMenu(menu.hidden));
     menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
