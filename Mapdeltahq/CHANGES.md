@@ -22,6 +22,14 @@ Every wording change from the previous live site, for your review. "Removed" mea
 - **Hero:** chart is now full width under the headline, with larger labels.
 - **Accent:** one accent (ink); the MapDelta comparison column is marked by a rule, not a tint.
 
+## Round 4 (October 2026): structure and motion
+
+- **Structure:** every section uses the same left-aligned head (kicker, heading, lead); Pricing is no longer centred and the FAQ no longer has a side column. "The problem" got its kicker. The hero is the headline, then the intro beside the buttons, then the full-width chart.
+- **Pricing:** the price now sits next to the retainer name; the features run in two columns on wide screens and stack under the name and price on phones (no sideways scroll).
+- **Snapshot form:** one panel with a rule between copy and form, instead of a box inside a box.
+- **Motion:** spring physics for the hero dots and scroll reveals (see DESIGN.md §6).
+- **Fix:** trend-chart dots in the sample report render as solid ink/red again.
+
 ## Owner TODOs (must be done before launch)
 
 1. **Mailbox:** confirm `ayman@mapdeltahq.com` receives mail. It's the only contact address on the site, the legal pages and the form fallback. (`index.html` footer, `#snapshot-form` `data-email`, privacy, terms)

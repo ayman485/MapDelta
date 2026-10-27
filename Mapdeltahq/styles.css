@@ -175,8 +175,6 @@ svg { display: block; }
 .block:last-of-type { padding-bottom: var(--block); }
 .head { max-width: 46rem; margin-bottom: clamp(32px, 4vw, 52px); }
 .head h2 { margin-top: 10px; }
-.head.center { margin-inline: auto; text-align: center; }
-.head.center .lead { margin-inline: auto; }
 
 /* Panels */
 .panel {
@@ -204,12 +202,13 @@ svg { display: block; }
    Hero
    ========================================================================== */
 .hero { padding-top: clamp(40px, 6vw, 88px); }
-.hero-grid { display: grid; gap: 40px; }
-.hero-top { display: grid; gap: 28px; }
-@media (min-width: 1024px) { .hero-top { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 64px; align-items: end; } }
-.hero h1 { margin-top: 14px; }
+.hero-grid { display: grid; gap: clamp(28px, 4vw, 44px); }
+.hero-intro { display: grid; gap: 28px; }
+@media (min-width: 1024px) { .hero-intro { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 64px; align-items: start; } }
+.hero h1 { margin-top: 14px; max-width: 16em; }
 .hero .lead { margin-top: 0; }
-.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (min-width: 1024px) { .hero-actions { padding-top: 6px; } }
 @media (max-width: 480px) { .cta-row .btn { flex: 1 1 100%; } }
 .assurances {
   display: flex; flex-wrap: wrap; gap: 10px 22px;
@@ -227,6 +226,8 @@ svg { display: block; }
 .plot-area svg, .trend-area svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .below-zone { fill: var(--signal-soft); }
 .map-line { stroke: var(--ink); stroke-width: 1.25; vector-effect: non-scaling-stroke; }
+.trend .dots .at { fill: var(--ink); stroke: none; }
+.trend .dots .below { fill: var(--signal); stroke: none; }
 .dots path { fill: none; stroke-width: 15px; stroke-linecap: round; vector-effect: non-scaling-stroke; }
 .dots .at { stroke: var(--ink); }
 .dots .below { stroke: var(--signal); }
@@ -254,24 +255,20 @@ svg { display: block; }
   .delta > span:first-child, .delta .sep { display: none; }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .plot .dots path { animation: settle 0.6s var(--ease) both; animation-delay: calc(var(--i, 0) * 20ms); }
-  .plot .dots .below {
-    animation: settle 0.6s var(--ease) both, redden 0.25s linear both;
-    animation-delay: calc(var(--i, 0) * 20ms), 0.62s;
-  }
-  .plot .delta { animation: fade 0.3s linear 0.8s both; }
-  .plot .below-zone { animation: fade 0.4s linear 0.55s both; }
-}
-@keyframes settle { from { transform: translateY(var(--from, 0)); } }
-@keyframes redden { from { stroke: var(--ink); } }
-@keyframes fade { from { opacity: 0; } }
+/* Motion (main.js springs). Before the springs run, below-MAP dots start ink and
+   their deltas and zone are hidden; .settled hands colour back with a short fade. */
+.motion .plot .dots path { transform: translateY(var(--from, 0)); }
+.motion .plot .dots .below { stroke: var(--ink); transition: stroke 0.3s linear; }
+.motion .plot .delta, .motion .plot .below-zone { opacity: 0; transition: opacity 0.4s linear; }
+.motion .plot.settled .dots .below { stroke: var(--signal); }
+.motion .plot.settled .delta, .motion .plot.settled .below-zone { opacity: 1; }
 
 /* ==========================================================================
    Problem
    ========================================================================== */
-.statement { max-width: 30em; font-size: clamp(1.75rem, 1.3rem + 1.7vw, 2.5rem); }
-.points { list-style: none; margin: 48px 0 0; padding: 0; display: grid; gap: 32px; }
+.head:has(.statement) { max-width: 52rem; }
+.statement { font-size: clamp(1.75rem, 1.3rem + 1.7vw, 2.5rem); }
+.points { list-style: none; margin: 0; padding: 0; display: grid; gap: 32px; }
 @media (min-width: 860px) { .points { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; } }
 .pnum {
   display: inline-grid; place-items: center;
@@ -425,22 +422,26 @@ svg { display: block; }
    Pricing
    ========================================================================== */
 .retainers { min-width: 760px; }
-.retainers th, .retainers td { padding: 22px 24px 22px 0; vertical-align: top; }
+.retainers thead .num { text-align: left; }
+.retainers th, .retainers td { padding: 24px 28px 24px 0; vertical-align: top; }
+.retainers th:first-child, .retainers td:first-child { padding-left: 28px; }
 .retainers thead th { padding-block: 12px; }
-.retainers tbody th { width: 22%; font-family: var(--serif); font-weight: 400; font-size: 1.375rem; line-height: 1.25; color: var(--ink); }
+.retainers tbody th { width: 24%; font-family: var(--serif); font-weight: 400; font-size: 1.375rem; line-height: 1.25; color: var(--ink); }
 .retainers .r-for { display: block; margin-top: 6px; font-family: var(--sans); font-size: 0.875rem; color: var(--ink-2); }
 .retainers ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 0.9375rem; line-height: 1.5; }
 .retainers li { display: flex; gap: 10px; }
 .retainers li::before { margin-top: 2px; }
 .retainers li.inherit { font-size: 0.8125rem; font-weight: 600; color: var(--ink-2); }
 .retainers li.inherit::before { content: none; }
-.retainers td.r-price { width: 17%; text-align: right; white-space: nowrap; }
+.retainers td.r-price { width: 16%; white-space: nowrap; }
+@media (min-width: 1100px) { .retainers ul { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; } .retainers li.inherit { grid-column: 1 / -1; } }
 .retainers .amt { display: block; font-size: 1.75rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
-.retainers .per, .retainers .from { display: block; margin-top: 4px; font-size: 0.8125rem; color: var(--ink-2); }
+.retainers .from { display: block; margin-bottom: 2px; font-size: 0.8125rem; color: var(--ink-2); }
+.retainers .per { display: block; margin-top: 4px; font-size: 0.8125rem; color: var(--ink-2); }
 .retainers tbody tr:last-child > * { border-bottom: 1px solid var(--line); }
 
-.plan-terms { max-width: 40rem; margin: 40px auto 0; text-align: center; display: grid; gap: 8px; font-size: 0.9375rem; color: var(--ink-2); }
-.plan-terms .btn { justify-self: center; margin-top: 18px; }
+.plan-terms { max-width: 44rem; margin: 28px 0 0; display: grid; gap: 8px; font-size: 0.9375rem; color: var(--ink-2); }
+.plan-terms .btn { justify-self: start; margin-top: 18px; }
 
 /* ==========================================================================
    Evidence standard
@@ -465,11 +466,7 @@ svg { display: block; }
 /* ==========================================================================
    FAQ
    ========================================================================== */
-@media (min-width: 960px) {
-  .faq-wrap { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr); gap: 56px; align-items: start; }
-  .faq-wrap .head { position: sticky; top: calc(var(--nav-h) + 32px); }
-}
-.faq { border-top: 1px solid var(--line); }
+.faq { max-width: 52rem; border-top: 1px solid var(--line); }
 .faq details { border-bottom: 1px solid var(--line); }
 .faq summary {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
@@ -497,14 +494,13 @@ svg { display: block; }
 .cta-panel {
   display: grid; gap: 40px;
   padding: clamp(28px, 5vw, 56px);
-  background: var(--brand-soft);
-  border-color: var(--brand-line);
-  box-shadow: none;
+  background: var(--panel);
 }
 @media (min-width: 960px) { .cta-panel { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 56px; align-items: start; } }
 .cta-copy h2 { margin-top: 10px; }
 
-.form-wrap { background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: clamp(20px, 3vw, 30px); box-shadow: var(--shadow); }
+.form-wrap { padding-top: 4px; }
+@media (min-width: 960px) { .form-wrap { padding-left: 56px; border-left: 1px solid var(--line); } }
 #snapshot-form { display: grid; gap: 18px; }
 .field { display: grid; gap: 6px; }
 .field label { font-size: 0.875rem; font-weight: 500; }
@@ -572,9 +568,19 @@ main + .footer { margin-top: 0; }
 .summary ul { color: var(--ink-2); }
 
 /* ==========================================================================
-   Quiet scroll reveal (JS only, once)
+   Scroll reveal: hidden until main.js springs it in (motion only)
    ========================================================================== */
-@media (prefers-reduced-motion: no-preference) {
-  .js .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
-  .js .reveal.in { opacity: 1; transform: none; }
+.motion .reveal { opacity: 0; transform: translateY(18px); }
+.motion .reveal.in { opacity: 1; transform: none; }
+
+/* Pricing on phones: each retainer stacks (name and price, then what's included), no sideways scroll */
+@media (max-width: 759px) {
+  .retainers { min-width: 0; }
+  .retainers thead { display: none; }
+  .retainers tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 16px; padding: 22px 20px; border-bottom: 1px solid var(--line); }
+  .retainers tbody tr:last-child { border-bottom: 0; }
+  .retainers tbody th, .retainers tbody td, .retainers tbody th:first-child { display: block; width: auto; padding: 0; border: 0; }
+  .retainers tbody tr:last-child > * { border-bottom: 0; }
+  .retainers td.r-price { text-align: right; }
+  .retainers td:last-child { grid-column: 1 / -1; margin-top: 16px; }
 }

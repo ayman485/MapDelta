@@ -38,9 +38,13 @@ A single ink hairline labelled "MAP $129.00". It recurs:
 Dots above the line are ink. Dots below are red on a soft red zone, with their delta labelled "−$24.05 / −18.6%".
 
 ## 6. Motion
-- On first load, the hero dots settle from the MAP line onto their prices over 600ms, and the below-MAP ones turn red.
-- Elsewhere: a single opacity plus 12px rise on scroll, once.
-- `prefers-reduced-motion` removes all motion.
+Minimal, and driven by one spring (a damped harmonic oscillator in `main.js`, stepped at 120 Hz), not by easing curves.
+- Hero: on load, each offer drops from the MAP line onto its price (stiffness 210, damping 19: one barely visible overshoot), staggered 28ms. When all have settled, the below-MAP dots turn red and their deltas and red zone fade in.
+- Scroll: each block rises 18px and fades in on a near-critically-damped spring (stiffness 120, damping 20), once. Blocks entering together stagger by 60ms.
+- `prefers-reduced-motion` removes all motion; the page renders in its final state.
+
+## 4b. Structure
+Every section has the same head: small uppercase kicker, serif heading, optional lead, all left-aligned. No centred sections and no side columns. The hero is the headline, then a row with the intro and the actions, then the full-width chart.
 
 ## 7. Words
 - Say "below-MAP listings", "flags", "flags to verify", and "confirmed below-MAP listings" only after the brand has checked them.

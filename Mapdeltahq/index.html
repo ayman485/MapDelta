@@ -27,7 +27,7 @@
   <link rel="preload" href="fonts/serif-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add('js')</script>
+  <script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')</script>
   <script src="main.js" defer></script>
 </head>
 <body>
@@ -62,13 +62,13 @@
     <!-- Hero -->
     <section class="block hero" id="top" aria-labelledby="hero-h">
       <div class="wrap hero-grid">
-        <div class="hero-top">
-          <div class="hero-copy">
-            <p class="kicker">MAP enforcement for US consumer brands</p>
-            <h1 id="hero-h">Your MAP policy is only as good as the follow&#8209;through.</h1>
-          </div>
-          <div class="hero-side">
-            <p class="lead">MapDelta checks Amazon, Walmart, Google Shopping and eBay for listings below your minimum advertised price, verifies each one by hand against your dealer list, and handles the follow-up with you. You see the evidence before you pay anything.</p>
+        <div class="hero-copy">
+          <p class="kicker">MAP enforcement for US consumer brands</p>
+          <h1 id="hero-h">Your MAP policy is only as good as the follow&#8209;through.</h1>
+        </div>
+        <div class="hero-intro">
+          <p class="lead">MapDelta checks Amazon, Walmart, Google Shopping and eBay for listings below your minimum advertised price, verifies each one by hand against your dealer list, and handles the follow-up with you. You see the evidence before you pay anything.</p>
+          <div class="hero-actions">
             <div class="cta-row">
               <a class="btn" href="#snapshot">Send us one product</a>
               <a class="btn btn-ghost" href="#report">See a sample report</a>
@@ -125,7 +125,10 @@
     <!-- Problem -->
     <section class="block" id="problem" aria-labelledby="problem-h">
       <div class="wrap">
-        <h2 id="problem-h" class="statement reveal">When one seller drops below MAP, the others follow, your authorized dealers complain, and the price floor stops meaning anything.</h2>
+        <div class="head reveal">
+          <p class="kicker">The problem</p>
+          <h2 id="problem-h" class="statement">When one seller drops below MAP, the others follow, your authorized dealers complain, and the price floor stops meaning anything.</h2>
+        </div>
         <ol class="points">
           <li class="reveal"><span class="pnum">1</span><h3>Dealers lose trust.</h3><p>Dealers who hold your price lose sales to listings that don’t, and start asking why they should.</p></li>
           <li class="reveal"><span class="pnum">2</span><h3>Margin erodes.</h3><p>Each undercut becomes the new reference price, for shoppers and for the next seller.</p></li>
@@ -341,7 +344,7 @@
     <!-- Pricing -->
     <section class="block" id="pricing" aria-labelledby="pricing-h">
       <div class="wrap">
-        <div class="head center reveal">
+        <div class="head reveal">
           <p class="kicker">Pricing</p>
           <h2 id="pricing-h">Simple pricing. Month&#8209;to&#8209;month to start.</h2>
           <p class="lead">No contract for the first three months.</p>
@@ -351,11 +354,12 @@
           <div class="table-scroll" role="region" aria-labelledby="pricing-h" tabindex="0">
             <table class="ledger retainers">
               <thead>
-                <tr><th scope="col">Retainer</th><th scope="col">What’s included</th><th scope="col" class="num">Per month</th></tr>
+                <tr><th scope="col">Retainer</th><th scope="col" class="num">Per month</th><th scope="col">What’s included</th></tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">Monitoring &amp; notices<span class="r-for">For brands with a focused catalog.</span></th>
+                  <td class="r-price"><span class="amt">$750</span><span class="per">per month</span></td>
                   <td>
                     <ul>
                       <li>Every flag checked by a person before it reaches you</li>
@@ -367,10 +371,10 @@
                       <li>Email support</li>
                     </ul>
                   </td>
-                  <td class="r-price"><span class="amt">$750</span><span class="per">/month</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Full enforcement<span class="r-for">For brands with an active reseller problem.</span></th>
+                  <td class="r-price"><span class="amt">$1,750</span><span class="per">per month</span></td>
                   <td>
                     <ul>
                       <li class="inherit">Everything in Monitoring &amp; notices, plus:</li>
@@ -386,10 +390,10 @@
                       <li>Priority support</li>
                     </ul>
                   </td>
-                  <td class="r-price"><span class="amt">$1,750</span><span class="per">/month</span></td>
                 </tr>
                 <tr>
                   <th scope="row">Channel programme<span class="r-for">For larger catalogs and wide dealer networks.</span></th>
+                  <td class="r-price"><span class="from">From</span><span class="amt">$3,500</span><span class="per">per month</span></td>
                   <td>
                     <ul>
                       <li class="inherit">Everything in Full enforcement, plus:</li>
@@ -400,7 +404,6 @@
                       <li>Coordination with your legal counsel for formal action</li>
                     </ul>
                   </td>
-                  <td class="r-price"><span class="amt">$3,500</span><span class="per">/month, from</span></td>
                 </tr>
               </tbody>
             </table>
@@ -443,7 +446,7 @@
 
     <!-- FAQ -->
     <section class="block" id="faq" aria-labelledby="faq-h">
-      <div class="wrap faq-wrap">
+      <div class="wrap">
         <div class="head reveal">
           <p class="kicker">FAQ</p>
           <h2 id="faq-h">Questions</h2>

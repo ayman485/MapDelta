@@ -30,17 +30,66 @@
     });
   }
 
-  /* Quiet reveal on scroll, once */
+  /* Springs: a damped harmonic oscillator stepped at a fixed 120 Hz.
+     Stiffness pulls toward the target, damping bleeds off velocity; a damping
+     a little under critical (2 * sqrt(stiffness)) gives one barely visible overshoot. */
+  const spring = ({ stiffness = 170, damping = 24, delay = 0, onUpdate, onDone }) => {
+    let x = 0, v = 0, last = null;
+    const h = 1 / 120;
+    const tick = (now) => {
+      let dt = last === null ? h : Math.min((now - last) / 1000, 0.064);
+      last = now;
+      while (dt > 0) {
+        const step = Math.min(h, dt);
+        v += (-stiffness * (x - 1) - damping * v) * step;
+        x += v * step;
+        dt -= step;
+      }
+      if (Math.abs(v) < 0.002 && Math.abs(x - 1) < 0.001) {
+        onUpdate(1);
+        if (onDone) onDone();
+        return;
+      }
+      onUpdate(x);
+      requestAnimationFrame(tick);
+    };
+    setTimeout(() => requestAnimationFrame(tick), delay);
+  };
+
+  /* Hero: each offer drops from the MAP line onto its price, then the below-MAP ones turn red */
+  const plot = document.querySelector('.plot');
+  if (plot && !reduceMotion) {
+    const dots = [...plot.querySelectorAll('.dots path')];
+    let left = dots.length;
+    dots.forEach((dot, i) => {
+      const from = parseFloat(dot.style.getPropertyValue('--from')) || 0;
+      spring({
+        stiffness: 210, damping: 19, delay: 250 + i * 28,
+        onUpdate: (p) => { dot.style.transform = `translateY(${(from * (1 - p)).toFixed(2)}px)`; },
+        onDone: () => { if (--left === 0) plot.classList.add('settled'); },
+      });
+    });
+  } else if (plot) {
+    plot.classList.add('settled');
+  }
+
+  /* Reveal on scroll, once: a short spring rise; siblings entering together stagger by 60ms */
   const reveals = document.querySelectorAll('.reveal');
+  const show = (el, delay) => spring({
+    stiffness: 120, damping: 20, delay,
+    onUpdate: (p) => {
+      el.style.opacity = Math.min(1, p * 1.4).toFixed(3);
+      el.style.transform = `translateY(${(18 * (1 - p)).toFixed(2)}px)`;
+    },
+    onDone: () => { el.classList.add('in'); el.style.opacity = ''; el.style.transform = ''; },
+  });
   if (!reduceMotion && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
+      entries.filter((e) => e.isIntersecting).forEach((entry, i) => {
+        io.unobserve(entry.target);
+        show(entry.target, i * 60);
       });
-    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
     reveals.forEach((el) => io.observe(el));
   } else {
     reveals.forEach((el) => el.classList.add('in'));
