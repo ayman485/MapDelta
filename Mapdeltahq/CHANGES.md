@@ -11,6 +11,17 @@ Every wording change from the previous live site, for your review. "Removed" mea
 - **Location:** every mention of the team's location was removed. The FAQ "Where is your team based?" became "How quickly do you reply?". The Privacy Policy now says information "may be processed in the United States and in other countries where we and our service providers operate". The Terms governing-law clause no longer names a country or city (see TODO 7).
 - Small kicker labels were added above headings: How it works · Anatomy of a flag · Sample report · Comparison · Pricing · Our evidence standard · FAQ · Free snapshot.
 
+## Round 3 (October 2026): owner feedback
+
+- **Redirect:** `vercel.json` now 301-redirects any `*.vercel.app` host to `https://mapdeltahq.com/`. The old copy ("violation snapshot", "direct founder access", Hyderabad, 8-field form) is a stale deployment, not in this repo: redeploy production from this branch.
+- **Footer email:** now ink, underlined, a `mailto:` link.
+- **Plan names:** Starter / Growth / Scale became Monitoring & notices / Full enforcement / Channel programme everywhere (pricing, timeline, comparison row, FAQ, privacy).
+- **Comparison table:** the "Software demo" cell stays; it describes competitors only.
+- **Theme:** light paper background, ink text, red only for below-MAP. Dark mode removed. Green and mint removed.
+- **Pricing:** three cards and the "Recommended" badge replaced by one ledger table.
+- **Hero:** chart is now full width under the headline, with larger labels.
+- **Accent:** one accent (ink); the MapDelta comparison column is marked by a rule, not a tint.
+
 ## Owner TODOs (must be done before launch)
 
 1. **Mailbox:** confirm `ayman@mapdeltahq.com` receives mail. It's the only contact address on the site, the legal pages and the form fallback. (`index.html` footer, `#snapshot-form` `data-email`, privacy, terms)

@@ -1,21 +1,21 @@
 # Design System: MapDelta
 
 ## 1. Atmosphere
-One continuous, polished page: no numbered sections or dividers, just generous space between blocks. Content sits in soft rounded panels (22px radius, gentle shadow). Calm and exact, with numbers that line up.
+An audit report on paper: warm paper background, ink text, hairline rules, flat panels with a 6px radius and no shadows. Calm and exact, with numbers that line up.
 
 ## 2. Colour
-| Token | Light | Dark | Use |
-|---|---|---|---|
-| `--bg` | #FBFCFB | #0B100E | Page |
-| `--panel` / `--panel-2` | #FFFFFF / #F3F6F4 | #111916 / #17211D | Panels / tiles inside panels |
-| `--ink` / `--ink-2` | #0E1512 / #56615B | #E7EEEA / #9BA8A1 | Text / secondary text |
-| `--line` | #E2E8E4 | #23302A | Hairlines inside panels |
-| `--brand` | #0F5B46 | #3DBB8E | Buttons, kickers, checks, timeline, MapDelta column |
-| `--brand-soft` | #E8F2EC | #12261E | Tinted surfaces (CTA panel, legal summary) |
-| `--signal` | #C93D33 | #FF7A6E | **Below MAP** (dots, deltas, tinted zone under the MAP line), plus form errors |
-| `--ok` | #0F7A5F | #62D4A9 | "Back at MAP", at-or-above notes |
+Light only (no dark mode). One accent, ink; red is reserved for below-MAP.
+| Token | Value | Use |
+|---|---|---|
+| `--bg` | #F5F1E8 | Paper |
+| `--panel` / `--panel-2` | #FBF9F3 / #EDE8DB | Panels / tiles and table heads |
+| `--ink` / `--ink-2` | #14130F / #5B574C | Text / secondary text |
+| `--line` | #DDD6C5 | Hairlines |
+| `--brand` | #14130F | The one accent (ink): buttons, checks, timeline |
+| `--signal` | #B3261E | **Below MAP** (dots, deltas, tinted zone), plus form errors |
+| `--ok` | #5B574C | "Back at MAP": neutral, not a second colour |
 
-No gradients or glows.
+No gradients, glows or shadows.
 
 ## 3. Type
 - **Headlines:** Source Serif 4, regular (wordmark semibold). Sentence case, tight leading.
@@ -25,13 +25,13 @@ No gradients or glows.
 
 ## 4. Layout
 - 1160px max width, one continuous flow. A small green kicker sits above each heading.
-- Panels: 22px radius, 1px line, soft shadow. Buttons are pills.
+- Panels: 6px radius, 1px line. Buttons are squared (4px). Pricing is a ledger table (Monitoring & notices, Full enforcement, Channel programme), not cards.
 - Below 1024px everything stacks into a single column.
 - Tables scroll inside their own container, never the page.
 
 ## 5. The MAP line
 A single ink hairline labelled "MAP $129.00". It recurs:
-- as the hero strip plot (12 illustrative offers; 8 on phones);
+- as the full-width hero strip plot under the headline (12 illustrative offers; 8 on phones);
 - as the spine of the "How it works" timeline;
 - in the sample report's three-month chart.
 
