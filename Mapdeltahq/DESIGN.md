@@ -1,46 +1,50 @@
-# Design System: MapDelta
+# Design System: MapDelta — "the audit ledger"
 
-## 1. Visual Theme & Atmosphere
-Quiet and typographic, with a single green family for colour. Apple product-page restraint with OpenAI-style calm: warm off-white canvas, hairline structure, one confident black for action. Density is gallery-airy (3/10), variance is offset (6/10: sticky left headings against right-hand content, split hero), motion is fluid CSS (4/10: short fade-and-rise, one line-draw, one breathing status dot). Trust comes from clarity, not decoration.
+## 1. Atmosphere
+A carefully kept evidence file, not a startup landing page. Calm, exact, a little editorial. Hairline rules instead of cards, a visible margin column for small mono notes, numbers that line up. The reader should come away thinking "these people check things".
 
-## 2. Color Palette & Roles
-- **Warm Canvas** (#FAFAF9): page background
-- **Pure Surface** (#FFFFFF): cards, form, alternate sections
-- **Ink** (#0A0A0A): primary text, primary buttons, featured-plan border
-- **Graphite** (#6B6B6B): secondary copy, labels, captions (5.2:1 on canvas)
-- **Hairline** (#E7E5E4): every border and divider; **Hairline Strong** (#D6D3D1) for inputs and secondary buttons
-- **Night** (#0B0B0C) with **Bone** (#F5F5F4) text: the sample-report section only
-- **Compliance Green** (#0E9F6E): dots, lines, and fills for positive/compliant states. Text uses the AA-safe **Deep Green** (#0A7A55)
-- **Violation Red** (#E5484D): only inside report visuals. Text uses **Deep Red** (#C4292F)
-- **Form Error** (#B42318): validation messages only, deliberately not the violation red
-- **Green family** for colour: Green 50 (#F0F8F4) tinted surfaces, Green 100/200 (#DDF1E7 / #BFE5D2) tinted borders and lines, Mint (#F2F8F5) section wash, Green 700 (#0A7A55) numbers, badges and labels, Green 900 (#053D2B) text on tints. Colour arrives as soft radial washes (hero, dark report, final CTA) and tinted surfaces (How it works, MapDelta comparison column, featured plan, founding banner, footer). Primary buttons stay Ink.
+## 2. Colour
+| Token | Light | Dark | Use |
+|---|---|---|---|
+| `--paper` | #FAFAF9 | #141210 | Background |
+| `--ink` | #16130F | #EDE8DF | Text, rules that matter, primary button |
+| `--ink-2` | #6B645A | #A39B8E | Secondary text, margin notes |
+| `--rule` | #DAD5CC | #3A352E | 1px hairlines |
+| `--tint` | #F2EEE6 | #1F1C18 | MapDelta column in the comparison, active listing row |
+| `--signal` | #C2410C | #EE7444 | **Below MAP only**: deltas, below-MAP dots, status markers. Also focus rings. |
+| `--ok` | #3F6B4E | #86B094 | **At or above MAP only**: "Back at MAP", month-1 comparison note |
 
-## 3. Typography Rules
-- **Family:** Inter 400/500/600 (per brand brief)
-- **Hero:** 40px to 72px (clamp), semibold, -0.03em, line-height 1.05
-- **Section headings:** 30px to 46px, semibold, -0.03em, line-height 1.1, `text-wrap: balance`
-- **Body:** 17px/1.6; leads 18–19px in Graphite, max ~34em
-- **Eyebrows:** 13px uppercase, +0.08em, Graphite
-- **Numbers:** tabular figures everywhere prices or KPIs appear
+No other colours. No gradients, glows, blur, glass or drop shadows. Dark mode is ink on charcoal, via `prefers-color-scheme`.
 
-## 4. Component Stylings
-- **Buttons:** 48px pills. Primary is an Ink fill with white text; secondary is transparent with a 1px Hairline Strong border. Press state is `scale(.98)`. No glows.
-- **Cards:** 22px radius, 1px hairline, `0 1px 2px rgba(0,0,0,.04)`. Hero report and form add one wide, faint diffusion layer.
-- **Pills:** 24px status chips with a 5px leading dot: Notified (neutral), Resolved (green), Escalated (red).
-- **Inputs:** label above, error below, 48px, 12px radius, Ink focus border with a 4px soft ring. 16px text prevents iOS zoom.
-- **FAQ:** native `<details>` with a plus that rotates 45°, and height animated via `::details-content`.
+## 3. Type
+- **Headlines:** Source Serif 4, regular (wordmark semibold). Sentence case, tight leading.
+- **Body:** IBM Plex Sans 400/500. Measure capped at 64ch.
+- **Numbers:** IBM Plex Mono for every price, percentage, date, SKU and seller ID, so columns align.
+- Fonts are self-hosted in `/fonts`: static Latin subsets (about 100 KB in total), with the serif and sans preloaded.
 
-## 5. Layout Principles
-- Max content width 1120px; gutters 20–32px; section padding 96–152px.
-- Hero is a split layout (copy left, product mockup right) at ≥1024px and stacks below that.
-- Problem and FAQ sections use a sticky heading on the left and content on the right at ≥960px.
-- Everything collapses to a single column below 768px. The comparison table becomes labelled rows below 720px. No horizontal page scroll (verified at 375px).
+## 4. Layout
+- 12-column grid. Columns 1–2 are the margin column (section number plus a mono label); columns 3–12 hold the content, separated by a vertical hairline.
+- Under 960px, margin labels move above their section and everything becomes a single column.
+- Sections are separated by 1px rules. Corners are square or 2px at most.
+- Tables scroll inside their own container, never the page.
 
-## 6. Motion & Interaction
-- Scroll reveal: opacity plus a 14px rise, 300ms, `cubic-bezier(.2,.7,.2,1)`, staggered 70ms, via IntersectionObserver.
-- Hero: staggered rise on load, price line draws in, violation dots pop in sequence.
-- Report: compliance line draws when it enters view.
-- `prefers-reduced-motion` disables all of it. Only `transform` and `opacity` are animated.
+## 5. The MAP line
+A single ink hairline labelled "MAP $129.00" in mono. It recurs:
+- as the hero strip plot (12 illustrative offers; 8 on phones);
+- as the spine of the "How it works" timeline;
+- as the section divider before How it works, Sample report and Snapshot;
+- in the sample report's three-month chart.
 
-## 7. Anti-Patterns (Banned)
-No emojis. No marketplace or client logos. No testimonials, client counts, or invented stats outside the clearly labelled sample report. No gradients on text, no neon glows, no carousels, no parallax, no stock photos, no "scroll to explore" filler. Red never appears outside report visuals.
+Dots above the line are ink. Dots below are vermilion, with their delta labelled "−$24.05 / −18.6%".
+
+## 6. Motion
+- On first load, the hero dots settle from the MAP line onto their prices over 600ms, and the below-MAP ones turn vermilion.
+- Elsewhere: a single opacity plus 8px fade on scroll, once.
+- `prefers-reduced-motion` removes all motion.
+
+## 7. Words
+- Say "below-MAP listings", "flags", "flags to verify", and "confirmed below-MAP listings" only after the brand has checked them.
+- Never say "violators", "unauthorized sellers", "offenders" or "violations" about a prospect's sellers.
+- Describe source checks as something run with the brand's approval, never as already done.
+- Sample data is always labelled "Illustrative data" and uses placeholder sellers ("Seller A").
+- No people, testimonials, logos, ratings or invented statistics.

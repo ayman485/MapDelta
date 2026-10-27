@@ -1,25 +1,17 @@
 (() => {
   'use strict';
 
-  /* Nav: hairline border once the page scrolls */
-  const nav = document.getElementById('nav');
-  const sentinel = document.querySelector('.nav-sentinel');
-  if (nav && sentinel && 'IntersectionObserver' in window) {
-    new IntersectionObserver(([entry]) => {
-      nav.classList.toggle('is-scrolled', !entry.isIntersecting);
-    }).observe(sentinel);
-  }
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Mobile menu */
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('mobile-menu');
-  const setMenu = (open) => {
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    menu.hidden = !open;
-    nav.classList.toggle('is-open', open);
-  };
   if (toggle && menu) {
+    const setMenu = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? 'Close' : 'Menu';
+      menu.hidden = !open;
+    };
     toggle.addEventListener('click', () => setMenu(menu.hidden));
     menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
     document.addEventListener('keydown', (e) => {
@@ -27,9 +19,9 @@
     });
   }
 
-  /* Scroll reveal */
+  /* Quiet reveal on scroll, once */
   const reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
+  if (!reduceMotion && 'IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -37,13 +29,43 @@
           io.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.05 });
     reveals.forEach((el) => io.observe(el));
   } else {
     reveals.forEach((el) => el.classList.add('in'));
   }
 
-  /* Snapshot form */
+  /* Anatomy of a flag: numbered hotspots select a margin note.
+     Without JS the hotspots are plain links to the notes list. */
+  const anatomy = document.querySelector('.anatomy');
+  if (anatomy) {
+    const hots = anatomy.querySelectorAll('.hot');
+    const rows = anatomy.querySelectorAll('.l-row[data-note]');
+    const notes = anatomy.querySelectorAll('.notes li');
+    const sideBySide = window.matchMedia('(min-width: 1100px)');
+
+    const select = (n) => {
+      notes.forEach((li) => li.classList.toggle('is-active', li.id === `note-${n}`));
+      rows.forEach((row) => row.classList.toggle('is-active', row.dataset.note === n));
+      hots.forEach((a) => a.setAttribute('aria-current', String(a.getAttribute('href') === `#note-${n}`)));
+    };
+
+    hots.forEach((a) => {
+      const n = a.getAttribute('href').replace('#note-', '');
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        select(n);
+        if (!sideBySide.matches) {
+          document.getElementById(`note-${n}`).scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
+        }
+      });
+      a.addEventListener('mouseenter', () => select(n));
+      a.addEventListener('focus', () => select(n));
+    });
+    select('1');
+  }
+
+  /* Snapshot request form */
   const form = document.getElementById('snapshot-form');
   if (!form) return;
 
@@ -56,36 +78,26 @@
   const rules = {
     name: (v) => (v ? '' : 'Enter your name.'),
     email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Enter a valid work email.'),
-    brand: (v) => (v ? '' : 'Enter your brand name.'),
-    website: (v) => (/^(https?:\/\/)?[^\s/.]+(\.[^\s/.]+)*\.[a-z]{2,}(\/\S*)?$/i.test(v) ? '' : 'Enter your brand’s website, e.g. yourbrand.com.'),
-    concern: (v) => (v ? '' : 'Choose one option.'),
-    size: (v) => (v ? '' : 'Choose your company size.'),
+    website: (v) => (/^(https?:\/\/)?[^\s/.]+(\.[^\s/.]+)*\.[a-z]{2,}(\/\S*)?$/i.test(v) ? '' : 'Enter your brand’s website, for example yourbrand.com.'),
   };
+  const fields = Object.keys(rules).map((n) => form.elements[n]);
 
-  const validateField = (field) => {
-    const rule = rules[field.name];
-    if (!rule) return true;
-    const msg = rule(field.value.trim());
+  const validate = (field) => {
+    const msg = rules[field.name](field.value.trim());
     const err = document.getElementById(field.getAttribute('aria-describedby'));
     field.setAttribute('aria-invalid', msg ? 'true' : 'false');
     if (err) err.textContent = msg;
     return !msg;
   };
 
-  const fields = Object.keys(rules).map((n) => form.elements[n]);
-
   fields.forEach((field) => {
-    const evt = field.tagName === 'SELECT' ? 'change' : 'input';
-    field.addEventListener(evt, () => {
-      if (field.getAttribute('aria-invalid') === 'true') validateField(field);
-    });
-    field.addEventListener('blur', () => {
-      if (field.value.trim()) validateField(field);
-    });
+    field.addEventListener('input', () => { if (field.getAttribute('aria-invalid') === 'true') validate(field); });
+    field.addEventListener('blur', () => { if (field.value.trim()) validate(field); });
   });
 
-  const showSuccess = (message) => {
+  const showSuccess = (message, title) => {
     if (message) successMsg.textContent = message;
+    if (title) success.querySelector('.success-title').textContent = title;
     form.hidden = true;
     success.hidden = false;
     success.focus();
@@ -95,29 +107,31 @@
     e.preventDefault();
     status.textContent = '';
 
-    const invalid = fields.filter((f) => !validateField(f));
+    const invalid = fields.filter((f) => !validate(f));
     if (invalid.length) { invalid[0].focus(); return; }
 
-    // Honeypot: bots fill hidden fields
+    // Honeypot: only bots fill the hidden field
     if (form.elements.company.value) { showSuccess(); return; }
 
-    const data = Object.fromEntries(
-      fields.map((f) => [f.name, f.value.trim()])
-    );
+    const data = {
+      name: form.elements.name.value.trim(),
+      email: form.elements.email.value.trim(),
+      website: form.elements.website.value.trim(),
+      product: form.elements.product.value.trim(),
+    };
     const endpoint = form.dataset.endpoint;
 
     if (!endpoint) {
-      // No backend configured yet: hand off to the visitor's email client.
+      // TODO(owner): no form backend yet. Hand the request to the visitor's email app
+      // so nothing is dropped, and say so plainly.
       const body = [
         `Name: ${data.name}`,
         `Work email: ${data.email}`,
-        `Brand: ${data.brand}`,
-        `Website: ${data.website}`,
-        `Main marketplace concern: ${data.concern}`,
-        `Company size: ${data.size}`,
+        `Brand website: ${data.website}`,
+        `Product and MAP price: ${data.product || '(not given)'}`,
       ].join('\n');
-      window.location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Free violation snapshot: ' + data.brand)}&body=${encodeURIComponent(body)}`;
-      showSuccess('Your email app should open with these details. Send it and we’ll reply with your snapshot within 48 hours.');
+      window.location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Snapshot request: ' + data.website)}&body=${encodeURIComponent(body)}`;
+      showSuccess(`Your email app should have opened with these details. Send that email to ${form.dataset.email} and we’ll reply within one US business day.`, 'One more step.');
       return;
     }
 
@@ -132,10 +146,10 @@
       if (!res.ok) throw new Error(String(res.status));
       showSuccess();
     } catch {
-      status.textContent = `Something went wrong. Please try again or email ${form.dataset.email}.`;
+      status.textContent = `That didn’t go through. Please try again, or email ${form.dataset.email}.`;
     } finally {
       submit.disabled = false;
-      label.textContent = 'Get my free snapshot';
+      label.textContent = 'Request my snapshot';
     }
   });
 })();
