@@ -13,6 +13,32 @@
     new IntersectionObserver(([entry]) => nav.classList.toggle('is-scrolled', !entry.isIntersecting)).observe(sentinel);
   }
 
+  /* Email links: a mailto does nothing on computers without a mail app,
+     so a click also copies the address and offers Gmail. */
+  const mailLinks = document.querySelectorAll('a[href^="mailto:"]');
+  if (mailLinks.length) {
+    const toast = document.createElement('div');
+    toast.className = 'mail-toast';
+    toast.setAttribute('role', 'status');
+    toast.hidden = true;
+    document.body.append(toast);
+    let timer;
+    mailLinks.forEach((link) => link.addEventListener('click', () => {
+      const address = link.getAttribute('href').slice(7).split('?')[0];
+      const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(address)}`;
+      const copied = navigator.clipboard ? navigator.clipboard.writeText(address).then(() => true, () => false) : Promise.resolve(false);
+      copied.then((ok) => {
+        toast.textContent = ok ? `Copied ${address}` : address;
+        const a = document.createElement('a');
+        a.href = gmail; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Open in Gmail';
+        toast.append(a);
+        toast.hidden = false;
+        clearTimeout(timer);
+        timer = setTimeout(() => { toast.hidden = true; }, 6000);
+      });
+    }));
+  }
+
   /* Mobile menu */
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('mobile-menu');
@@ -178,17 +204,19 @@
       email: form.elements.email.value.trim(),
       website: form.elements.website.value.trim(),
       product: form.elements.product.value.trim(),
+      message: form.elements.message.value.trim(),
     };
     const endpoint = form.dataset.endpoint;
 
     if (!endpoint) {
-      // TODO(owner): no form backend yet. Hand the request to the visitor's email app
+      // No endpoint configured: hand the request to the visitor's email app
       // so nothing is dropped, and say so plainly.
       const body = [
         `Name: ${data.name}`,
         `Work email: ${data.email}`,
         `Brand website: ${data.website}`,
         `Product and MAP price: ${data.product || '(not given)'}`,
+        `Message: ${data.message || '(none)'}`,
       ].join('\n');
       window.location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Snapshot request: ' + data.website)}&body=${encodeURIComponent(body)}`;
       showSuccess(`Your email app should have opened with these details. Send that email to ${form.dataset.email} and we’ll reply within one US business day.`, 'One more step.');
@@ -201,12 +229,30 @@
       const res = await fetch(endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          'Name': data.name,
+          'Work email': data.email,
+          'Brand website': data.website,
+          'Product and MAP price': data.product || '(not given)',
+          'Message': data.message || '(none)',
+          _replyto: data.email,
+          _subject: `Snapshot request: ${data.website}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
       });
-      if (!res.ok) throw new Error(String(res.status));
+      const out = await res.json().catch(() => ({}));
+      // FormSubmit answers 200 with success "false" when delivery didn't happen
+      if (!res.ok || String(out.success) === 'false') throw new Error(out.message || String(res.status));
       showSuccess();
     } catch {
-      status.textContent = `That didn’t go through. Please try again, or email ${form.dataset.email}.`;
+      const mailto = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Snapshot request: ' + data.website)}&body=${encodeURIComponent(
+        `Name: ${data.name}\nWork email: ${data.email}\nBrand website: ${data.website}\nProduct and MAP price: ${data.product || '(not given)'}\nMessage: ${data.message || '(none)'}`)}`;
+      status.innerHTML = '';
+      status.append(`That didn’t go through. Please try again, or `);
+      const a = document.createElement('a');
+      a.href = mailto; a.textContent = `email ${form.dataset.email}`;
+      status.append(a, '.');
     } finally {
       submit.disabled = false;
       label.textContent = 'Request my snapshot';

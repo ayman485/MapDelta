@@ -30,11 +30,18 @@ Every wording change from the previous live site, for your review. "Removed" mea
 - **Motion:** spring physics for the hero dots and scroll reveals (see DESIGN.md §6).
 - **Fix:** trend-chart dots in the sample report render as solid ink/red again.
 
+## Round 6 (October 2026): email, form, pricing, comparison
+
+- **Email links:** clicking ayman@mapdeltahq.com (footer, legal pages) still opens the mail app, and now also copies the address and shows an "Open in Gmail" link, so it works on computers without a mail app.
+- **Form:** requests are emailed to ayman@mapdeltahq.com through FormSubmit, no mail app needed. Added an optional "Message" field. Fixed: the form now hides once the success message shows.
+- **Pricing:** three ledger rows on one sheet; Full enforcement is lifted off the sheet with a soft glow and a "Recommended" label.
+- **Comparison:** competitor columns have short descriptors; the MapDelta column is raised, topped with an ink rule, and every answer carries a check.
+
 ## Owner TODOs (must be done before launch)
 
 1. **Mailbox:** confirm `ayman@mapdeltahq.com` receives mail. It's the only contact address on the site, the legal pages and the form fallback. (`index.html` footer, `#snapshot-form` `data-email`, privacy, terms)
 2. ~~**What happens after month 3**~~ Done (round 5): the pricing section now says *"After the first three months, we agree ongoing terms with you. Where it suits your business, that’s a fixed-term contract setting out scope, pricing and notice period in writing."* This matches Terms §4, which already defers term and cancellation to the signed services agreement.
-3. **Form endpoint:** set `data-endpoint` on `#snapshot-form` to a real backend (Formspree, Basin or your own API). Until then, submitting opens the visitor's email app with a pre-filled message, and the success screen says so. Nothing is silently dropped. (`index.html`, `main.js`)
+3. **Form delivery: activate once.** The form now posts to FormSubmit (`https://formsubmit.co/ajax/ayman@mapdeltahq.com`), which emails every request to ayman@mapdeltahq.com. The very first submission makes FormSubmit send an activation email to that inbox: click the link in it once, or nothing is delivered. Until then the visitor sees "That didn’t go through" with a pre-filled email link, so nothing is lost. To use your own backend later, change `data-endpoint` on `#snapshot-form`.
 4. **Case study:** a commented-out slot sits under "What we hold ourselves to". Fill it only with a real, approved client case study.
 5. **Domain:** the canonical URL, OG URL and OG image use `https://mapdeltahq.com/`. Point the domain at Vercel before sharing links, or link previews won't find the image.
 6. **Deploy:** upload the new `fonts/` folder and `vercel.json` along with the changed files.

@@ -314,25 +314,25 @@
           <p class="kicker">Comparison</p>
           <h2 id="compare-h">How we compare</h2>
         </div>
-        <div class="panel panel-flush reveal">
+        <div class="compare-wrap reveal">
           <div class="table-scroll" role="region" aria-labelledby="compare-h" tabindex="0">
-            <table class="ledger compare">
+            <table class="compare">
               <thead>
                 <tr>
                   <td></td>
-                  <th scope="col">Monitoring software</th>
-                  <th scope="col">Enterprise enforcement firms</th>
-                  <th scope="col" class="us">MapDelta</th>
+                  <th scope="col">Monitoring software<span class="c-sub">Self-serve tools</span></th>
+                  <th scope="col">Enforcement firms<span class="c-sub">Enterprise agencies</span></th>
+                  <th scope="col" class="us"><span class="c-name">MapDelta</span><span class="c-sub">Verified by hand</span></th>
                 </tr>
               </thead>
               <tbody>
                 <tr><th scope="row">First step</th><td>Software demo</td><td>Sales call and custom quote</td><td class="us">Free snapshot of your own products in 48 hours</td></tr>
-                <tr><th scope="row">Who does the enforcement work</th><td>You</td><td>Them</td><td class="us">Us</td></tr>
+                <tr><th scope="row">Who does the enforcement work</th><td>You</td><td>Them</td><td class="us">Us, with your approval at each step</td></tr>
                 <tr><th scope="row">Every flag checked by a person</th><td>Rarely</td><td>Varies</td><td class="us">Always</td></tr>
                 <tr><th scope="row">Source checks (test buys, lot codes)</th><td>No</td><td>Varies</td><td class="us">On Full enforcement and Channel programme, with your approval</td></tr>
-                <tr><th scope="row">Pricing</th><td>Low, but you do the work</td><td>Custom quotes</td><td class="us">Flat, published</td></tr>
-                <tr><th scope="row">Commitment</th><td>Varies</td><td>Typically contracts</td><td class="us">Month-to-month for the first 3 months</td></tr>
-                <tr><th scope="row">Who you talk to</th><td>Support</td><td>Account manager</td><td class="us">The team that checked your listings</td></tr>
+                <tr><th scope="row">Pricing</th><td>Low, but you do the work</td><td>Custom quotes</td><td class="us">Flat and published</td></tr>
+                <tr><th scope="row">Commitment</th><td>Varies</td><td>Typically annual contracts</td><td class="us">Month-to-month for the first 3 months</td></tr>
+                <tr><th scope="row">Who you talk to</th><td>Support desk</td><td>Account manager</td><td class="us">The team that checked your listings</td></tr>
               </tbody>
             </table>
           </div>
@@ -350,64 +350,59 @@
           <p class="lead">No contract for the first three months.</p>
         </div>
 
-        <div class="panel panel-flush reveal">
-          <div class="table-scroll" role="region" aria-labelledby="pricing-h" tabindex="0">
-            <table class="ledger retainers">
-              <thead>
-                <tr><th scope="col">Retainer</th><th scope="col" class="num">Per month</th><th scope="col">What’s included</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Monitoring &amp; notices<span class="r-for">For brands with a focused catalog.</span></th>
-                  <td class="r-price"><span class="amt">$750</span><span class="per">per month</span></td>
-                  <td>
-                    <ul>
-                      <li>Every flag checked by a person before it reaches you</li>
-                      <li>Up to 100 products</li>
-                      <li>Amazon, Walmart and Google Shopping</li>
-                      <li>Weekly scans</li>
-                      <li>Notices sent in your name, with your approval</li>
-                      <li>Monthly report</li>
-                      <li>Email support</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Full enforcement<span class="r-for">For brands with an active reseller problem.</span></th>
-                  <td class="r-price"><span class="amt">$1,750</span><span class="per">per month</span></td>
-                  <td>
-                    <ul>
-                      <li class="inherit">Everything in Monitoring &amp; notices, plus:</li>
-                      <li>Up to 500 products</li>
-                      <li>Daily scans</li>
-                      <li>Source checks on repeat cases, with your approval</li>
-                      <li>eBay and independent websites</li>
-                      <li>Seller identification for anonymous storefronts, from public sources</li>
-                      <li>4-step escalation ladder</li>
-                      <li>Do-Not-Sell list management</li>
-                      <li>IP reports filed where genuine infringement exists (counterfeits, copied images, trademark misuse)</li>
-                      <li>Bi-weekly reports</li>
-                      <li>Priority support</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Channel programme<span class="r-for">For larger catalogs and wide dealer networks.</span></th>
-                  <td class="r-price"><span class="from">From</span><span class="amt">$3,500</span><span class="per">per month</span></td>
-                  <td>
-                    <ul>
-                      <li class="inherit">Everything in Full enforcement, plus:</li>
-                      <li>500+ products</li>
-                      <li>Custom channels and retailers</li>
-                      <li>Reports you can share with your retailers</li>
-                      <li>Quarterly channel review call</li>
-                      <li>Coordination with your legal counsel for formal action</li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="retainers reveal">
+          <article class="retainer" aria-labelledby="r-monitor">
+            <div class="r-head">
+              <h3 id="r-monitor">Monitoring &amp; notices</h3>
+              <p class="r-for">For brands with a focused catalog.</p>
+              <p class="r-price"><span class="amt">$750</span><span class="per">per month</span></p>
+            </div>
+            <ul class="r-list">
+                <li>Every flag checked by a person before it reaches you</li>
+                <li>Up to 100 products</li>
+                <li>Amazon, Walmart and Google Shopping</li>
+                <li>Weekly scans</li>
+                <li>Notices sent in your name, with your approval</li>
+                <li>Monthly report</li>
+                <li>Email support</li>
+            </ul>
+          </article>
+          <article class="retainer is-rec" aria-labelledby="r-full">
+            <div class="r-head">
+              <p class="rec">Recommended</p>
+              <h3 id="r-full">Full enforcement</h3>
+              <p class="r-for">For brands with an active reseller problem.</p>
+              <p class="r-price"><span class="amt">$1,750</span><span class="per">per month</span></p>
+            </div>
+            <ul class="r-list">
+                <li class="inherit">Everything in Monitoring &amp; notices, plus:</li>
+                <li>Up to 500 products</li>
+                <li>Daily scans</li>
+                <li>Source checks on repeat cases, with your approval</li>
+                <li>eBay and independent websites</li>
+                <li>Seller identification for anonymous storefronts, from public sources</li>
+                <li>4-step escalation ladder</li>
+                <li>Do-Not-Sell list management</li>
+                <li>IP reports filed where genuine infringement exists (counterfeits, copied images, trademark misuse)</li>
+                <li>Bi-weekly reports</li>
+                <li>Priority support</li>
+            </ul>
+          </article>
+          <article class="retainer" aria-labelledby="r-channel">
+            <div class="r-head">
+              <h3 id="r-channel">Channel programme</h3>
+              <p class="r-for">For larger catalogs and wide dealer networks.</p>
+              <p class="r-price"><span class="from">From</span><span class="amt">$3,500</span><span class="per">per month</span></p>
+            </div>
+            <ul class="r-list">
+                <li class="inherit">Everything in Full enforcement, plus:</li>
+                <li>500+ products</li>
+                <li>Custom channels and retailers</li>
+                <li>Reports you can share with your retailers</li>
+                <li>Quarterly channel review call</li>
+                <li>Coordination with your legal counsel for formal action</li>
+            </ul>
+          </article>
         </div>
 
         <div class="plan-terms reveal">
@@ -494,10 +489,10 @@
           </div>
 
           <div class="form-wrap reveal">
-            <!-- TODO(owner): set data-endpoint to your form backend (e.g. Formspree, Basin or your own API).
-                 Until then, submitting opens the visitor's email app with a pre-filled message to data-email,
-                 so no request is silently dropped. -->
-            <form id="snapshot-form" data-endpoint="" data-email="ayman@mapdeltahq.com" novalidate>
+            <!-- Requests are delivered to data-email through FormSubmit (formsubmit.co), no backend needed.
+                 Set data-endpoint to use your own API instead. If delivery fails, the visitor is offered
+                 their email app with the message pre-filled, so nothing is silently dropped. -->
+            <form id="snapshot-form" data-endpoint="https://formsubmit.co/ajax/ayman@mapdeltahq.com" data-email="ayman@mapdeltahq.com" novalidate>
               <div class="field">
                 <label for="f-name">Name</label>
                 <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
@@ -518,6 +513,10 @@
                 <textarea id="f-product" name="product" rows="3" placeholder="e.g. Trail pack 45L, MAP $129.00" aria-describedby="f-product-help"></textarea>
                 <p class="field-help" id="f-product-help">If you leave this blank, we’ll pick from your best-selling products.</p>
               </div>
+              <div class="field">
+                <label for="f-message">Message <span class="optional">(optional)</span></label>
+                <textarea id="f-message" name="message" rows="3" placeholder="Anything we should know: channels you’re worried about, sellers you’ve already seen."></textarea>
+              </div>
               <div class="hp" aria-hidden="true">
                 <label for="f-company">Leave this empty</label>
                 <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off">
@@ -528,7 +527,7 @@
 
             <div class="form-success" id="form-success" hidden tabindex="-1">
               <p class="success-title">Request received.</p>
-              <p id="success-msg">Thanks. We’ll reply within one US business day.</p>
+              <p id="success-msg">Thanks. Your message has been sent to ayman@mapdeltahq.com, and we’ll reply within one US business day.</p>
             </div>
           </div>
         </div>
