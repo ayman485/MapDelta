@@ -132,7 +132,7 @@ See section 9 for the results.
 | Reduced motion | Home, How It Works and Contact render every element in its final state, with no motion class applied |
 | Hero CTA | Clickable 119 ms after DOMContentLoaded; nothing waits on animation |
 | Links | Crawl of all pages and anchors, plus fonts, icons, OG image, robots and sitemap: nothing broken |
-| LCP (slow 4G + 4× CPU, uncompressed local server) | Home 1.89 s mobile / 1.77 s desktop; How It Works 0.88 s; Contact 0.87 s. Target ≤ 2.5 s. Vercel's compression should lower these in production. |
+| LCP (slow 4G + 4× CPU) | Home, after the hero-text fix below: **1.01 s mobile / 0.98 s desktop** on the local server. How It Works 0.88 s, Contact 0.87 s. On the live site, before that fix: 2.12 s mobile / 2.32 s desktop, which passed but with little margin. The fix keeps hero text visible from the first frame (it only rises into place) instead of fading it in. Target ≤ 2.5 s; re-measure live after deploy. |
 | CLS | 0.000 on every page measured. Target ≤ 0.1. |
 | Interaction latency (4× CPU, touch) | Menu taps and FAQ taps: 56–120 ms per click event. Target ≤ 200 ms. One hover-type event recorded 288 ms of input delay while the page was still settling. INP doesn't count hover events, but the Audit's "920 ms" baseline figure came from the same kind of event and overstated the old site's latency too. |
 | Page weight | 162 KB home (was 109 KB; the increase is the new page length and the stage illustrations), about 125 KB inner pages, uncompressed |
