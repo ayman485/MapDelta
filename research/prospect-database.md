@@ -22,16 +22,18 @@ Verified this pass: 2 agencies, 2 law firms, 2 competitor/consultant entries, 6 
 | B1 | Vorys, Sater, Seymour and Pease LLP | https://www.vorys.com | Not stated on fetched page | eControl group: online distribution, gray market | Argued *Otter Products v. Wang* (D. Colo., 1:18-cv-03198): injunction vs an Amazon gray-market seller, per firm alert | Tyler B. Pensyl (argued the case; title not listed on page). Whitney Gibson is named in the article as leading the eControl group | Not publicly verified | Not publicly verified | tbpensyl@vorys.com (published on firm alert); info@vorys.com | 614.464.6334 (published on alert) | https://www.vorys.com/news-Another-Federal-Court-Ruling-Strengthens-Brands-Approach-to-Reduce-Gray-Market-Sales-on-Amazon | 8/10: demonstrated marketplace work and a named, published contact; large firm so partnership fit is uncertain | Angle: organized, dated seller and listing records to support their client investigations. We do not give legal advice or assert violations. |
 | B2 | Traverse Legal, PLC | https://www.traverselegal.com | Offices in Austin TX, Detroit MI, Traverse City MI (HQ not designated) | Amazon law, trademark, IP | Blog covers gray-market sellers and counterfeits on Amazon; practice list includes Plans of Action and IP complaints | Enrico Schaefer, founding partner | Founding Partner | Not publicly verified | enrico@traverselegal.com | (866) 936-7447 | https://www.traverselegal.com/blog/how-to-grey-market-sellers-and-counterfeits/ | 7/10: published partner email, marketplace focus; much of the practice is seller-side (reinstatement), so brand-side fit is partial | Angle: evidence packages for brand clients dealing with unauthorized sellers. |
 
-**Law-firm leads to verify:** Freeborn & Peters (Chicago): one trade snippet said it partners with MAPP Trap on cease-and-desist letters, but a second search could not confirm it. Sideman & Bancroft (gray-market commentary seen in search; no contact checked).
+**Law-firm leads to verify:** Freeborn & Peters (Chicago): an earlier search summary said it partners with MAPP Trap, but the MAPP Trap announcement page (June 7, 2022) refers only to an unnamed "high-visibility law firm". Treat as unconfirmed. Sideman & Bancroft (gray-market commentary seen in search; no contact checked).
 
 ---
 ## C. Brand Protection / MAP Consultants (competitors flagged; 1 verified of 20 requested)
 
 | # | Company | Website | HQ | Services | Contact | Phone | Sources | Competitor? | Score | Collaboration idea |
 |---|---|---|---|---|---|---|---|---|---|---|
-| C1 | MAPP Trap | https://www.mapptrap.com | Not listed on page | MAP monitoring on Amazon, eBay, Walmart, Google Shopping; seller identification; automated notices; "White Glove Compliance Program" | Marc Maybee, Director of Compliance (per an undated trade announcement, https://www.giftsanddec.com/tag/mapp-trap/); email not listed; contact form /contact-us | 303.670.5111 | https://www.mapptrap.com | **Yes, direct competitor** | 4/10 as partner | Possible overflow or evidence subcontracting only. Low priority; check the competitive risk first. |
+| C1 | MAPP Trap | https://www.mapptrap.com | Not listed on page | MAP monitoring on Amazon, eBay, Walmart, Google Shopping; seller identification; automated notices; "White Glove Compliance Program" | Director of Compliance (new hire announced Aug 7, 2026 at https://www.giftsanddec.com/tag/mapp-trap/). **Name conflict:** an earlier search summary said Marc Maybee; the page's image alt text says Chris Gibbins. Confirm before use; email not listed; contact form /contact-us | 303.670.5111 | https://www.mapptrap.com | **Yes, direct competitor** | 4/10 as partner | Possible overflow or evidence subcontracting only. Low priority; check the competitive risk first. |
 
-**Consultant/competitor leads, not verified:** MAPCOP (mapcop.com redirects to brandcop.ai; not fetched), Brand Alignment, PriceSpider, Wiser, Redpoints, The Search Monitor. SunTec India appeared in search but is not US-based, so exclude it. Treat the software vendors as competitors unless a services channel is confirmed.
+**BrandCop (brandcop.ai, formerly mapcop.com):** footer "Kroll International, LLC"; manufacturer-facing Amazon storefront, listings, Brand Registry, 3PL and MAP monitoring. HQ, leadership and email not listed; contact form only. Competitor with a services bent; possible subcontract fit; score 4/10. Source: https://www.brandcop.ai/
+
+**Consultant/competitor leads, not verified:** Brand Alignment, PriceSpider, Wiser, Redpoints, The Search Monitor. SunTec India appeared in search but is not US-based, so exclude it. Treat the software vendors as competitors unless a services channel is confirmed.
 
 ---
 ## D. Direct Brand Prospects (6 verified of 30 requested)
@@ -83,5 +85,6 @@ Not enough verified rows for the 10/5/5/10 split. Current priority order:
 - No named brand-side contact (e-commerce, channel, legal) verified for any brand.
 - Agency client lists: Marknology names none; Avenue7Media logos need confirmation.
 - Vorys: HQ and Pensyl's title not on the fetched page. Whitney Gibson's role is from the article text only.
-- Cartograph, Channel Op, Commerce ROI, Sequence Commerce: unverified (site unreachable or only seen in search summaries).
+- Cartograph, Channel Op, Commerce ROI, Sequence Commerce: unverified (retried 2026-11-01; sites returned no content or did not load).
+- Whitney Gibson (Vorys): profile URL guess returned 404; title not confirmed beyond the article.
 - Category counts: 2/30 agencies, 2/20 law firms, 1/20 consultants, 6/30 brands.
