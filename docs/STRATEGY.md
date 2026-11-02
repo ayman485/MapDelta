@@ -14,7 +14,7 @@
 
 1. **Specificity of process.** The five stages, the record each produces, and who approves what.
 2. **Precision of language.** "Potentially supportable", not "recoverable". "Recovered" means cash received or credit applied.
-3. **Visible honesty.** It is founder-led and operated from India, with a narrow initial scope, fees only on realised recoveries, and no certifications claimed.
+3. **Visible honesty.** It is founder-led, with a narrow initial scope, fees only on realised recoveries, and no certifications claimed.
 4. **A worked example.** A synthetic claim register, clearly labelled, that shows how a case moves from identified to closed.
 
 ## Sitemap
@@ -24,7 +24,7 @@
 /how-it-works/    The five-stage workflow in depth, approvals, what you provide
 /services/        Each service, its output and its limits; what we don't do
 /who-we-help/     Supplier categories, situations, fit and not-yet-a-fit
-/about/           Founder-led, operated from India, principles, accountability
+/about/           Founder-led, principles, accountability
 /contact/         Short qualifying form; what happens next; records policy
 /privacy/         Rewritten for client financial records (counsel review)
 /terms/           Rewritten for the new service (counsel review)
@@ -46,7 +46,7 @@ Primary navigation: How It Works · Services · Who We Help · About · Contact,
 | 7 | Who we help | Supplier categories and profile; no claim of universal suitability. |
 | 8 | Engagement model | Backlog investigation, then ongoing recovery. Fee structure in words, no prices. |
 | 9 | Trust | Traceability, human review, client approval, responsibilities, handling, corrections. |
-| 10 | About | Founder-led, operated from India, direct accountability. |
+| 10 | About | Founder-led, direct accountability. |
 | 11 | FAQ | All 15 questions answered from current capability. |
 | 12 | Final CTA | "Start with the records." |
 
@@ -97,4 +97,4 @@ The brief's reference points ("Apple meets Nolan") translate as:
 3. **Campaign attribution.** UTM parameters and the referrer are captured on landing (session storage only, no cookies) and sent with the form, so outreach performance is visible. This is disclosed in the Privacy Policy.
 4. **Analytics.** A provider-agnostic `track()` layer records CTA clicks, form starts, form submissions and page views with source. No third-party analytics script loads until the founder chooses a provider.
 5. **No published prices.** The fee structure is explained in words, and "recovery" is defined. Exact fees go in the service agreement.
-6. **Honesty is part of the pitch.** The site says plainly that MapDelta is operated from India, that the initial scope is Walmart, and that performance fees apply to realised recoveries only. For a sceptical CFO these answer the questions they would otherwise have to ask.
+6. **Honesty is part of the pitch.** The site says plainly that the initial scope is Walmart, and that performance fees apply to realised recoveries only. For a sceptical CFO these answer the questions they would otherwise have to ask.

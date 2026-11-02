@@ -16,7 +16,7 @@
 | `/how-it-works/` | Process diagram with the two client decision points. Each stage covers what happens, what we need from you, and what you receive. |
 | `/services/` | Nine services, each with its output and its limits, plus "What we don't do" |
 | `/who-we-help/` | Supplier categories, typical situations, "often a good fit" / "probably not the right choice yet" |
-| `/about/` | Founder-led, operated from India, focused initial scope, working principles |
+| `/about/` | Founder-led, focused initial scope, working principles |
 | `/contact/` | Qualifying form (the fields in Part 6 of the brief), next steps, and a "don't send records here" notice |
 | `/privacy/`, `/terms/` | Rewritten for the deduction-recovery service (**counsel review required**) |
 | `/404.html` | Branded not-found page |
@@ -65,7 +65,7 @@
 ## 4. Content changes
 
 - **Positioning:** everything about MAP enforcement has been replaced with retailer deduction investigation and recovery (see `STRATEGY.md`).
-- **Location:** "operated from India" is now stated in the footer, on About, in the FAQ, in the Privacy Policy and in the Organization structured data. It had previously been removed.
+- **Location:** by founder decision (2 November 2026), the site does not state where MapDelta operates. The Privacy Policy says information may be processed in the United States and in other countries where MapDelta and its service providers operate.
 - **Initial scope:** "Walmart supplier deductions" appears on the homepage, Services, Who We Help, About and in the FAQ. Other retailers are described as "only after validation".
 - **Primary CTA everywhere:** "Discuss Your Deduction Backlog" → `/contact/`. The header uses the shorter "Discuss your backlog" because of the width available.
 - **Removed:**

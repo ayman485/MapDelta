@@ -33,7 +33,6 @@ ORGANIZATION = {
     "logo": BASE + "/apple-touch-icon.png",
     "email": "ayman@mapdeltahq.com",
     "description": "Managed retailer deduction investigation and recovery operations for consumer-goods suppliers.",
-    "address": {"@type": "PostalAddress", "addressCountry": "IN"},
     "areaServed": "US",
 }
 
