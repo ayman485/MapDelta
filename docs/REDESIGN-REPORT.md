@@ -147,3 +147,30 @@ See section 9 for the results.
 ## Regenerating the share image
 
 Start a local server in `Mapdeltahq/` (`python3 -m http.server 5190`). Then open `/tools/og.html` at 1200×630 in headless Chromium and save a screenshot as `og-image.png`.
+
+## Addendum, 2 November 2026: "Why choose MapDelta" section
+
+**What changed:** a new homepage section, 06, between "The difference" and "Visibility". Later sections were renumbered 07–12. It has two parts:
+
+- **A comparison table.** MapDelta is compared with three alternatives buyers actually consider: deduction-management software, contingency recovery firms, and an in-house AR team.
+- **Six "where we move ahead" points.**
+
+**How the comparison stays defensible:**
+
+- **Categories, not named companies.** Every cell describes a category in terms its own vendors publish, and the table carries the note "Individual providers and plans vary".
+- **The last two rows say where alternatives are ahead today:** retailer coverage, and track record. A sceptical CFO will check these, and conceding them makes the rest credible.
+- **No figures about competitors.** No performance claims and no statements that anyone's service is poor.
+
+**Sources used for the competitor columns** (vendor-published material, consulted 2 November 2026):
+
+- **SupplyPike (SPS Commerce):** automated dispute workflows for Walmart and other retailers. Pricing is described by SPS as a flat monthly fee per retailer or a take-rate on recoveries. SupplierWiki "Walmart's APDP 101" says Walmart allows a deduction to be disputed three times.
+- **HighRadius and iNymbus:** deduction-management platforms that automate the deduction lifecycle. iNymbus states support for 40+ retailers. Pricing is not published.
+- **Carbon6:** a Walmart revenue-recovery product with a monthly fee per retailer.
+- **RevRecoup and STAT Recovery Services:** contingency-based recovery ("no recovery, no fee").
+
+**Claims for the founder to confirm:**
+
+1. "Walmart limits how many times a deduction can be re-disputed." The source is SupplyPike's webinar transcript, not Walmart. Check this in Retail Link / APDP.
+2. "No standing mandate and no automated submissions." This must remain true in delivery.
+3. "Root-cause findings in every monthly report." This must be in the service agreement and the report template.
+4. "The founder, directly." This must stay true, or be updated, as the team grows.

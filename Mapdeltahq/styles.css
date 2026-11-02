@@ -336,6 +336,48 @@ strong { color: var(--fg); font-weight: 500; }
 .principles p { margin-top: 6px; font-size: 0.9375rem; }
 
 /* ==========================================================================
+   Why choose us: comparison table
+   ========================================================================== */
+.compare-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-top: 1px solid var(--rule); }
+.compare { width: 100%; min-width: 880px; border-collapse: separate; border-spacing: 0; font-size: 0.9375rem; line-height: 1.5; }
+.compare th, .compare td { padding: 18px 20px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+.compare thead th, .compare thead td { vertical-align: bottom; padding-block: 22px 16px; border-bottom-color: var(--rule-strong); }
+.compare thead th { font-weight: 500; }
+.c-name { display: block; color: var(--fg); font-size: 1rem; font-weight: 500; letter-spacing: -0.01em; }
+.c-sub { display: block; margin-top: 2px; font: 500 0.6875rem/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-3); }
+.compare tbody th { width: 18%; color: var(--fg); font-weight: 500; font-size: 0.9375rem; }
+.compare tbody td { width: 19%; color: var(--fg-3); }
+.compare tbody td strong { color: var(--fg); }
+/* the MapDelta column is an ivory document lifted off the canvas */
+.compare .us { width: 25%; background: var(--ivory); color: var(--paper-ink); border-bottom-color: var(--ivory-2); }
+.compare thead .us { border-top: 3px solid var(--copper); border-radius: var(--r) var(--r) 0 0; border-bottom-color: #CFC6B6; }
+.compare thead .us .c-name { color: var(--paper-ink); font-size: 1.125rem; }
+.compare thead .us .c-sub { color: var(--copper-deep); }
+.compare tbody td.us { font-weight: 500; }
+.compare tbody tr:last-child .us { border-radius: 0 0 var(--r) var(--r); border-bottom: 0; }
+.compare tr.ahead td.us { color: var(--paper-ink-2); font-weight: 400; }
+.compare tr.ahead th { color: var(--fg-2); }
+.compare tbody tr.ahead:first-of-type > * { border-top: 1px dashed var(--rule-strong); }
+.compare tbody tr.ahead:first-of-type td.us { border-top: 1px dashed #CFC6B6; }
+/* Phones: each row becomes a block — MapDelta's answer first, alternatives listed beneath */
+@media (max-width: 759px) {
+  .compare-scroll { overflow: visible; }
+  .compare { min-width: 0; }
+  .compare thead { display: none; }
+  .compare, .compare tbody, .compare tr, .compare th, .compare td { display: block; width: auto !important; }
+  .compare tbody tr { padding: 20px 0; border-bottom: 1px solid var(--rule); }
+  .compare tbody th, .compare tbody td { padding: 0; border: 0 !important; }
+  .compare tbody th { font-size: 1.0625rem; margin-bottom: 12px; }
+  .compare tbody td { display: grid; grid-template-columns: 8.25rem 1fr; gap: 12px; padding: 6px 0; font-size: 0.875rem; }
+  .compare tbody td::before { content: attr(data-label); font: 500 0.6875rem/1.6 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-3); }
+  .compare tbody td.us { padding: 12px 14px; margin-bottom: 6px; border-radius: var(--r) !important; border-left: 3px solid var(--copper) !important; }
+  .compare tbody td.us::before { color: var(--copper-deep); }
+  .compare tbody tr:last-child .us { border-radius: var(--r); }
+}
+.compare-note { margin-top: 16px; font-size: 0.8125rem; color: var(--fg-3); max-width: var(--measure); }
+.ahead-head { margin: clamp(56px, 7vw, 88px) 0 20px; }
+
+/* ==========================================================================
    Claim register (interactive, illustrative)
    ========================================================================== */
 .register { overflow: hidden; }
