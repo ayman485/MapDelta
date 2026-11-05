@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /tools/
 
-Sitemap: https://mapdeltahq.com/sitemap.xml
+Sitemap: https://www.mapdeltahq.com/sitemap.xml
