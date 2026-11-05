@@ -1,9 +1,7 @@
 (() => {
   'use strict';
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* Nav: hairline appears once the page scrolls */
+  /* Nav: hairline and solid background appear once the page scrolls */
   const nav = document.getElementById('nav');
   if (nav && 'IntersectionObserver' in window) {
     const sentinel = document.createElement('div');
@@ -56,115 +54,62 @@
     });
   }
 
-  /* Springs: a damped harmonic oscillator stepped at a fixed 120 Hz.
-     Stiffness pulls toward the target, damping bleeds off velocity; a damping
-     a little under critical (2 * sqrt(stiffness)) gives one barely visible overshoot. */
-  const spring = ({ stiffness = 170, damping = 24, delay = 0, onUpdate, onDone }) => {
-    let x = 0, v = 0, last = null;
-    const h = 1 / 120;
-    const tick = (now) => {
-      let dt = last === null ? h : Math.min((now - last) / 1000, 0.064);
-      last = now;
-      while (dt > 0) {
-        const step = Math.min(h, dt);
-        v += (-stiffness * (x - 1) - damping * v) * step;
-        x += v * step;
-        dt -= step;
-      }
-      if (Math.abs(v) < 0.002 && Math.abs(x - 1) < 0.001) {
-        onUpdate(1);
-        if (onDone) onDone();
-        return;
-      }
-      onUpdate(x);
-      requestAnimationFrame(tick);
-    };
-    setTimeout(() => requestAnimationFrame(tick), delay);
-  };
-
-  /* Hero: each offer drops from the MAP line onto its price, then the below-MAP ones turn red */
-  const plot = document.querySelector('.plot');
-  if (plot && !reduceMotion) {
-    const dots = [...plot.querySelectorAll('.dots path')];
-    let left = dots.length;
-    dots.forEach((dot, i) => {
-      const from = parseFloat(dot.style.getPropertyValue('--from')) || 0;
-      spring({
-        stiffness: 210, damping: 19, delay: 250 + i * 28,
-        onUpdate: (p) => { dot.style.transform = `translateY(${(from * (1 - p)).toFixed(2)}px)`; },
-        onDone: () => { if (--left === 0) plot.classList.add('settled'); },
-      });
-    });
-  } else if (plot) {
-    plot.classList.add('settled');
-  }
-
-  /* Reveal on scroll, once: a short spring rise; siblings entering together stagger by 60ms */
+  /* Entrance: fade and short rise, once. Without motion (or JS) everything shows. */
   const reveals = document.querySelectorAll('.reveal');
-  const show = (el, delay) => spring({
-    stiffness: 120, damping: 20, delay,
-    onUpdate: (p) => {
-      el.style.opacity = Math.min(1, p * 1.4).toFixed(3);
-      el.style.transform = `translateY(${(18 * (1 - p)).toFixed(2)}px)`;
-    },
-    onDone: () => { el.classList.add('in'); el.style.opacity = ''; el.style.transform = ''; },
-  });
-  if (!reduceMotion && 'IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window && document.documentElement.classList.contains('motion')) {
     const io = new IntersectionObserver((entries) => {
-      entries.filter((e) => e.isIntersecting).forEach((entry, i) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
         io.unobserve(entry.target);
-        show(entry.target, i * 60);
+        entry.target.classList.add('in');
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
     reveals.forEach((el) => io.observe(el));
   } else {
     reveals.forEach((el) => el.classList.add('in'));
   }
 
-  /* Anatomy of a flag: numbered hotspots select a margin note.
-     Without JS the hotspots are plain links to the notes list. */
-  const anatomy = document.querySelector('.anatomy');
-  if (anatomy) {
-    const hots = anatomy.querySelectorAll('.hot');
-    const rows = anatomy.querySelectorAll('.l-row[data-note]');
-    const notes = anatomy.querySelectorAll('.notes li');
-    const sideBySide = window.matchMedia('(min-width: 1100px)');
-
-    const select = (n) => {
-      notes.forEach((li) => li.classList.toggle('is-active', li.id === `note-${n}`));
-      rows.forEach((row) => row.classList.toggle('is-active', row.dataset.note === n));
-      hots.forEach((a) => a.setAttribute('aria-current', String(a.getAttribute('href') === `#note-${n}`)));
-    };
-
-    hots.forEach((a) => {
-      const n = a.getAttribute('href').replace('#note-', '');
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        select(n);
-        if (!sideBySide.matches) {
-          document.getElementById(`note-${n}`).scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
-        }
+  /* Package preview tabs (without JS, all three views are shown in sequence) */
+  const tabs = [...document.querySelectorAll('.tabs [role="tab"]')];
+  if (tabs.length) {
+    const select = (tab, focus) => {
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
       });
-      a.addEventListener('mouseenter', () => select(n));
-      a.addEventListener('focus', () => select(n));
+      if (focus) tab.focus();
+    };
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(tab));
+      tab.addEventListener('keydown', (e) => {
+        const keys = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+        if (!(e.key in keys)) return;
+        e.preventDefault();
+        select(tabs[(keys[e.key] + tabs.length) % tabs.length], true);
+      });
     });
-    select('1');
+    select(tabs[0]);
   }
 
-  /* Snapshot request form */
-  const form = document.getElementById('snapshot-form');
+  /* Contact form */
+  const form = document.getElementById('contact-form');
   if (!form) return;
 
   const success = document.getElementById('form-success');
-  const successMsg = document.getElementById('success-msg');
   const status = form.querySelector('.form-status');
   const submit = form.querySelector('button[type="submit"]');
   const label = submit.querySelector('.btn-label');
+  const idleLabel = label.textContent;
+  let sending = false;
+  let sent = false;
 
   const rules = {
     name: (v) => (v ? '' : 'Enter your name.'),
-    email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Enter a valid work email.'),
-    website: (v) => (/^(https?:\/\/)?[^\s/.]+(\.[^\s/.]+)*\.[a-z]{2,}(\/\S*)?$/i.test(v) ? '' : 'Enter your brand’s website, for example yourbrand.com.'),
+    companyName: (v) => (v ? '' : 'Enter your company name.'),
+    email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Enter a valid business email.'),
+    jobs: (v) => (v === '' || (Number.isInteger(Number(v)) && Number(v) >= 0 && Number(v) <= 999) ? '' : 'Enter a whole number between 0 and 999.'),
   };
   const fields = Object.keys(rules).map((n) => form.elements[n]);
 
@@ -181,62 +126,57 @@
     field.addEventListener('blur', () => { if (field.value.trim()) validate(field); });
   });
 
-  const showSuccess = (message, title) => {
-    if (message) successMsg.textContent = message;
-    if (title) success.querySelector('.success-title').textContent = title;
+  const showSuccess = () => {
+    sent = true;
     form.hidden = true;
     success.hidden = false;
     success.focus();
   };
 
+  const summary = (d) => [
+    `Name: ${d.name}`,
+    `Company: ${d.company}`,
+    `Business email: ${d.email}`,
+    `Annual revenue: ${d.revenue || '(not given)'}`,
+    `Accounting system: ${d.system || '(not given)'}`,
+    `Active jobs: ${d.jobs || '(not given)'}`,
+    `Current WIP preparation: ${d.method || '(not given)'}`,
+    `Message: ${d.message || '(none)'}`,
+  ];
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (sending || sent) return;          // blocks double submissions
     status.textContent = '';
 
     const invalid = fields.filter((f) => !validate(f));
     if (invalid.length) { invalid[0].focus(); return; }
 
     // Honeypot: only bots fill the hidden field
-    if (form.elements.company.value) { showSuccess(); return; }
+    if (form.elements.website.value) { showSuccess(); return; }
 
-    const data = {
-      name: form.elements.name.value.trim(),
-      email: form.elements.email.value.trim(),
-      website: form.elements.website.value.trim(),
-      product: form.elements.product.value.trim(),
-      message: form.elements.message.value.trim(),
-    };
-    const endpoint = form.dataset.endpoint;
+    const v = (n) => form.elements[n].value.trim();
+    const data = { name: v('name'), company: v('companyName'), email: v('email'), revenue: v('revenue'), system: v('system'), jobs: v('jobs'), method: v('method'), message: v('message') };
+    const subject = `WIP discussion request: ${data.company}`;
 
-    if (!endpoint) {
-      // No endpoint configured: hand the request to the visitor's email app
-      // so nothing is dropped, and say so plainly.
-      const body = [
-        `Name: ${data.name}`,
-        `Work email: ${data.email}`,
-        `Brand website: ${data.website}`,
-        `Product and MAP price: ${data.product || '(not given)'}`,
-        `Message: ${data.message || '(none)'}`,
-      ].join('\n');
-      window.location.href = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Snapshot request: ' + data.website)}&body=${encodeURIComponent(body)}`;
-      showSuccess(`Your email app should have opened with these details. Send that email to ${form.dataset.email} and we’ll reply within one US business day.`, 'One more step.');
-      return;
-    }
-
+    sending = true;
     submit.disabled = true;
     label.textContent = 'Sending…';
     try {
-      const res = await fetch(endpoint, {
+      const res = await fetch(form.dataset.endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           'Name': data.name,
-          'Work email': data.email,
-          'Brand website': data.website,
-          'Product and MAP price': data.product || '(not given)',
+          'Company': data.company,
+          'Business email': data.email,
+          'Annual revenue': data.revenue || '(not given)',
+          'Accounting system': data.system || '(not given)',
+          'Active jobs': data.jobs || '(not given)',
+          'Current WIP preparation': data.method || '(not given)',
           'Message': data.message || '(none)',
           _replyto: data.email,
-          _subject: `Snapshot request: ${data.website}`,
+          _subject: subject,
           _template: 'table',
           _captcha: 'false',
         }),
@@ -246,16 +186,15 @@
       if (!res.ok || String(out.success) === 'false') throw new Error(out.message || String(res.status));
       showSuccess();
     } catch {
-      const mailto = `mailto:${form.dataset.email}?subject=${encodeURIComponent('Snapshot request: ' + data.website)}&body=${encodeURIComponent(
-        `Name: ${data.name}\nWork email: ${data.email}\nBrand website: ${data.website}\nProduct and MAP price: ${data.product || '(not given)'}\nMessage: ${data.message || '(none)'}`)}`;
-      status.innerHTML = '';
-      status.append(`That didn’t go through. Please try again, or `);
+      const mailto = `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(summary(data).join('\n'))}`;
+      status.textContent = '';
+      status.append('That didn’t go through, and nothing was lost. Please try again, or ');
       const a = document.createElement('a');
       a.href = mailto; a.textContent = `email ${form.dataset.email}`;
       status.append(a, '.');
     } finally {
-      submit.disabled = false;
-      label.textContent = 'Request my snapshot';
+      sending = false;
+      if (!sent) { submit.disabled = false; label.textContent = idleLabel; }
     }
   });
 })();

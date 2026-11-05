@@ -1,54 +1,38 @@
-# Design System: MapDelta
+# Design system: MapDelta (WIP reporting for electrical contractors)
 
-## 1. Atmosphere
-An audit report on paper: warm paper background, ink text, hairline rules, flat panels with a 6px radius and no shadows. Calm and exact, with numbers that line up.
+## Atmosphere
+A finance workpaper: warm off-white page, navy ink, hairline rules, flat white panels with a 6px radius, no gradients, glows or shadows. Calm and exact, with numbers that line up (tabular figures).
 
-## 2. Colour
-Light only (no dark mode). One accent, ink; red is reserved for below-MAP.
+## Colour
 | Token | Value | Use |
 |---|---|---|
-| `--bg` | #F5F1E8 | Paper |
-| `--panel` / `--panel-2` | #FBF9F3 / #EDE8DB | Panels / tiles and table heads |
-| `--ink` / `--ink-2` | #14130F / #5B574C | Text / secondary text |
-| `--line` | #DDD6C5 | Hairlines |
-| `--brand` | #14130F | The one accent (ink): buttons, checks, timeline |
-| `--signal` | #B3261E | **Below MAP** (dots, deltas, tinted zone), plus form errors |
-| `--ok` | #5B574C | "Back at MAP": neutral, not a second colour |
+| `--bg` | #F6F4EE | Page |
+| `--panel` / `--panel-2` | #FFFFFF / #EFECE3 | Panels / table heads, totals |
+| `--ink` / `--ink-2` | #14202E / #4F5B69 | Text / secondary text |
+| `--navy` | #14202E | Buttons, workpaper bars, "How it works" and contact bands |
+| `--green` | #2C6A4B | Positive indicators (check marks) |
+| `--amber` | #8F5F0B (on #F6E9CC) | Needs attention |
+| `--red` | #A3322A (on #F4DEDA) | Negative margin movement, form errors |
 
-No gradients, glows or shadows.
+Over/under billing is shown neutral (it is a reconciling figure, not good or bad). Red is used only for margin declines of 1.0 point or more and for form errors.
 
-## 3. Type
-- **Headlines:** Source Serif 4, regular (wordmark semibold). Sentence case, tight leading.
-- **Body:** IBM Plex Sans 400/500. Measure capped at 64ch.
-- **Numbers:** Plex Sans with tabular figures, so columns align. Mono only for seller IDs and capture stamps.
-- Fonts are self-hosted in `/fonts`: static Latin subsets (about 100 KB in total), with the serif and sans preloaded.
+## Type
+- Headings: Source Serif 4 (400; wordmark 600). Body and tables: IBM Plex Sans with tabular figures. Both are self-hosted in `/fonts` (about 80 KB), so no third-party font requests.
+- Hero headline is large, sentence case; measure of body copy is capped at about 64 characters.
 
-## 4. Layout
-- 1160px max width, one continuous flow. A small green kicker sits above each heading.
-- Panels: 6px radius, 1px line. Buttons are squared (4px). Pricing is a ledger table (Monitoring & notices, Full enforcement, Channel programme), not cards.
-- Below 1024px everything stacks into a single column.
-- Tables scroll inside their own container, never the page.
+## Layout
+- 1180px max width; sections alternate off-white and navy bands. Section head: small uppercase kicker, serif heading, optional lead, all left-aligned.
+- Tables scroll inside their own container with a sticky project column; the page itself never scrolls sideways.
+- Below 900px the navigation collapses to a menu and grids stack.
 
-## 5. The MAP line
-A single ink hairline labelled "MAP $129.00". It recurs:
-- as the full-width hero strip plot under the headline (12 illustrative offers; 8 on phones);
-- as the spine of the "How it works" timeline;
-- in the sample report's three-month chart.
+## The sample workpaper
+One fictional company (Harbor Electric Co.) and eight fictional jobs, used in the hero, the package preview and the social image. All derived figures follow one cost-to-cost model (see the note under the schedule) and are re-checked by `tools/verify-wip.mjs`. Every instance is labelled "Illustrative sample data".
 
-Dots above the line are ink. Dots below are red on a soft red zone, with their delta labelled "−$24.05 / −18.6%".
+## Motion
+Fade and a 14px rise once per block on scroll, 0.5s; hover colour transitions; smooth anchor scrolling. `prefers-reduced-motion` removes all of it.
 
-## 6. Motion
-Minimal, and driven by one spring (a damped harmonic oscillator in `main.js`, stepped at 120 Hz), not by easing curves.
-- Hero: on load, each offer drops from the MAP line onto its price (stiffness 210, damping 19: one barely visible overshoot), staggered 28ms. When all have settled, the below-MAP dots turn red and their deltas and red zone fade in.
-- Scroll: each block rises 18px and fades in on a near-critically-damped spring (stiffness 120, damping 20), once. Blocks entering together stagger by 60ms.
-- `prefers-reduced-motion` removes all motion; the page renders in its final state.
-
-## 4b. Structure
-Every section has the same head: small uppercase kicker, serif heading, optional lead, all left-aligned. No centred sections and no side columns. The hero is the headline, then a row with the intro and the actions, then the full-width chart.
-
-## 7. Words
-- Say "below-MAP listings", "flags", "flags to verify", and "confirmed below-MAP listings" only after the brand has checked them.
-- Never say "violators", "unauthorized sellers", "offenders" or "violations" about a prospect's sellers.
-- Describe source checks as something run with the brand's approval, never as already done.
-- Sample data is always labelled "Illustrative data" and uses placeholder sellers ("Seller A").
-- No people, testimonials, logos, ratings or invented statistics. No location is named anywhere.
+## Words
+- Use: prepare, organize, reconcile, identify, flag, report, support.
+- Never: certify, sign off, guarantee, advise (accounting, tax, legal, surety).
+- No customers, logos, testimonials, statistics, certifications or addresses unless the owner supplies them.
+- Day 10 is always qualified as a service target that depends on receiving agreed data and PM inputs.
