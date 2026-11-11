@@ -13,8 +13,8 @@ The home page now sells the **MapDelta Billing Desk** to small US freight broker
 | `privacy/`, `terms/`, `og-image.png`, `tools/og.html` | Rewritten for the billing desk |
 
 ## Before launch (owner)
-1. **Activate FormSubmit** once: the first submission emails an activation link to `ayman@mapdeltahq.com`. Until then visitors see an error with an email fallback.
-2. **Business mailbox.** The site still uses `ayman@mapdeltahq.com` (footer, contact, legal, form delivery) because `billing@mapdeltahq.com` does not exist yet. When it does, replace the address everywhere (`grep -rl ayman@ .`) and re-activate FormSubmit for it.
+1. **Activate FormSubmit** once: the first submission emails an activation link to `billing@mapdeltahq.com`. Until you click it, visitors see an error with an email fallback.
+2. **Business mailbox.** Done: the site uses `billing@mapdeltahq.com` everywhere (footer, contact line, legal pages, form delivery). Submit the form once yourself to trigger FormSubmit's activation email to that inbox, and click the link in it.
 3. **US-hours coverage.** The FAQ says "US business hours, Monday to Friday" and the hero promises one-business-day invoicing. Publish only if someone covers those hours.
 4. **The promise.** "Invoiced within one business day, or that load is free" is a commercial commitment: define it in the service agreement (POD received, access granted, billing rules supplied).
 5. **Pricing** is the brief's recommendation and has not been tested with buyers.
@@ -52,8 +52,8 @@ node tools/verify-wip.mjs        # checks the sample WIP figures
 Deploy: push this folder to the Vercel project (root directory `Mapdeltahq`). Nothing to build.
 
 ## Owner TODOs before launch
-1. **Activate the form once.** The form posts to FormSubmit (`https://formsubmit.co/ajax/ayman@mapdeltahq.com`). The first submission triggers an activation email to that inbox; click the link or nothing is delivered. Until then visitors see an error with an email fallback, so no enquiry is lost silently. To use another backend, change `data-endpoint` on `#contact-form`.
-2. **Confirm the mailbox** `ayman@mapdeltahq.com` receives mail (footer, form, legal pages).
+1. **Activate the form once.** The form posts to FormSubmit (`https://formsubmit.co/ajax/billing@mapdeltahq.com`). The first submission triggers an activation email to that inbox; click the link or nothing is delivered. Until then visitors see an error with an email fallback, so no enquiry is lost silently. To use another backend, change `data-endpoint` on `#contact-form`.
+2. **Confirm the mailbox** `billing@mapdeltahq.com` receives mail (footer, form, legal pages).
 3. **Booking link.** "Book a WIP Discussion" goes to the contact form. If you set up a calendar link (Calendly, Cal.com, etc.), point the CTAs at it.
 4. **Verify the data-handling practices.** The Data handling section and Privacy Policy describe seven working practices (client-controlled file sharing, no ERP passwords, limited access, defined scope, version-controlled workpapers, documented adjustments, agreed retention and deletion). They are worded as practices, with an explicit "no certifications" note. Only keep each one if you will actually do it.
 5. **Confirm the day-10 commitment** and the WIP Rebuild scope (up to 30 jobs). Pricing is intentionally not shown.
