@@ -36,3 +36,6 @@ Fade and a 14px rise once per block on scroll, 0.5s; hover colour transitions; s
 - Never: certify, sign off, guarantee, advise (accounting, tax, legal, surety).
 - No customers, logos, testimonials, statistics, certifications or addresses unless the owner supplies them.
 - Day 10 is always qualified as a service target that depends on receiving agreed data and PM inputs.
+
+## Billing Desk page (November 2026)
+Same system, new content. Additions: the Friday report panel (navy bar, white rows, serif figures; amber for the "Missing POD" count), a pricing ledger table (stacks into labelled rows below 640px), a navy "promise" callout and a bordered "what we don't touch" note. Words to avoid on this page: platform, dashboard, free trial, any founder name or photo.

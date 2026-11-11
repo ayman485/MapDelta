@@ -5,25 +5,27 @@
 <link rel="stylesheet" href="../styles.css">
 <style>
   html, body { width: 1200px; height: 630px; overflow: hidden; background: #F6F4EE; }
-  .og { padding: 56px 72px 0; height: 630px; display: flex; flex-direction: column; }
-  .og h1 { margin-top: 26px; font-size: 62px; line-height: 1.05; max-width: 17em; }
-  .og h1 span { display: block; color: #4F5B69; }
-  .og .kicker { margin-top: 26px; font-size: 17px; }
-  .og .paper { margin-top: auto; margin-bottom: -2px; border-bottom: 0; border-radius: 6px 6px 0 0; }
-  .og table.wip { font-size: 15px; }
-  .og table.wip th, .og table.wip td { padding: 8px 12px; }
-  .og .stamp { margin-left: auto; padding: 3px 9px; border: 1px solid #B8C2CE; border-radius: 3px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  .og { padding: 56px 72px; height: 630px; display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: center; }
+  .og h1 { margin-top: 22px; font-size: 60px; line-height: 1.05; }
+  .og .kicker { margin-top: 24px; font-size: 16px; }
+  .og .report { margin: 0; }
+  .og .stat { padding: 13px 18px; }
+  .og .stamp { margin-left: auto; padding: 3px 9px; border: 1px solid #B8C2CE; border-radius: 3px; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
 </style></head>
 <body><div class="og">
-  <a class="wordmark" style="font-size:28px"><svg viewBox="0 0 20 20" style="width:26px;height:26px"><path d="M10 3.5 17.5 16.5H2.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>MapDelta</a>
-  <p class="kicker">Month-end WIP reporting for commercial electrical contractors</p>
-  <h1>Your WIP schedule. <span>Prepared. Reconciled. Delivered by day 10.</span></h1>
-  <div class="paper">
-    <div class="paper-bar"><strong>Monthly WIP schedule</strong><span class="stamp">Illustrative sample data</span></div>
-    <table class="wip"><thead><tr><th scope="col">Project</th><th scope="col">Revised contract</th><th scope="col">Costs to date</th><th scope="col">% complete</th><th scope="col">Over / (under)</th><th scope="col">Proj. GP</th></tr></thead>
-    <tbody>
-      <tr><th scope="row">Lakeview Medical Office Fit-Out</th><td>1,912,000</td><td>1,236,000</td><td>72.8%</td><td>10,226</td><td>214,000</td></tr>
-      <tr><th scope="row">Eastgate Distribution Center, Ph. 2</th><td>2,400,000</td><td>1,428,000</td><td>70.0%</td><td>65,000</td><td>360,000</td></tr>
-    </tbody></table>
+  <div>
+    <a class="wordmark" style="font-size:28px"><svg viewBox="0 0 20 20" style="width:26px;height:26px"><path d="M10 3.5 17.5 16.5H2.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>MapDelta</a>
+    <p class="kicker">Billing Desk for freight brokers</p>
+    <h1>Every delivered load, invoiced within one business day.</h1>
   </div>
+  <figure class="report">
+    <div class="paper-bar"><strong>Friday report</strong><span class="stamp">Sample, illustrative</span></div>
+    <dl>
+      <div class="stat"><dt>Delivered</dt><dd>112</dd></div>
+      <div class="stat"><dt>Invoiced</dt><dd>109</dd></div>
+      <div class="stat attn"><dt>Missing POD</dt><dd>3</dd></div>
+      <div class="stat money"><dt>AR over 45 days</dt><dd>$18,400</dd></div>
+      <div class="stat money"><dt>Carrier pay due next week</dt><dd>$61,250</dd></div>
+    </dl>
+  </figure>
 </div></body></html>

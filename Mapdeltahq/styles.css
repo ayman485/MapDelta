@@ -337,3 +337,53 @@ table.small thead th { font-size: .72rem; font-weight: 600; letter-spacing: .03e
 .summary-box h2 { font: 600 .78rem/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
 .summary-box ul { margin: 10px 0 0; padding-left: 1.2em; color: var(--ink-2); }
 .summary-box li + li { margin-top: 6px; }
+
+/* ==========================================================================
+   Billing Desk (freight brokers) additions
+   ========================================================================== */
+.hero-grid { display: grid; gap: clamp(32px, 5vw, 56px); align-items: start; }
+@media (min-width: 980px) { .hero-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 64px; } }
+.hero-grid h1 { max-width: 13em; }
+.hero-grid .lead { margin-top: 22px; }
+.hero-grid .cta-row { margin-top: 28px; }
+.hero-grid .hero-note { margin-top: 14px; }
+.report { background: var(--panel); border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; }
+.report dl { margin: 0; }
+.report .stat { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+.report .stat:last-child { border-bottom: 0; }
+.report dt { color: var(--ink-2); font-size: .9375rem; }
+.report dd { margin: 0; font: 400 1.6rem/1.1 var(--serif); }
+.report .stat.attn dd { color: var(--amber); }
+.report .stat.money dd { font-size: 1.35rem; }
+.sample-tables { display: grid; }
+.sample-tables > div { border-top: 1px solid var(--line); }
+.sample-tables h4 { padding: 16px 20px 6px; font: 600 .78rem/1.3 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.sample-tables table.small th, .sample-tables table.small td { padding-inline: 20px; }
+.sample-tables tfoot th, .sample-tables tfoot td { font-weight: 600; background: var(--panel-2); border-bottom: 0; }
+.friday-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-strong); max-width: 640px; }
+.friday-list li { padding: 13px 0 13px 34px; border-bottom: 1px solid var(--line); position: relative; }
+.friday-list li::before { content: ""; position: absolute; left: 2px; top: 20px; width: 14px; height: 7px; border-left: 2px solid var(--green); border-bottom: 2px solid var(--green); transform: rotate(-45deg); }
+.friday-grid { display: grid; gap: 36px; }
+@media (min-width: 980px) { .friday-grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; align-items: start; } }
+.steps.three { }
+@media (min-width: 860px) { .steps.three { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.ledger { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line-strong); border-radius: var(--radius); overflow: hidden; }
+.ledger th, .ledger td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.ledger thead th { background: var(--panel-2); font-size: .78rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
+.ledger tbody th { font: 400 1.2rem/1.3 var(--serif); }
+.ledger td.num, .ledger th.num { text-align: right; white-space: nowrap; }
+.ledger tr:last-child > * { border-bottom: 0; }
+.ledger .price { font: 400 1.35rem/1.2 var(--serif); }
+.ledger .muted { color: var(--ink-2); font-size: .9375rem; }
+@media (max-width: 640px) {
+  .ledger thead { display: none; }
+  .ledger, .ledger tbody, .ledger tr, .ledger th, .ledger td { display: block; }
+  .ledger tr { padding: 14px 18px; border-bottom: 1px solid var(--line); }
+  .ledger tr:last-child { border-bottom: 0; }
+  .ledger th, .ledger td { padding: 2px 0; border: 0; text-align: left !important; }
+  .ledger td[data-l]::before { content: attr(data-l) ": "; color: var(--ink-2); font-size: .875rem; }
+}
+.promise { margin-top: 28px; padding: 20px 22px; background: var(--navy); color: var(--on-navy); border-radius: var(--radius); max-width: 76ch; font: 400 1.25rem/1.4 var(--serif); }
+.donttouch { margin-top: 32px; padding: 18px 20px; background: var(--panel); border: 1px solid var(--line-strong); border-left: 4px solid var(--navy); border-radius: var(--radius); max-width: 76ch; font-size: .9375rem; color: var(--ink-2); }
+.donttouch strong { color: var(--ink); }
+.field select, .field input[type="text"] { width: 100%; }

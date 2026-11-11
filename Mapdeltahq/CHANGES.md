@@ -1,4 +1,30 @@
-# MapDelta site: WIP repositioning (November 2026)
+# MapDelta site: Billing Desk for freight brokers (November 2026)
+
+The home page now sells the **MapDelta Billing Desk** to small US freight brokerages, using the copy and offer from the "Freight Broker Billing Desk" brief (ten sections, pilot CTA). The earlier WIP-reporting page for electrical contractors moved to **/wip/** (unchanged apart from asset paths and the shared form script), so links in earlier contractor emails still reach it. Privacy and Terms were rewritten for the billing desk and mention /wip.
+
+## New in this change
+| File | Purpose |
+|---|---|
+| `index.html` | New home page: hero + sample Friday report, problem, what we deliver, Friday report detail, how it works (pilot), who we serve, pricing, FAQ, contact form (Name, Brokerage, MC number, email, loads a month, TMS, message) |
+| `wip/index.html` | Previous WIP site, moved |
+| `tools/verify-sample.mjs` | Checks the Friday sample reconciles (112 - 109 = 3 missing; AR over 45 = $18,400; carrier pay = $61,250) and the per-load arithmetic |
+| `tools/verify-wip.mjs` | Now reads `wip/index.html` |
+| `main.js` | Form handler is generic (`data-key`, `data-rule`, `data-subject`), shared by both forms |
+| `privacy/`, `terms/`, `og-image.png`, `tools/og.html` | Rewritten for the billing desk |
+
+## Before launch (owner)
+1. **Activate FormSubmit** once: the first submission emails an activation link to `ayman@mapdeltahq.com`. Until then visitors see an error with an email fallback.
+2. **Business mailbox.** The site still uses `ayman@mapdeltahq.com` (footer, contact, legal, form delivery) because `billing@mapdeltahq.com` does not exist yet. When it does, replace the address everywhere (`grep -rl ayman@ .`) and re-activate FormSubmit for it.
+3. **US-hours coverage.** The FAQ says "US business hours, Monday to Friday" and the hero promises one-business-day invoicing. Publish only if someone covers those hours.
+4. **The promise.** "Invoiced within one business day, or that load is free" is a commercial commitment: define it in the service agreement (POD received, access granted, billing rules supplied).
+5. **Pricing** is the brief's recommendation and has not been tested with buyers.
+6. **Legal review** of Privacy and Terms (new text, not reviewed by counsel); Terms section 12 still needs a governing law.
+7. **CAN-SPAM:** outreach emails need a physical postal address; none is invented on the site.
+8. Optional: /wip/ is live but not in the sitemap. Add `noindex` to it if you do not want it found by search.
+
+---
+
+# Earlier change: WIP repositioning (November 2026)
 
 The site moved from MAP enforcement for consumer brands to **monthly WIP preparation and reconciliation for commercial electrical subcontractors**. Everything on the home page, the legal pages, the metadata and the social image was rewritten for the new offer. The old MAP copy no longer appears anywhere.
 

@@ -93,7 +93,8 @@
     select(tabs[0]);
   }
 
-  /* Contact form */
+  /* Contact form. Fields opt in with data-key (label sent in the email) and data-rule
+     (required | email | mc | jobs). The subject is data-subject + the value of data-subject-field. */
   const form = document.getElementById('contact-form');
   if (!form) return;
 
@@ -106,15 +107,16 @@
   let sent = false;
 
   const rules = {
-    name: (v) => (v ? '' : 'Enter your name.'),
-    companyName: (v) => (v ? '' : 'Enter your company name.'),
+    required: (v, f) => (v ? '' : `Enter ${f.dataset.label || 'this field'}.`),
     email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Enter a valid business email.'),
+    mc: (v) => (v === '' || /^(mc-?)?\d{4,8}$/i.test(v) ? '' : 'Use digits only, for example 123456 or MC-123456.'),
     jobs: (v) => (v === '' || (Number.isInteger(Number(v)) && Number(v) >= 0 && Number(v) <= 999) ? '' : 'Enter a whole number between 0 and 999.'),
   };
-  const fields = Object.keys(rules).map((n) => form.elements[n]);
+  const fields = [...form.elements].filter((el) => el.dataset && el.dataset.rule);
+  const inputs = [...form.elements].filter((el) => el.name && el.dataset && el.dataset.key);
 
   const validate = (field) => {
-    const msg = rules[field.name](field.value.trim());
+    const msg = rules[field.dataset.rule](field.value.trim(), field);
     const err = document.getElementById(field.getAttribute('aria-describedby'));
     field.setAttribute('aria-invalid', msg ? 'true' : 'false');
     if (err) err.textContent = msg;
@@ -133,17 +135,6 @@
     success.focus();
   };
 
-  const summary = (d) => [
-    `Name: ${d.name}`,
-    `Company: ${d.company}`,
-    `Business email: ${d.email}`,
-    `Annual revenue: ${d.revenue || '(not given)'}`,
-    `Accounting system: ${d.system || '(not given)'}`,
-    `Active jobs: ${d.jobs || '(not given)'}`,
-    `Current WIP preparation: ${d.method || '(not given)'}`,
-    `Message: ${d.message || '(none)'}`,
-  ];
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (sending || sent) return;          // blocks double submissions
@@ -153,11 +144,12 @@
     if (invalid.length) { invalid[0].focus(); return; }
 
     // Honeypot: only bots fill the hidden field
-    if (form.elements.website.value) { showSuccess(); return; }
+    if (form.elements.website && form.elements.website.value) { showSuccess(); return; }
 
-    const v = (n) => form.elements[n].value.trim();
-    const data = { name: v('name'), company: v('companyName'), email: v('email'), revenue: v('revenue'), system: v('system'), jobs: v('jobs'), method: v('method'), message: v('message') };
-    const subject = `WIP discussion request: ${data.company}`;
+    const data = {};
+    inputs.forEach((el) => { data[el.dataset.key] = el.value.trim() || (el.dataset.rule === 'required' || el.dataset.rule === 'email' ? '' : (el.name === 'message' ? '(none)' : '(not given)')); });
+    const subject = `${form.dataset.subject}: ${form.elements[form.dataset.subjectField].value.trim()}`;
+    const email = form.elements.email.value.trim();
 
     sending = true;
     submit.disabled = true;
@@ -166,27 +158,15 @@
       const res = await fetch(form.dataset.endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          'Name': data.name,
-          'Company': data.company,
-          'Business email': data.email,
-          'Annual revenue': data.revenue || '(not given)',
-          'Accounting system': data.system || '(not given)',
-          'Active jobs': data.jobs || '(not given)',
-          'Current WIP preparation': data.method || '(not given)',
-          'Message': data.message || '(none)',
-          _replyto: data.email,
-          _subject: subject,
-          _template: 'table',
-          _captcha: 'false',
-        }),
+        body: JSON.stringify({ ...data, _replyto: email, _subject: subject, _template: 'table', _captcha: 'false' }),
       });
       const out = await res.json().catch(() => ({}));
       // FormSubmit answers 200 with success "false" when delivery didn't happen
       if (!res.ok || String(out.success) === 'false') throw new Error(out.message || String(res.status));
       showSuccess();
     } catch {
-      const mailto = `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(summary(data).join('\n'))}`;
+      const body = Object.entries(data).map(([k, v]) => `${k}: ${v}`).join('\n');
+      const mailto = `mailto:${form.dataset.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       status.textContent = '';
       status.append('That didn’t go through, and nothing was lost. Please try again, or ');
       const a = document.createElement('a');

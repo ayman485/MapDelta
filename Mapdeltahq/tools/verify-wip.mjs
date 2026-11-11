@@ -4,7 +4,7 @@
 // and compares it with what the page displays. Exits 1 on any mismatch.
 import { readFileSync } from 'node:fs';
 
-const html = readFileSync(process.argv[2] || new URL('../index.html', import.meta.url), 'utf8');
+const html = readFileSync(process.argv[2] || new URL('../wip/index.html', import.meta.url), 'utf8');
 const fail = [];
 const num = (s) => {
   const t = s.replace(/<[^>]+>/g, '').replace(/&minus;/g, '-').trim();

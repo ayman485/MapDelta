@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>MapDelta | Monthly WIP Reporting for Electrical Contractors</title>
+  <meta name="description" content="MapDelta helps bonded commercial electrical contractors prepare monthly WIP schedules, reconcile project reporting and identify margin changes.">
+  <link rel="canonical" href="https://www.mapdeltahq.com/wip/">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#F6F4EE">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MapDelta">
+  <meta property="og:title" content="MapDelta | Monthly WIP Reporting for Electrical Contractors">
+  <meta property="og:description" content="MapDelta helps bonded commercial electrical contractors prepare monthly WIP schedules, reconcile project reporting and identify margin changes.">
+  <meta property="og:url" content="https://www.mapdeltahq.com/wip/">
+  <meta property="og:image" content="https://www.mapdeltahq.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A sample WIP schedule with projects, billings, over and under billing and projected gross profit. Illustrative sample data.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MapDelta | Monthly WIP Reporting for Electrical Contractors">
+  <meta name="twitter:description" content="MapDelta helps bonded commercial electrical contractors prepare monthly WIP schedules, reconcile project reporting and identify margin changes.">
+  <meta name="twitter:image" content="https://www.mapdeltahq.com/og-image.png">
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../styles.css">
+  <script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')</script>
+  <script src="../main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="wordmark" href="#top" aria-label="MapDelta, home"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5 17.5 16.5H2.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>MapDelta</a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#how">How It Works</a>
+        <a href="#deliver">What We Deliver</a>
+        <a href="#serve">Who We Serve</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-sm" href="#contact">Book a WIP Discussion</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+      </div>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
+      <div class="wrap">
+        <a href="#how">How It Works</a>
+        <a href="#deliver">What We Deliver</a>
+        <a href="#serve">Who We Serve</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#contact">Book a WIP Discussion</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" id="top" aria-labelledby="hero-h">
+      <div class="wrap">
+        <p class="kicker">Month-end WIP reporting for commercial electrical contractors</p>
+        <h1 id="hero-h">Your WIP schedule. <span>Prepared. Reconciled. Delivered by day&nbsp;10.</span></h1>
+        <div class="hero-row">
+          <p class="lead">MapDelta helps bonded electrical subcontractors turn job-cost, billing and project estimate data into a structured monthly WIP package &mdash; with general ledger reconciliation, margin fade analysis and change-order exposure reporting.</p>
+          <div>
+            <div class="cta-row">
+              <a class="btn" href="#contact">Discuss Your WIP Process</a>
+              <a class="btn btn-ghost" href="#deliver">See What We Deliver</a>
+            </div>
+            <p class="hero-note">Built for commercial electrical contractors using QuickBooks and Sage 100 Contractor.</p>
+            <p class="hero-note">Day 10 is our service target. It applies once the agreed source data and project-manager estimates have been received.</p>
+          </div>
+        </div>
+
+        <figure class="paper" aria-labelledby="paper-cap">
+          <div class="paper-bar">
+            <strong>Monthly WIP schedule</strong>
+            <span>Harbor Electric Co. (fictional)</span>
+            <span class="stamp">Illustrative sample data &mdash; not client results</span>
+          </div>
+          <div class="paper-body">
+            <div class="paper-main">
+              <div class="scroll" tabindex="0" role="region" aria-label="Sample WIP schedule, scrolls sideways on small screens">
+                <table class="wip" id="hero-wip"><caption>Sample WIP schedule, US dollars. Percent complete is cost-to-cost.</caption><thead><tr><th scope="col">Project</th><th scope="col">Contract value</th><th scope="col">Approved COs</th><th scope="col">Revised contract</th><th scope="col">Costs to date</th><th scope="col">Est. cost to complete</th><th scope="col">Projected gross profit</th><th scope="col">% complete</th><th scope="col">Billed to date</th><th scope="col">Over / (under) billing</th></tr></thead><tbody>
+<tr data-job="J-2401" data-orig="1850000" data-co="62000" data-cost="1236000" data-etc="462000" data-billed="1402000" data-prior="11.2"><th scope="row">Lakeview Medical Office Fit-Out<small>J-2401</small></th><td data-c="o">1,850,000</td><td data-c="co">62,000</td><td data-c="rev">1,912,000</td><td data-c="cost">1,236,000</td><td data-c="etc">462,000</td><td data-c="gp">214,000</td><td data-c="pct">72.8%</td><td data-c="billed">1,402,000</td><td data-c="ou" class="ou-cell"><span class="ou">10,226</span><i>over</i></td></tr>
+<tr data-job="J-2403" data-orig="2300000" data-co="100000" data-cost="1428000" data-etc="612000" data-billed="1745000" data-prior="18"><th scope="row">Eastgate Distribution Center, Ph. 2<small>J-2403 &middot; <span class="tag red">Margin fade</span></small></th><td data-c="o">2,300,000</td><td data-c="co">100,000</td><td data-c="rev">2,400,000</td><td data-c="cost">1,428,000</td><td data-c="etc">612,000</td><td data-c="gp">360,000</td><td data-c="pct">70.0%</td><td data-c="billed">1,745,000</td><td data-c="ou" class="ou-cell"><span class="ou">65,000</span><i>over</i></td></tr>
+<tr data-job="J-2406" data-orig="1480000" data-co="0" data-cost="1040000" data-etc="228000" data-billed="1190000" data-prior="14.5"><th scope="row">Cedar Park Middle School<small>J-2406</small></th><td data-c="o">1,480,000</td><td data-c="co">0</td><td data-c="rev">1,480,000</td><td data-c="cost">1,040,000</td><td data-c="etc">228,000</td><td data-c="gp">212,000</td><td data-c="pct">82.0%</td><td data-c="billed">1,190,000</td><td data-c="ou" class="ou-cell"><span class="ou">(23,880)</span><i>under</i></td></tr>
+<tr data-job="J-2409" data-orig="3150000" data-co="85000" data-cost="1160000" data-etc="1620000" data-billed="1480000" data-prior="14.2"><th scope="row">Millbrook Senior Living, Bldg B<small>J-2409 &middot; <span class="tag">Pending CO</span></small></th><td data-c="o">3,150,000</td><td data-c="co">85,000</td><td data-c="rev">3,235,000</td><td data-c="cost">1,160,000</td><td data-c="etc">1,620,000</td><td data-c="gp">455,000</td><td data-c="pct">41.7%</td><td data-c="billed">1,480,000</td><td data-c="ou" class="ou-cell"><span class="ou">130,144</span><i>over</i></td></tr>
+<tr data-job="J-2412" data-orig="960000" data-co="24000" data-cost="812000" data-etc="106000" data-billed="880000" data-prior="7.1"><th scope="row">Harborview Parking Structure<small>J-2412</small></th><td data-c="o">960,000</td><td data-c="co">24,000</td><td data-c="rev">984,000</td><td data-c="cost">812,000</td><td data-c="etc">106,000</td><td data-c="gp">66,000</td><td data-c="pct">88.5%</td><td data-c="billed">880,000</td><td data-c="ou" class="ou-cell"><span class="ou">9,621</span><i>over</i></td></tr>
+<tr data-job="J-2415" data-orig="1240000" data-co="0" data-cost="402000" data-etc="716000" data-billed="468000" data-prior="9.8"><th scope="row">Riverbend Elementary Addition<small>J-2415 &middot; <span class="tag">ETC not updated</span></small></th><td data-c="o">1,240,000</td><td data-c="co">0</td><td data-c="rev">1,240,000</td><td data-c="cost">402,000</td><td data-c="etc">716,000</td><td data-c="gp">122,000</td><td data-c="pct">36.0%</td><td data-c="billed">468,000</td><td data-c="ou" class="ou-cell"><span class="ou">22,132</span><i>over</i></td></tr>
+<tr data-job="J-2418" data-orig="720000" data-co="0" data-cost="18400" data-etc="555600" data-billed="60000" data-prior="20.3"><th scope="row">Northgate Retail Shell<small>J-2418 &middot; <span class="tag">ETC missing</span></small></th><td data-c="o">720,000</td><td data-c="co">0</td><td data-c="rev">720,000</td><td data-c="cost">18,400</td><td data-c="etc">555,600</td><td data-c="gp">146,000</td><td data-c="pct">3.2%</td><td data-c="billed">60,000</td><td data-c="ou" class="ou-cell"><span class="ou">36,920</span><i>over</i></td></tr>
+<tr data-job="J-2420" data-orig="1590000" data-co="40000" data-cost="966000" data-etc="560000" data-billed="1010000" data-prior="7.9"><th scope="row">Summit Ridge Warehouse<small>J-2420 &middot; <span class="tag red">Cost movement</span></small></th><td data-c="o">1,590,000</td><td data-c="co">40,000</td><td data-c="rev">1,630,000</td><td data-c="cost">966,000</td><td data-c="etc">560,000</td><td data-c="gp">104,000</td><td data-c="pct">63.3%</td><td data-c="billed">1,010,000</td><td data-c="ou" class="ou-cell"><span class="ou">(21,835)</span><i>under</i></td></tr>
+</tbody><tfoot><tr data-total><th scope="row">Total, 8 jobs</th><td data-c="o">13,290,000</td><td data-c="co">311,000</td><td data-c="rev">13,601,000</td><td data-c="cost">7,062,400</td><td data-c="etc">4,859,600</td><td data-c="gp">1,679,000</td><td data-c="pct">59.2%</td><td data-c="billed">8,235,000</td><td data-c="ou" class="ou-cell"><span class="ou">228,328</span><i>over</i></td></tr></tfoot></table>
+              </div>
+            </div>
+            <div class="paper-side">
+              <div class="tile">
+                <h3>Total active jobs</h3>
+                <p class="big">8</p>
+                <p class="sub">Revised contract value <b>$13.60M</b></p>
+              </div>
+              <div class="tile">
+                <h3>Gross margin movement</h3>
+                <p class="big neg">2 jobs down &gt;1.0 pt</p>
+                <p class="sub">Largest: Eastgate Distribution Center, Ph.&nbsp;2, <b>18.0% &rarr; 15.0%</b></p>
+              </div>
+              <div class="tile">
+                <h3>Over / under billing</h3>
+                <p class="big">$274,043</p>
+                <p class="sub">Overbilled on 6 jobs; <b>$45,715</b> underbilled on 2. Net $228,328 overbilled.</p>
+              </div>
+              <div class="tile">
+                <h3>Projects requiring attention</h3>
+                <p class="big warn">5 of 8</p>
+                <p class="sub">Margin fade, pending change order, stale or missing cost-to-complete</p>
+              </div>
+            </div>
+          </div>
+          <figcaption class="paper-foot" id="paper-cap">Illustrative sample data &mdash; not client results. All names and figures are fictional.<span class="hint"> Swipe the table sideways to see every column.</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="block" id="problem" aria-labelledby="problem-h">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">The problem we help address</p>
+          <h2 id="problem-h">Your monthly WIP should not depend on chasing spreadsheets.</h2>
+          <p class="lead">Preparing a reliable WIP schedule often means pulling together information from accounting systems, billing records and project managers. When these inputs are scattered, month-end reporting can become a manual exercise.</p>
+        </div>
+        <div class="cards three">
+          <article class="card reveal">
+            <p class="num">01</p>
+            <h3>Fragmented project data</h3>
+            <p>Job costs, billing records, change orders and cost-to-complete estimates live in different places.</p>
+          </article>
+          <article class="card reveal">
+            <p class="num">02</p>
+            <h3>Unexplained margin movement</h3>
+            <p>A project can appear healthy until estimated costs change. Without a structured review, margin deterioration may go unnoticed.</p>
+          </article>
+          <article class="card reveal">
+            <p class="num">03</p>
+            <h3>Reconciliation pressure</h3>
+            <p>Overbilling, underbilling and job-level figures need to be understood alongside the general ledger.</p>
+          </article>
+        </div>
+        <p class="closing reveal">MapDelta brings these inputs together into a consistent monthly reporting process.</p>
+      </div>
+    </section>
+
+    <!-- Deliverables -->
+    <section class="block" id="deliver" aria-labelledby="deliver-h">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">What we deliver</p>
+          <h2 id="deliver-h">One structured WIP package. Every month.</h2>
+        </div>
+        <ol class="deliver">
+          <li class="reveal">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="28" height="24" rx="2"/><path d="M4 13h28M4 20h28M13 6v24"/></svg>
+            <h3>Monthly WIP Schedule</h3>
+            <p>Job-level reporting that consolidates contract value, costs, estimated completion costs, billings and projected profitability.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6v22M9 28h18M6 14l5-8 5 8a5 5 0 0 1-10 0zM20 14l5-8 5 8a5 5 0 0 1-10 0z"/></svg>
+            <h3>GL Reconciliation</h3>
+            <p>A reconciliation workpaper comparing WIP calculations with the relevant general ledger balances, with differences identified and explained where possible.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l9 10 6-6 13 14M24 26h8v-8"/></svg>
+            <h3>Margin Fade Analysis</h3>
+            <p>Highlight projects where projected gross margins have deteriorated and identify movements that require review.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h14l6 6v22H9zM23 4v6h6M14 19h10M14 25h10M19 14v0"/></svg>
+            <h3>Change-Order Exposure</h3>
+            <p>Track approved and pending change orders separately so their effect on contract value and project reporting is visible.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l3 3 5-6M6 20l3 3 5-6M6 31l3 3M20 9h10M20 20h10M20 31h10" transform="translate(0 -3)"/></svg>
+            <h3>PM Follow-up Register</h3>
+            <p>Identify missing or outdated cost-to-complete estimates and outstanding project-manager inputs.</p>
+          </li>
+          <li class="reveal">
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l14-7 14 7v14l-14 7-14-7zM4 12l14 7 14-7M18 19v14"/></svg>
+            <h3>Monthly Reporting Package</h3>
+            <p>A structured package designed for internal review and discussion with the contractor&rsquo;s finance team and relevant external advisors.</p>
+          </li>
+        </ol>
+
+        <div class="engagements">
+          <article class="engage reveal">
+            <p class="kicker">Ongoing</p>
+            <h3>The Monthly WIP Desk</h3>
+            <p>Each month we prepare the job-level schedule, over/under billing calculations, the GL reconciliation workpaper, margin fade analysis, change-order exposure report, outstanding project-manager questions and the structured reporting package.</p>
+          </article>
+          <article class="engage reveal">
+            <p class="kicker">Where most conversations start</p>
+            <h3>WIP Rebuild</h3>
+            <p>A one-time engagement to reconstruct the previous month&rsquo;s WIP reporting from your source files.</p>
+            <ul>
+              <li>Initial scope: up to 30 active jobs</li>
+              <li>WIP schedule and GL tie-out workpaper</li>
+              <li>Margin fade analysis and change-order exposure report</li>
+              <li>Findings summary and a walkthrough with the owner or controller</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inside a package -->
+    <section class="block" id="package" aria-labelledby="package-h">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">Sample package</p>
+          <h2 id="package-h">Inside a MapDelta WIP package</h2>
+          <p class="lead">A look at the kind of workpaper you receive, built on fictional jobs. Every figure follows one calculation model, set out below the schedule.</p>
+        </div>
+
+        <div class="preview reveal" id="preview">
+          <div class="paper-bar">
+            <strong>WIP package</strong>
+            <span>Harbor Electric Co. (fictional) &middot; sample month-end</span>
+            <span class="stamp">Illustrative data for demonstration only</span>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Sample WIP package views">
+            <button type="button" role="tab" id="tab-summary" aria-controls="panel-summary" aria-selected="true">WIP summary</button>
+            <button type="button" role="tab" id="tab-margin" aria-controls="panel-margin" aria-selected="false" tabindex="-1">Margin movement</button>
+            <button type="button" role="tab" id="tab-attn" aria-controls="panel-attn" aria-selected="false" tabindex="-1">Items requiring attention</button>
+          </div>
+
+          <div class="panel" id="panel-summary" role="tabpanel" aria-labelledby="tab-summary">
+            <div class="scroll" tabindex="0" role="region" aria-label="Sample WIP summary, scrolls sideways on small screens">
+              <table class="wip" id="full-wip"><caption>Sample WIP summary, US dollars</caption><thead><tr><th scope="col">Project</th><th scope="col">Original contract</th><th scope="col">Approved COs</th><th scope="col">Revised contract</th><th scope="col">Costs to date</th><th scope="col">Est. cost to complete</th><th scope="col">Projected total cost</th><th scope="col">% complete</th><th scope="col">Earned revenue</th><th scope="col">Billings to date</th><th scope="col">Over / (under) billing</th><th scope="col">Projected gross profit</th><th scope="col">Projected gross margin</th></tr></thead><tbody>
+<tr data-job="J-2401" data-orig="1850000" data-co="62000" data-cost="1236000" data-etc="462000" data-billed="1402000" data-prior="11.2"><th scope="row">Lakeview Medical Office Fit-Out<small>J-2401</small></th><td data-c="o">1,850,000</td><td data-c="co">62,000</td><td data-c="rev">1,912,000</td><td data-c="cost">1,236,000</td><td data-c="etc">462,000</td><td data-c="ptc">1,698,000</td><td data-c="pct">72.8%</td><td data-c="earned">1,391,774</td><td data-c="billed">1,402,000</td><td data-c="ou" class="ou-cell"><span class="ou">10,226</span><i>over</i></td><td data-c="gp">214,000</td><td data-c="gm">11.2%</td></tr>
+<tr data-job="J-2403" data-orig="2300000" data-co="100000" data-cost="1428000" data-etc="612000" data-billed="1745000" data-prior="18"><th scope="row">Eastgate Distribution Center, Ph. 2<small>J-2403 &middot; <span class="tag red">Margin fade</span></small></th><td data-c="o">2,300,000</td><td data-c="co">100,000</td><td data-c="rev">2,400,000</td><td data-c="cost">1,428,000</td><td data-c="etc">612,000</td><td data-c="ptc">2,040,000</td><td data-c="pct">70.0%</td><td data-c="earned">1,680,000</td><td data-c="billed">1,745,000</td><td data-c="ou" class="ou-cell"><span class="ou">65,000</span><i>over</i></td><td data-c="gp">360,000</td><td data-c="gm">15.0%</td></tr>
+<tr data-job="J-2406" data-orig="1480000" data-co="0" data-cost="1040000" data-etc="228000" data-billed="1190000" data-prior="14.5"><th scope="row">Cedar Park Middle School<small>J-2406</small></th><td data-c="o">1,480,000</td><td data-c="co">0</td><td data-c="rev">1,480,000</td><td data-c="cost">1,040,000</td><td data-c="etc">228,000</td><td data-c="ptc">1,268,000</td><td data-c="pct">82.0%</td><td data-c="earned">1,213,880</td><td data-c="billed">1,190,000</td><td data-c="ou" class="ou-cell"><span class="ou">(23,880)</span><i>under</i></td><td data-c="gp">212,000</td><td data-c="gm">14.3%</td></tr>
+<tr data-job="J-2409" data-orig="3150000" data-co="85000" data-cost="1160000" data-etc="1620000" data-billed="1480000" data-prior="14.2"><th scope="row">Millbrook Senior Living, Bldg B<small>J-2409 &middot; <span class="tag">Pending CO</span></small></th><td data-c="o">3,150,000</td><td data-c="co">85,000</td><td data-c="rev">3,235,000</td><td data-c="cost">1,160,000</td><td data-c="etc">1,620,000</td><td data-c="ptc">2,780,000</td><td data-c="pct">41.7%</td><td data-c="earned">1,349,856</td><td data-c="billed">1,480,000</td><td data-c="ou" class="ou-cell"><span class="ou">130,144</span><i>over</i></td><td data-c="gp">455,000</td><td data-c="gm">14.1%</td></tr>
+<tr data-job="J-2412" data-orig="960000" data-co="24000" data-cost="812000" data-etc="106000" data-billed="880000" data-prior="7.1"><th scope="row">Harborview Parking Structure<small>J-2412</small></th><td data-c="o">960,000</td><td data-c="co">24,000</td><td data-c="rev">984,000</td><td data-c="cost">812,000</td><td data-c="etc">106,000</td><td data-c="ptc">918,000</td><td data-c="pct">88.5%</td><td data-c="earned">870,379</td><td data-c="billed">880,000</td><td data-c="ou" class="ou-cell"><span class="ou">9,621</span><i>over</i></td><td data-c="gp">66,000</td><td data-c="gm">6.7%</td></tr>
+<tr data-job="J-2415" data-orig="1240000" data-co="0" data-cost="402000" data-etc="716000" data-billed="468000" data-prior="9.8"><th scope="row">Riverbend Elementary Addition<small>J-2415 &middot; <span class="tag">ETC not updated</span></small></th><td data-c="o">1,240,000</td><td data-c="co">0</td><td data-c="rev">1,240,000</td><td data-c="cost">402,000</td><td data-c="etc">716,000</td><td data-c="ptc">1,118,000</td><td data-c="pct">36.0%</td><td data-c="earned">445,868</td><td data-c="billed">468,000</td><td data-c="ou" class="ou-cell"><span class="ou">22,132</span><i>over</i></td><td data-c="gp">122,000</td><td data-c="gm">9.8%</td></tr>
+<tr data-job="J-2418" data-orig="720000" data-co="0" data-cost="18400" data-etc="555600" data-billed="60000" data-prior="20.3"><th scope="row">Northgate Retail Shell<small>J-2418 &middot; <span class="tag">ETC missing</span></small></th><td data-c="o">720,000</td><td data-c="co">0</td><td data-c="rev">720,000</td><td data-c="cost">18,400</td><td data-c="etc">555,600</td><td data-c="ptc">574,000</td><td data-c="pct">3.2%</td><td data-c="earned">23,080</td><td data-c="billed">60,000</td><td data-c="ou" class="ou-cell"><span class="ou">36,920</span><i>over</i></td><td data-c="gp">146,000</td><td data-c="gm">20.3%</td></tr>
+<tr data-job="J-2420" data-orig="1590000" data-co="40000" data-cost="966000" data-etc="560000" data-billed="1010000" data-prior="7.9"><th scope="row">Summit Ridge Warehouse<small>J-2420 &middot; <span class="tag red">Cost movement</span></small></th><td data-c="o">1,590,000</td><td data-c="co">40,000</td><td data-c="rev">1,630,000</td><td data-c="cost">966,000</td><td data-c="etc">560,000</td><td data-c="ptc">1,526,000</td><td data-c="pct">63.3%</td><td data-c="earned">1,031,835</td><td data-c="billed">1,010,000</td><td data-c="ou" class="ou-cell"><span class="ou">(21,835)</span><i>under</i></td><td data-c="gp">104,000</td><td data-c="gm">6.4%</td></tr>
+</tbody><tfoot><tr data-total><th scope="row">Total, 8 jobs</th><td data-c="o">13,290,000</td><td data-c="co">311,000</td><td data-c="rev">13,601,000</td><td data-c="cost">7,062,400</td><td data-c="etc">4,859,600</td><td data-c="ptc">11,922,000</td><td data-c="pct">59.2%</td><td data-c="earned">8,006,672</td><td data-c="billed">8,235,000</td><td data-c="ou" class="ou-cell"><span class="ou">228,328</span><i>over</i></td><td data-c="gp">1,679,000</td><td data-c="gm">12.3%</td></tr></tfoot></table>
+            </div>
+            <p class="panel-note"><strong>How the figures are built.</strong> Projected total cost = costs to date + estimated cost to complete. Percentage complete = costs to date &divide; projected total cost (cost-to-cost). Earned revenue = percentage complete &times; revised contract, rounded to the nearest dollar. Over/(under) billing = billings to date &minus; earned revenue; a positive figure is overbilled, a figure in brackets is underbilled. Projected gross profit = revised contract &minus; projected total cost. Contractors and their accountants choose the method that applies to their own reporting.</p>
+            <div class="gl">
+              <h4>GL tie-out (sample)</h4>
+              <div class="scroll" tabindex="0" role="region" aria-label="Sample GL tie-out, scrolls sideways on small screens"><table class="small" id="gl-table"><thead><tr><th scope="col">Account</th><th scope="col">Calculated from schedule</th><th scope="col">GL balance</th><th scope="col">Difference</th></tr></thead><tbody>
+<tr data-gl="ob" data-calc="274043" data-gl-bal="271543"><th scope="row">Billings in excess of costs and estimated earnings (overbillings)</th><td>$274,043</td><td>$271,543</td><td class="warn" style="color:var(--amber)">$2,500</td></tr>
+<tr data-gl="ub" data-calc="45715" data-gl-bal="45715"><th scope="row">Costs and estimated earnings in excess of billings (underbillings)</th><td>$45,715</td><td>$45,715</td><td>$0</td></tr></tbody></table></div>
+              <p class="panel-note">The $2,500 difference is shown as an open question for the bookkeeper to confirm (for example, billing cut-off timing). It is a difference to be explained, not an assertion that either balance is wrong.</p>
+            </div>
+            <div class="coexp">
+              <h4>Change-order exposure (sample)</h4>
+              <div class="scroll" tabindex="0" role="region" aria-label="Sample change-order exposure, scrolls sideways on small screens"><table class="small" id="co-table" data-approved-total="311000"><thead><tr><th scope="col">Job</th><th scope="col">Approved COs (in contract)</th><th scope="col">Pending COs (not in contract)</th></tr></thead><tbody>
+<tr><th scope="row">J-2403 Eastgate Distribution Center, Ph. 2</th><td data-approved="100000">$100,000</td><td data-pending="95000">$95,000</td></tr>
+<tr><th scope="row">J-2409 Millbrook Senior Living, Bldg B</th><td data-approved="85000">$85,000</td><td data-pending="48000">$48,000</td></tr>
+<tr><th scope="row">All other jobs</th><td data-approved="126000">$126,000</td><td data-pending="0">$0</td></tr>
+<tr><th scope="row"><strong>Total</strong></th><td><strong>$311,000</strong></td><td><strong>$143,000</strong></td></tr></tbody></table></div>
+            </div>
+          </div>
+
+          <div class="panel" id="panel-margin" role="tabpanel" aria-labelledby="tab-margin">
+            <div class="fade-grid">
+              <div class="scroll" tabindex="0" role="region" aria-label="Sample margin movement, scrolls sideways on small screens">
+                <table class="small" id="fade-table"><thead><tr><th scope="col">Project</th><th scope="col">Prior est. margin</th><th scope="col">Current est. margin</th><th scope="col">Change</th></tr></thead><tbody>
+<tr data-job="J-2401" data-prior="11.2" data-gm="11.2"><th scope="row">J-2401 Lakeview Medical Office Fit-Out</th><td>11.2%</td><td>11.2%</td><td class="">0.0 pts</td></tr>
+<tr data-job="J-2403" data-prior="18" data-gm="15"><th scope="row">J-2403 Eastgate Distribution Center, Ph. 2</th><td>18.0%</td><td>15.0%</td><td class="neg">&minus;3.0 pts</td></tr>
+<tr data-job="J-2406" data-prior="14.5" data-gm="14.3"><th scope="row">J-2406 Cedar Park Middle School</th><td>14.5%</td><td>14.3%</td><td class="">&minus;0.2 pts</td></tr>
+<tr data-job="J-2409" data-prior="14.2" data-gm="14.1"><th scope="row">J-2409 Millbrook Senior Living, Bldg B</th><td>14.2%</td><td>14.1%</td><td class="">&minus;0.1 pts</td></tr>
+<tr data-job="J-2412" data-prior="7.1" data-gm="6.7"><th scope="row">J-2412 Harborview Parking Structure</th><td>7.1%</td><td>6.7%</td><td class="">&minus;0.4 pts</td></tr>
+<tr data-job="J-2415" data-prior="9.8" data-gm="9.8"><th scope="row">J-2415 Riverbend Elementary Addition</th><td>9.8%</td><td>9.8%</td><td class="">0.0 pts</td></tr>
+<tr data-job="J-2418" data-prior="20.3" data-gm="20.3"><th scope="row">J-2418 Northgate Retail Shell</th><td>20.3%</td><td>20.3%</td><td class="">0.0 pts</td></tr>
+<tr data-job="J-2420" data-prior="7.9" data-gm="6.4"><th scope="row">J-2420 Summit Ridge Warehouse</th><td>7.9%</td><td>6.4%</td><td class="neg">&minus;1.5 pts</td></tr>
+</tbody></table>
+              </div>
+              <div class="explain">
+                <h4>J-2403 Eastgate Distribution Center, Ph. 2</h4>
+                <dl>
+                  <dt>Revised contract</dt><dd>$2,400,000</dd>
+                  <dt>Prior estimated total cost</dt><dd>$1,968,000</dd>
+                  <dt>Current estimated total cost</dt><dd>$2,040,000</dd>
+                  <dt>Change in estimated cost</dt><dd class="neg">+$72,000</dd>
+                  <dt>Projected gross margin</dt><dd class="neg">18.0% &rarr; 15.0%</dd>
+                </dl>
+                <p><strong>A movement to investigate, not a conclusion.</strong> A 3.0-point decline does not by itself show a loss or an accounting error. It tells the finance team and the project manager where to look first, for example at what drove the revised estimate and whether the pending change order of $95,000 relates to the added cost.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" id="panel-attn" role="tabpanel" aria-labelledby="tab-attn">
+            <ul class="attn">
+              <li><div class="what"><span class="tag">Missing input</span><span class="job">J-2418 Northgate Retail Shell</span></div><p><b>Missing cost-to-complete estimate.</b> No project-manager estimate was received this month. The original budgeted cost-to-complete of $555,600 is carried forward until the estimate arrives, and the job is on the follow-up register.</p></li>
+              <li><div class="what"><span class="tag">Pending CO</span><span class="job">J-2409 Millbrook Senior Living, Bldg B</span></div><p><b>Pending change order not included in contract value.</b> A $48,000 pending change order sits outside the revised contract of $3,235,000. It is tracked separately until it is approved.</p></li>
+              <li><div class="what"><span class="tag red">Cost movement</span><span class="job">J-2420 Summit Ridge Warehouse</span></div><p><b>Unexpected cost movement.</b> Projected gross margin moved from 7.9% to 6.4%. A project-manager explanation has been requested before the movement is accepted as reported.</p></li>
+              <li><div class="what"><span class="tag">GL difference</span><span class="job">Overbillings account</span></div><p><b>Difference between calculated WIP and the relevant GL balance.</b> Calculated overbillings of $274,043 compare with a GL balance of $271,543, a $2,500 difference. The bookkeeper is asked to confirm the cause.</p></li>
+              <li><div class="what"><span class="tag">Stale estimate</span><span class="job">J-2415 Riverbend Elementary Addition</span></div><p><b>Cost-to-complete not updated.</b> The estimate is unchanged from the prior two months while costs to date have moved. Added to the project-manager follow-up register.</p></li>
+              <li><div class="what"><span class="tag red">Margin fade</span><span class="job">J-2403 Eastgate Distribution Center, Ph. 2</span></div><p><b>Projected margin down 3.0 points.</b> See the Margin movement view.</p></li>
+            </ul>
+          </div>
+          <p class="paper-foot">Illustrative data for demonstration only. Not actual client work or financial results. The model is a simplified cost-to-cost illustration; it is not accounting or surety advice.<span class="hint"> Swipe the tables sideways to see every column.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="block band" id="how" aria-labelledby="how-h">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">How it works</p>
+          <h2 id="how-h">A repeatable month-end process.</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><span class="n">01</span><h3>Share the source data</h3><p>Your team provides the agreed accounting exports, billing information, change-order records and project estimates through a secure file-sharing process.</p></li>
+          <li class="reveal"><span class="n">02</span><h3>Consolidate the job data</h3><p>MapDelta maps and organizes the information into a consistent project-level structure.</p></li>
+          <li class="reveal"><span class="n">03</span><h3>Reconcile and review</h3><p>We prepare the WIP calculations, compare relevant balances with the general ledger and flag discrepancies, missing inputs and material margin movements.</p></li>
+          <li class="reveal"><span class="n">04</span><h3>Receive your WIP package</h3><p>Your team receives the completed reporting package, open questions and a walkthrough of the key items.</p></li>
+        </ol>
+        <p class="dependency reveal"><strong>The delivery timeline begins once the agreed source data and required project-manager inputs have been received.</strong> Day 10 is a proposed service commitment, not an unconditional guarantee.</p>
+      </div>
+    </section>
+
+    <!-- Who we serve -->
+    <section class="block" id="serve" aria-labelledby="serve-h">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">Who we serve</p>
+          <h2 id="serve-h">Built for contractors who need a better month-end WIP process.</h2>
+        </div>
+        <div class="serve">
+          <ul class="checks reveal">
+            <li>Commercial electrical subcontractors</li>
+            <li>Bonded contractors</li>
+            <li>Multiple active projects</li>
+            <li>QuickBooks or Sage 100 Contractor users</li>
+            <li>Teams currently relying on spreadsheets for WIP preparation</li>
+            <li>Businesses that need a more consistent monthly reporting workflow</li>
+          </ul>
+          <aside class="notfit reveal" aria-labelledby="notfit-h">
+            <h3 id="notfit-h">Not a fit?</h3>
+            <p>MapDelta is currently focused on commercial electrical subcontractors.</p>
+            <p>We are not a replacement for a full accounting department, construction CPA or controller.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust and data handling -->
+    <section class="block" id="data" aria-labelledby="data-h">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">Data handling</p>
+          <h2 id="data-h">Your financial data deserves a disciplined process.</h2>
+          <p class="lead">These are the working practices we follow on every engagement. The specifics are written into the engagement agreement.</p>
+        </div>
+        <ul class="practices reveal">
+          <li>Client-controlled file-sharing access</li>
+          <li>No need to share ERP passwords</li>
+          <li>Limited access to the agreed source files</li>
+          <li>Defined project scope and data requirements</li>
+          <li>Version-controlled reporting workpapers</li>
+          <li>Documented adjustments and outstanding questions</li>
+          <li>Agreed retention and deletion procedures</li>
+        </ul>
+        <p class="callout reveal"><strong>Practices, not certifications.</strong> MapDelta does not currently hold SOC 2, ISO 27001 or similar certifications and does not claim them. We are happy to walk through how files are handled before you share anything.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="block" id="faq" aria-labelledby="faq-h">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="kicker">FAQ</p>
+          <h2 id="faq-h">Questions contractors ask first.</h2>
+        </div>
+        <div class="faq reveal">
+          <details><summary>What is a WIP schedule?</summary><p class="answer">A Work in Progress schedule tracks the financial position of active construction projects, including contract values, costs incurred, estimated completion costs, billings and projected profitability.</p></details>
+          <details><summary>Who is MapDelta designed for?</summary><p class="answer">Bonded commercial electrical subcontractors, particularly those using QuickBooks or Sage 100 Contractor and maintaining WIP reporting through spreadsheets or manual processes.</p></details>
+          <details><summary>Does MapDelta replace our accountant or controller?</summary><p class="answer">No. MapDelta provides WIP preparation, data organization and reconciliation support. It does not replace a qualified construction accountant, controller, CPA or other professional responsible for accounting decisions and financial oversight.</p></details>
+          <details><summary>What accounting systems do you support?</summary><p class="answer">We are initially focused on QuickBooks and Sage 100 Contractor. We confirm the exact version, the exports and the available data during the initial discussion. We work from the files your system produces and do not rely on a direct integration.</p></details>
+          <details><summary>What information do you need?</summary><p class="answer">Typical inputs include job-cost detail, contract and change-order information, billing registers, a trial balance or relevant GL balances, and project-manager cost-to-complete estimates.</p></details>
+          <details><summary>How long does the process take?</summary><p class="answer">The intended monthly delivery target is by business day 10 after month-end, subject to receiving the agreed source data and project-manager inputs on time.</p></details>
+          <details><summary>Can you help us rebuild an existing WIP schedule?</summary><p class="answer">Yes. The initial WIP Rebuild engagement is designed to reconstruct a previous month&rsquo;s WIP package using agreed source data and scope.</p></details>
+          <details><summary>Do you provide accounting or surety advice?</summary><p class="answer">No. MapDelta provides reporting preparation and reconciliation support. Accounting judgments, financial statement opinions, tax advice, surety advice and bonding decisions remain with the relevant qualified professionals.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA + form -->
+    <section class="block band" id="contact" aria-labelledby="contact-h">
+      <div class="wrap contact">
+        <div class="reveal">
+          <p class="kicker">Contact</p>
+          <h2 id="contact-h">Let&rsquo;s look at your current WIP process.</h2>
+          <p class="lead">If your team is spending too much time assembling monthly WIP information, let&rsquo;s understand how the process works today and whether MapDelta can help.</p>
+          <p class="contact-alt">Prefer email? Write to <a href="mailto:ayman@mapdeltahq.com">ayman@mapdeltahq.com</a>.</p>
+        </div>
+        <div class="form-card reveal">
+          <!-- Enquiries are delivered to data-email through FormSubmit (formsubmit.co); no backend of our own.
+               Change data-endpoint to use a different service. -->
+          <form id="contact-form" data-subject="WIP discussion request" data-subject-field="companyName" data-endpoint="https://formsubmit.co/ajax/ayman@mapdeltahq.com" data-email="ayman@mapdeltahq.com" novalidate>
+            <div class="form-grid">
+              <div class="form-grid two">
+                <div class="field">
+                  <label for="f-name">Name</label>
+                  <input id="f-name" name="name" data-rule="required" data-key="Name" data-label="your name" type="text" autocomplete="name" required aria-describedby="e-name">
+                  <p class="err" id="e-name"></p>
+                </div>
+                <div class="field">
+                  <label for="f-company">Company</label>
+                  <input id="f-company" name="companyName" data-rule="required" data-key="Company" data-label="your company name" type="text" autocomplete="organization" required aria-describedby="e-company">
+                  <p class="err" id="e-company"></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="f-email">Business email</label>
+                <input id="f-email" name="email" data-rule="email" data-key="Business email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email">
+                <p class="err" id="e-email"></p>
+              </div>
+              <div class="form-grid two">
+                <div class="field">
+                  <label for="f-revenue">Annual revenue <span class="opt">(optional)</span></label>
+                  <select id="f-revenue" name="revenue" data-key="Annual revenue">
+                    <option value="">Select a range</option>
+                    <option>Under $10M</option>
+                    <option>$10M&ndash;$20M</option>
+                    <option>$20M&ndash;$40M</option>
+                    <option>$40M+</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="f-system">Accounting system <span class="opt">(optional)</span></label>
+                  <select id="f-system" name="system" data-key="Accounting system">
+                    <option value="">Select a system</option>
+                    <option>QuickBooks Online</option>
+                    <option>QuickBooks Desktop</option>
+                    <option>Sage 100 Contractor</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-grid two">
+                <div class="field">
+                  <label for="f-jobs">Approximate active jobs <span class="opt">(optional)</span></label>
+                  <input id="f-jobs" name="jobs" data-rule="jobs" data-key="Active jobs" type="number" min="0" max="999" inputmode="numeric" aria-describedby="e-jobs">
+                  <p class="err" id="e-jobs"></p>
+                </div>
+                <div class="field">
+                  <label for="f-method">Current WIP preparation <span class="opt">(optional)</span></label>
+                  <select id="f-method" name="method" data-key="Current WIP preparation">
+                    <option value="">Select a method</option>
+                    <option>Internal controller/accounting team</option>
+                    <option>Excel spreadsheets</option>
+                    <option>External CPA/controller</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="f-message">Message <span class="opt">(optional)</span></label>
+                <textarea id="f-message" name="message" data-key="Message" rows="3"></textarea>
+              </div>
+              <div class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            </div>
+            <div class="form-actions">
+              <button class="btn" type="submit"><span class="btn-label">Book a WIP Discussion</span></button>
+              <p class="form-status" role="alert" aria-live="assertive"></p>
+              <p class="form-small">We use these details only to reply about your enquiry. See our <a href="../privacy/">Privacy Policy</a>.</p>
+            </div>
+          </form>
+          <div class="success" id="form-success" tabindex="-1" hidden>
+            <h3 class="success-title">Thank you. We have your enquiry.</h3>
+            <p id="success-msg">We will reply within one US business day to arrange a short discussion about your WIP process.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div>
+        <a class="wordmark" href="#top" aria-label="MapDelta, back to top"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5 17.5 16.5H2.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>MapDelta</a>
+        <p>A specialist service that prepares and reconciles monthly WIP reporting for commercial electrical subcontractors.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2>Site</h2>
+        <ul>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#deliver">What We Deliver</a></li>
+          <li><a href="#serve">Who We Serve</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:ayman@mapdeltahq.com">ayman@mapdeltahq.com</a></li>
+          <li><a href="https://www.mapdeltahq.com/">mapdeltahq.com</a></li>
+          <li><a href="../privacy/">Privacy Policy</a></li>
+          <li><a href="../terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+      <p class="footer-legal">MapDelta provides reporting preparation and reconciliation support. It is not a CPA firm or licensed accounting practice and does not provide accounting, audit, tax, legal or surety advice. Sample figures on this site are fictional.</p>
+    </div>
+  </footer>
+</body>
+</html>
