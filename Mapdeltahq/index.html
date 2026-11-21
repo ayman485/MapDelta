@@ -1,346 +1,282 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>MapDelta Billing Desk for freight brokers</title>
-  <meta name="description" content="MapDelta runs the billing desk for small freight brokerages: POD chase, invoices out within one business day, carrier invoice audit and a Friday report.">
-  <link rel="canonical" href="https://www.mapdeltahq.com/">
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#F6F4EE">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="MapDelta">
-  <meta property="og:title" content="MapDelta Billing Desk for freight brokers">
-  <meta property="og:description" content="Every delivered load, invoiced within one business day. We chase the POD, build the invoice packet, bill the shipper and line up carrier pay, inside your own TMS.">
-  <meta property="og:url" content="https://www.mapdeltahq.com/">
-  <meta property="og:image" content="https://www.mapdeltahq.com/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="MapDelta Billing Desk: every delivered load invoiced within one business day, with a sample Friday report. Illustrative numbers.">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MapDelta Billing Desk for freight brokers">
-  <meta name="twitter:description" content="Every delivered load, invoiced within one business day. We chase the POD, build the invoice packet, bill the shipper and line up carrier pay, inside your own TMS.">
-  <meta name="twitter:image" content="https://www.mapdeltahq.com/og-image.png">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="fonts/serif-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')</script>
-  <script src="main.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MapDelta Missed-Lead Desk</title>
+<meta name="description" content="MapDelta texts every new roofing lead in under 60 seconds, follows up for 7 days and books the estimate on your calendar. Done for you. 14 days free, then $600 a month.">
+<link rel="canonical" href="https://www.mapdeltahq.com/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MapDelta">
+<meta property="og:title" content="MapDelta Missed-Lead Desk for roofing contractors">
+<meta property="og:description" content="Every new roofing lead gets a text in under 60 seconds, 7 days of follow-up, and the estimate booked on your calendar. 14 days free, then $600 a month.">
+<meta property="og:url" content="https://www.mapdeltahq.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: one narrow reading column; a "lead log" (timestamped rows) is the signature device, used in the hero and again for the 7-day follow-up. */
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#16202B; --muted:#55616E; --line:#D5DBE1;
+  --storm:#1E3A5F; --amber:#B45309; --amber-soft:#FCEFD9; --ok:#1F7A4D;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F161E; --surface:#16212C; --ink:#E6ECF2; --muted:#9AA7B4; --line:#2A3846;
+  --storm:#8DB4E2; --amber:#F2A541; --amber-soft:#2E2414; --ok:#5CC98F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F161E; --surface:#16212C; --ink:#E6ECF2; --muted:#9AA7B4; --line:#2A3846;
+  --storm:#8DB4E2; --amber:#F2A541; --amber-soft:#2E2414; --ok:#5CC98F; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+button[disabled]{opacity:.6;cursor:wait}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--storm)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);line-height:1.1;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.2rem,5.5vw,3.6rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:800}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.label{font:600 .75rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+section{padding-block:clamp(3rem,7vw,5rem);border-top:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;flex-wrap:wrap}
+.brand{font:800 1.2rem/1 var(--display);color:var(--ink);text-decoration:none}
+.brand span{color:var(--amber)}
+.nav a.cta-sm{font-weight:600;text-decoration:none;border:1.5px solid var(--storm);padding:8px 14px;border-radius:6px}
+.btn{display:inline-block;background:var(--storm);color:var(--bg);font:700 1rem/1 var(--display);padding:16px 22px;border-radius:6px;text-decoration:none;border:0;cursor:pointer}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,56px);align-items:center;padding-block:clamp(2rem,6vw,4.5rem)}
+.hero>*{min-width:0}
+.hero p.lede{font-size:1.2rem;color:var(--muted);margin-top:18px;max-width:34ch}
+.hero .actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.hero .fine{font-size:.95rem;color:var(--muted)}
+.log{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.log header{display:flex;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);font:600 .78rem/1.2 var(--mono);color:var(--muted)}
+.log ol{list-style:none;margin:0;padding:6px 0}
+.log li{display:grid;grid-template-columns:5.2rem 1fr;gap:12px;padding:10px 16px;align-items:baseline}
+.log time{font:600 .82rem/1.4 var(--mono);color:var(--storm);font-variant-numeric:tabular-nums}
+.log li.hot time{color:var(--amber)}
+.log li.done time{color:var(--ok)}
+.log .msg{font-size:.98rem}
+.log .msg em{display:block;font-style:normal;color:var(--muted);font-size:.9rem}
+.log footer{padding:12px 16px;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
+.stats>div{min-width:0;border-top:3px solid var(--storm);padding-top:14px}
+.stats b{display:block;font:800 2rem/1 var(--display);font-variant-numeric:tabular-nums}
+.stats p{color:var(--muted);margin-top:8px;font-size:.98rem}
+.src{font-size:.85rem;color:var(--muted);margin-top:18px}
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 40px;margin-top:32px}
+.cols>div{min-width:0}
+.cols p{color:var(--muted);margin-top:6px}
+.steps{display:grid;gap:0;margin-top:28px;border-left:2px solid var(--line);padding-left:22px}
+.steps div{position:relative;padding-block:12px}
+.steps div::before{content:"";position:absolute;left:-29px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--storm)}
+.steps b{font:600 .82rem/1 var(--mono);color:var(--storm);display:block;margin-bottom:4px}
+.steps p{color:var(--muted)}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);margin-top:28px;align-items:start}
+.price>*{min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:28px}
+.card .amt{font:800 3rem/1 var(--display);font-variant-numeric:tabular-nums}
+.card .amt small{font:600 1rem var(--body);color:var(--muted)}
+.card ul{margin:18px 0 0;padding-left:20px;display:grid;gap:8px}
+.guarantee{background:var(--amber-soft);border-radius:8px;padding:22px 24px}
+.guarantee h3{color:var(--amber)}
+.guarantee p{margin-top:8px}
+.vs{width:100%;border-collapse:collapse;font-size:.98rem;min-width:560px}
+.vs th,.vs td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.vs th{font:600 .75rem/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.vs td:first-child{font-weight:600}
+.vs td.us{color:var(--ok);font-weight:600}
+.scroll{overflow-x:auto;margin-top:24px}
+details{border-bottom:1px solid var(--line);padding-block:16px}
+summary{font:700 1.08rem/1.3 var(--display);cursor:pointer}
+details p{color:var(--muted);margin-top:10px;max-width:65ch}
+form{display:grid;gap:14px;margin-top:24px;max-width:520px}
+label{font-weight:600;font-size:.95rem;display:grid;gap:6px}
+input,select{font:inherit;padding:12px;border:1.5px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);width:100%}
+.ok-msg{color:var(--ok);font-weight:600}
+.foot{padding-block:32px;font-size:.92rem;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line)}
+.copy{font:inherit;font-size:.85rem;background:none;border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:2px 8px;cursor:pointer;margin-left:6px}
+@media (max-width:760px){
+  .hero,.price,.cols{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){
+  .log li{animation:in .4s ease both}
+  .log li:nth-child(2){animation-delay:.15s}.log li:nth-child(3){animation-delay:.3s}.log li:nth-child(4){animation-delay:.45s}
+  @keyframes in{from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
+}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="nav" id="nav">
-    <div class="wrap nav-inner">
-      <a class="wordmark" href="#top" aria-label="MapDelta, home"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5 17.5 16.5H2.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>MapDelta</a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#how">How It Works</a>
-        <a href="#deliver">What We Deliver</a>
-        <a href="#serve">Who We Serve</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <div class="nav-actions">
-        <a class="btn btn-sm" href="#contact">Start a two-week pilot</a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+<div class="wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#top">Map<span>Delta</span></a>
+    <a class="cta-sm" href="#start">Start 14 free days</a>
+  </nav>
+
+  <div class="hero" id="top">
+    <div>
+      <p class="label">Missed-lead desk for roofing contractors</p>
+      <h1 style="margin-top:14px">Every roofing lead gets a text in under 60 seconds.</h1>
+      <p class="lede">We answer your new web and phone leads, follow up for 7 days, and put the estimate on your calendar. You keep doing roofs.</p>
+      <div class="actions">
+        <a class="btn" href="#start">Start 14 free days</a>
+        <span class="fine">No contract. No new software for your team.</span>
       </div>
     </div>
-    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
-      <div class="wrap">
-        <a href="#how">How It Works</a>
-        <a href="#deliver">What We Deliver</a>
-        <a href="#serve">Who We Serve</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
-        <a class="btn" href="#contact">Start a two-week pilot</a>
-      </div>
-    </nav>
-  </header>
-
-  <main id="main">
-
-    <!-- 1. Hero + 2. sample panel -->
-    <section class="hero" id="top" aria-labelledby="hero-h">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="kicker">MapDelta Billing Desk for freight brokers</p>
-          <h1 id="hero-h" style="margin-top:18px">Every delivered load, invoiced within one business day.</h1>
-          <p class="lead">MapDelta runs the billing desk for small freight brokerages. We chase the POD, build the invoice packet, bill the shipper and line up carrier pay, inside your own TMS. You keep booking freight.</p>
-          <div class="cta-row"><a class="btn" href="#contact">Start a two-week pilot</a></div>
-          <p class="hero-note">Pilot: up to 75 loads for $400, credited to your first month.</p>
-        </div>
-        <figure class="report" aria-labelledby="report-cap">
-          <div class="paper-bar">
-            <strong>Friday report</strong>
-            <span class="stamp">Sample, illustrative numbers</span>
-          </div>
-          <dl id="friday-stats">
-            <div class="stat"><dt>Delivered</dt><dd data-v="112">112</dd></div>
-            <div class="stat"><dt>Invoiced</dt><dd data-v="109">109</dd></div>
-            <div class="stat attn"><dt>Missing POD</dt><dd data-v="3">3</dd></div>
-            <div class="stat money"><dt>AR over 45 days</dt><dd data-v="18400">$18,400</dd></div>
-            <div class="stat money"><dt>Carrier pay due next week</dt><dd data-v="61250">$61,250</dd></div>
-          </dl>
-          <figcaption class="paper-foot" id="report-cap">Sample, illustrative numbers. Not a real brokerage.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 3. Problem -->
-    <section class="block" id="problem" aria-labelledby="problem-h">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker">The problem</p>
-          <h2 id="problem-h">Billing should not wait until your night shift.</h2>
-          <p class="lead">Loads deliver all day. PODs sit in a driver&rsquo;s camera roll, invoices go out a week late, and a $150 detention charge never makes it onto the bill. Every late invoice is cash you&rsquo;ve already paid a carrier and haven&rsquo;t collected.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. What we deliver -->
-    <section class="block" id="deliver" aria-labelledby="deliver-h">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker">What we deliver</p>
-          <h2 id="deliver-h">One billing desk, every business day.</h2>
-        </div>
-        <ul class="practices reveal">
-          <li>POD chased the day the load delivers</li>
-          <li>Invoice packet built: rate con, BOL, POD, receipts</li>
-          <li>Accessorials checked against the rate confirmation</li>
-          <li>Shipper invoiced, or uploaded to your factor, within one business day</li>
-          <li>Carrier invoices matched to the rate con before you pay</li>
-          <li>Collections follow-up at 30 and 45 days</li>
-        </ul>
-        <p class="donttouch reveal"><strong>What we don&rsquo;t touch:</strong> booking loads, carrier sales, rate negotiation, releasing payments, or your bank account. We prepare the carrier pay list. You approve and release every payment.</p>
-      </div>
-    </section>
-
-    <!-- 5. Friday report -->
-    <section class="block" id="friday" aria-labelledby="friday-h">
-      <div class="wrap">
-        <div class="friday-grid">
-          <div class="sec-head reveal" style="margin-bottom:0">
-            <p class="kicker">The Friday report</p>
-            <h2 id="friday-h">Inside the Friday report</h2>
-            <p class="lead">One email every Friday: loads delivered and invoiced, missing PODs by carrier, AR aging, disputes and short pays, and carrier payables due next week.</p>
-          </div>
-          <div class="report reveal" id="friday-sample">
-            <div class="paper-bar"><strong>Friday report, detail</strong><span class="stamp">Sample, illustrative numbers</span></div>
-            <div class="sample-tables" style="border-top:0">
-              <div style="border-top:0">
-                <h4>AR aging by invoice age</h4>
-                <table class="small" id="ar-table"><tbody>
-                  <tr><th scope="row">Current (0&ndash;30 days)</th><td data-ar="128400">$128,400</td></tr>
-                  <tr><th scope="row">31&ndash;45 days</th><td data-ar="41900">$41,900</td></tr>
-                  <tr><th scope="row">46&ndash;60 days</th><td data-ar="11200" data-over45>$11,200</td></tr>
-                  <tr><th scope="row">60+ days</th><td data-ar="7200" data-over45>$7,200</td></tr>
-                </tbody><tfoot><tr><th scope="row">Total AR</th><td data-ar-total="188700">$188,700</td></tr></tfoot></table>
-              </div>
-              <div>
-                <h4>Missing POD by carrier</h4>
-                <table class="small" id="pod-table"><tbody>
-                  <tr><th scope="row">Sample Carrier A</th><td data-pod="2">2 loads</td></tr>
-                  <tr><th scope="row">Sample Carrier B</th><td data-pod="1">1 load</td></tr>
-                </tbody><tfoot><tr><th scope="row">Total</th><td data-pod-total="3">3 loads</td></tr></tfoot></table>
-              </div>
-              <div>
-                <h4>Carrier pay due next week</h4>
-                <table class="small" id="pay-table"><tbody>
-                  <tr><th scope="row">Monday</th><td data-pay="14800">$14,800</td></tr>
-                  <tr><th scope="row">Tuesday</th><td data-pay="9350">$9,350</td></tr>
-                  <tr><th scope="row">Wednesday</th><td data-pay="12600">$12,600</td></tr>
-                  <tr><th scope="row">Thursday</th><td data-pay="11500">$11,500</td></tr>
-                  <tr><th scope="row">Friday</th><td data-pay="13000">$13,000</td></tr>
-                </tbody><tfoot><tr><th scope="row">Queued for your approval</th><td data-pay-total="61250">$61,250</td></tr></tfoot></table>
-              </div>
-            </div>
-            <p class="paper-foot">Sample, illustrative numbers. Not a real brokerage. Same figures as the summary at the top of this page.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. How it works -->
-    <section class="block band" id="how" aria-labelledby="how-h">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker">How it works</p>
-          <h2 id="how-h">From login to pilot decision in two weeks.</h2>
-        </div>
-        <ol class="steps three">
-          <li class="reveal"><span class="n">Day 1 to 2</span><h3>Give us access</h3><p>You give us a limited user login to your TMS and accounting, and your customer billing rules.</p></li>
-          <li class="reveal"><span class="n">Day 3 to 14</span><h3>Run the pilot</h3><p>Pilot on up to 75 loads. We invoice every delivered load with a POD within one business day.</p></li>
-          <li class="reveal"><span class="n">Day 14</span><h3>You decide</h3><p>You see the Friday reports and decide. Keep the desk, or walk away and the pilot fee is the only cost.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 7. Who we serve -->
-    <section class="block" id="serve" aria-labelledby="serve-h">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker">Who we serve</p>
-          <h2 id="serve-h">Built for small brokerages where billing lands on the owner.</h2>
-          <p class="lead">Built for brokerages with 2 to 15 people and 80 to 600 loads a month, where billing still lands on the owner or a dispatcher. We work in Ascend, Rose Rocket, Tai, Revenova, QuickBooks Online and spreadsheets.</p>
-        </div>
-        <aside class="notfit reveal" style="max-width:640px" aria-labelledby="notfit-h">
-          <h3 id="notfit-h">Not a fit?</h3>
-          <p>If a full-service factor already handles all of your invoicing (you factor 100% of invoices), the factor does much of this work and the desk adds less.</p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- 8. Pricing -->
-    <section class="block" id="pricing" aria-labelledby="pricing-h">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker">Pricing</p>
-          <h2 id="pricing-h">A fixed price per load, not per hour.</h2>
-        </div>
-        <table class="ledger reveal" id="pricing-table">
-          <thead><tr><th scope="col">Plan</th><th scope="col">Loads</th><th scope="col" class="num">Price</th><th scope="col">Works out to</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Two-week pilot</th><td data-l="Loads">Up to 75 loads</td><td class="num price" data-l="Price">$400</td><td class="muted">About $5 a load. Credited to your first month.</td></tr>
-            <tr><th scope="row">Desk 150</th><td data-l="Loads">Up to 150 loads a month</td><td class="num price" data-l="Price">$1,200 a month</td><td class="muted">$8 a load</td></tr>
-            <tr><th scope="row">Desk 400</th><td data-l="Loads">Up to 400 loads a month</td><td class="num price" data-l="Price">$2,400 a month</td><td class="muted">$6 a load</td></tr>
-            <tr><th scope="row">Over 400 loads</th><td data-l="Loads">Each extra load</td><td class="num price" data-l="Price">$5 a load</td><td class="muted"></td></tr>
-          </tbody>
-        </table>
-        <p class="promise reveal"><strong style="font-weight:600">Our promise:</strong> a delivered load with a POD in hand is invoiced within one business day, or that load is free.</p>
-      </div>
-    </section>
-
-    <!-- 9. FAQ -->
-    <section class="block" id="faq" aria-labelledby="faq-h">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <p class="kicker">FAQ</p>
-          <h2 id="faq-h">Questions brokers ask first.</h2>
-        </div>
-        <div class="faq reveal">
-          <details><summary>Do you touch our money?</summary><p class="answer">No. We prepare the carrier pay list; you approve and release every payment.</p></details>
-          <details><summary>Do you talk to our shippers?</summary><p class="answer">Only for billing: sending invoices, portal uploads and payment reminders, in your company&rsquo;s name and tone.</p></details>
-          <details><summary>We use a factoring company.</summary><p class="answer">Fine. We build the packet and submit it to your factor.</p></details>
-          <details><summary>What hours do you work?</summary><p class="answer">US business hours, Monday to Friday.</p></details>
-          <details><summary>Can we cancel?</summary><p class="answer">Yes, with 14 days&rsquo; notice.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <!-- 10. Contact -->
-    <section class="block band" id="contact" aria-labelledby="contact-h">
-      <div class="wrap contact">
-        <div class="reveal">
-          <p class="kicker">Contact</p>
-          <h2 id="contact-h">Want your billing done before your night shift?</h2>
-          <p class="lead">Tell us about your desk.</p>
-          <p class="contact-alt">Prefer email? Write to <a href="mailto:billing@mapdeltahq.com">billing@mapdeltahq.com</a>.</p>
-        </div>
-        <div class="form-card reveal">
-          <!-- Enquiries are delivered to data-email through FormSubmit (formsubmit.co); no backend of our own.
-               Change data-endpoint to use a different service. -->
-          <form id="contact-form" data-subject="Billing desk pilot request" data-subject-field="brokerage" data-endpoint="https://formsubmit.co/ajax/billing@mapdeltahq.com" data-email="billing@mapdeltahq.com" novalidate>
-            <div class="form-grid">
-              <div class="form-grid two">
-                <div class="field">
-                  <label for="f-name">Name</label>
-                  <input id="f-name" name="name" data-rule="required" data-key="Name" data-label="your name" type="text" autocomplete="name" required aria-describedby="e-name">
-                  <p class="err" id="e-name"></p>
-                </div>
-                <div class="field">
-                  <label for="f-brokerage">Brokerage name</label>
-                  <input id="f-brokerage" name="brokerage" data-rule="required" data-key="Brokerage" data-label="your brokerage name" type="text" autocomplete="organization" required aria-describedby="e-brokerage">
-                  <p class="err" id="e-brokerage"></p>
-                </div>
-              </div>
-              <div class="form-grid two">
-                <div class="field">
-                  <label for="f-mc">MC number <span class="opt">(optional)</span></label>
-                  <input id="f-mc" name="mc" data-rule="mc" data-key="MC number" type="text" inputmode="numeric" autocomplete="off" aria-describedby="e-mc">
-                  <p class="err" id="e-mc"></p>
-                </div>
-                <div class="field">
-                  <label for="f-email">Business email</label>
-                  <input id="f-email" name="email" data-rule="email" data-key="Business email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email">
-                  <p class="err" id="e-email"></p>
-                </div>
-              </div>
-              <div class="form-grid two">
-                <div class="field">
-                  <label for="f-loads">Loads a month <span class="opt">(optional)</span></label>
-                  <select id="f-loads" name="loads" data-key="Loads a month">
-                    <option value="">Select a range</option>
-                    <option>Under 100</option>
-                    <option>100 to 300</option>
-                    <option>300 to 600</option>
-                    <option>600+</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="f-tms">TMS <span class="opt">(optional)</span></label>
-                  <select id="f-tms" name="tms" data-key="TMS">
-                    <option value="">Select a TMS</option>
-                    <option>Ascend</option>
-                    <option>Rose Rocket</option>
-                    <option>Tai</option>
-                    <option>Revenova</option>
-                    <option>Spreadsheets</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="field">
-                <label for="f-message">Message <span class="opt">(optional)</span></label>
-                <textarea id="f-message" name="message" data-key="Message" rows="3"></textarea>
-              </div>
-              <div class="hp" aria-hidden="true"><label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-            </div>
-            <div class="form-actions">
-              <button class="btn" type="submit"><span class="btn-label">Start a two-week pilot</span></button>
-              <p class="form-status" role="alert" aria-live="assertive"></p>
-              <p class="form-small">We use these details only to reply about your enquiry. See our <a href="privacy/">Privacy Policy</a>.</p>
-            </div>
-          </form>
-          <div class="success" id="form-success" tabindex="-1" hidden>
-            <h3 class="success-title">Thank you. We have your details.</h3>
-            <p id="success-msg">We will reply within one US business day to talk through your desk and set up the pilot.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <div>
-        <a class="wordmark" href="#top" aria-label="MapDelta, back to top"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3.5 17.5 16.5H2.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>MapDelta</a>
-        <p>A done-for-you billing desk for small US freight brokerages: POD chase, invoicing, carrier invoice audit and a Friday report.</p>
-      </div>
-      <nav aria-label="Footer">
-        <h2>Site</h2>
-        <ul>
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#deliver">What We Deliver</a></li>
-          <li><a href="#serve">Who We Serve</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </nav>
-      <div>
-        <h2>Contact</h2>
-        <ul>
-          <li><a href="mailto:billing@mapdeltahq.com">billing@mapdeltahq.com</a></li>
-          <li><a href="https://www.mapdeltahq.com/">mapdeltahq.com</a></li>
-          <li><a href="privacy/">Privacy Policy</a></li>
-          <li><a href="terms/">Terms of Service</a></li>
-        </ul>
-      </div>
-      <p class="footer-legal">MapDelta is a billing service. It does not book freight, negotiate rates, or hold or release payments, and it is not a freight broker, carrier or factoring company. Sample figures on this site are illustrative.</p>
+    <div class="log" role="img" aria-label="Example lead log: a storm lead at 6:47 PM gets a text 38 seconds later and an estimate is booked the next morning.">
+      <header><span>Lead log · example</span><span>Fri, after a hail storm</span></header>
+      <ol>
+        <li class="hot"><time>6:47:12p</time><span class="msg">New web form: "Hail damage, need roof inspected"<em>Your office closed at 5:30</em></span></li>
+        <li><time>6:47:50p</time><span class="msg">Text sent: "Hi Dana, this is Northside Roofing. Sorry about the hail. Is the roof leaking now, or are you checking for damage?"</span></li>
+        <li><time>6:52:03p</time><span class="msg">Dana: "No leak, but shingles in the yard"<em>Desk asks address and best time</em></span></li>
+        <li class="done"><time>7:01:40p</time><span class="msg">Inspection booked: Sat 10:00 AM<em>On your calendar, crew lead notified</em></span></li>
+      </ol>
+      <footer>An example of how the desk works. Names and times are made up.</footer>
     </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="label">Why this matters</p>
+    <h2 style="margin-top:12px">Storm leads go to whoever answers first.</h2>
+    <div class="stats">
+      <div><b>5 min</b><p>After five minutes, the odds of reaching a web lead drop sharply. Many businesses reply hours later.</p></div>
+      <div><b>2 or more</b><p>Homeowners with storm damage often ask more than one roofer for a quote, and book the first one who replies.</p></div>
+      <div><b>After 5 PM</b><p>Many forms come in at night and on weekends, when no one is in the office.</p></div>
+    </div>
+    <p class="src">Sources: lead response research by InsideSales.com and Harvard Business Review (Oldroyd, McElheran, Elkington, 2011). Your own numbers will differ, which is why the first 14 days are free.</p>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <p class="label">How the desk works</p>
+    <h2 style="margin-top:12px">We do the follow-up. You get booked estimates.</h2>
+    <div class="steps">
+      <div><b>Minute 1</b><h3>First text goes out</h3><p>A new form, missed call or Facebook lead gets a short, human text in your company name within 60 seconds, day or night.</p></div>
+      <div><b>Hours 1 to 24</b><h3>Qualify and book</h3><p>We ask the questions your estimator would: leak or no leak, insurance claim or retail, address, best time. Then we offer real open slots on your calendar.</p></div>
+      <div><b>Days 2 to 7</b><h3>Seven days of follow-up</h3><p>Leads that go quiet get a few spaced, polite check-ins. Anyone who says stop is never texted again.</p></div>
+      <div><b>Every Monday</b><h3>A plain report</h3><p>Leads in, how fast each got a reply, estimates booked, and which leads still need a call from you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">What makes us different</p>
+    <h2 style="margin-top:12px">A desk run by people, priced like a tool.</h2>
+    <div class="cols">
+      <div><h3>We show you the leak first</h3><p>Before you pay anything, we test your own website form and show you how long a new lead waits for a reply today.</p></div>
+      <div><h3>Done for you</h3><p>We set it up, write the roofing scripts and watch every conversation. Your team does not learn a new app.</p></div>
+      <div><h3>A person checks the AI</h3><p>Our team reviews conversations every day. Tricky questions, like insurance or pricing, get handed to you.</p></div>
+      <div><h3>No contract</h3><p>Month to month. Stop any time with one email.</p></div>
+    </div>
+    <div class="scroll">
+      <table class="vs">
+        <thead><tr><th></th><th>Software you run yourself</th><th>Answering service</th><th>MapDelta desk</th></tr></thead>
+        <tbody>
+          <tr><td>Who does the work</td><td>Your office staff</td><td>Call agents, phone only</td><td class="us">We do, texts and follow-up</td></tr>
+          <tr><td>Reply speed at night</td><td>Only if someone checks</td><td>Calls only</td><td class="us">Under 60 seconds</td></tr>
+          <tr><td>7-day follow-up</td><td>If you build it</td><td>No</td><td class="us">Included</td></tr>
+          <tr><td>Contract</td><td>Often 12 months</td><td>Varies</td><td class="us">Month to month</td></tr>
+          <tr><td>Pay if it doesn't work</td><td>Yes</td><td>Yes</td><td class="us">No, see the guarantee</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <p class="label">Pricing</p>
+    <h2 style="margin-top:12px">One price. A month free if it doesn't book.</h2>
+    <div class="price">
+      <div class="card">
+        <p class="label">Missed-lead desk</p>
+        <p class="amt" style="margin-top:12px">$600 <small>per month</small></p>
+        <ul>
+          <li>First 14 days free</li>
+          <li>Text reply to every new lead in under 60 seconds</li>
+          <li>7 days of follow-up per lead</li>
+          <li>Booking onto your calendar</li>
+          <li>Daily review by our team</li>
+          <li>Monday report</li>
+          <li>Month to month, cancel any time</li>
+        </ul>
+        <a class="btn" href="#start" style="margin-top:22px">Start 14 free days</a>
+      </div>
+      <div class="guarantee">
+        <h3>The booked-estimate guarantee</h3>
+        <p>If we book fewer than 3 extra estimates in a month, that month is free.</p>
+        <p style="color:var(--muted);font-size:.95rem">"Extra" means booked from leads that had no reply from your team within an hour. This works best for roofers getting about 20 or more leads a month, and we check that with you before starting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="label">Questions</p>
+    <h2 style="margin-top:12px">What roofers ask us</h2>
+    <div style="margin-top:20px">
+      <details><summary>Will homeowners know it's automated?</summary><p>The texts are short and written for roofing, signed with your company name. Anything that needs a real answer, like a price or an insurance question, comes to you.</p></details>
+      <details><summary>Do I need to change my CRM?</summary><p>No. We connect to your website form, phone line and calendar. If you use JobNimbus, AccuLynx or a spreadsheet, we send the booked leads there.</p></details>
+      <details><summary>Who do you text?</summary><p>Only people who contacted you first, such as a form, a call or a Facebook lead. We never text cold lists or old leads, and anyone who replies STOP is removed right away.</p></details>
+      <details><summary>Do I have to get on a call?</summary><p>No. You can set everything up by email. If you'd like to talk, we're happy to do a short audio call.</p></details>
+      <details><summary>What if I want to stop?</summary><p>Send one email. There is no contract and no cancellation fee.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="start">
+  <div class="wrap">
+    <p class="label">Start</p>
+    <h2 style="margin-top:12px">See how long your leads wait today.</h2>
+    <p style="color:var(--muted);margin-top:12px;max-width:60ch">Send us your website. We'll test your form and email you what we found within one business day. If you want the desk, the first 14 days are free.</p>
+    <form id="lead-form" novalidate>
+      <label for="f-company">Company name<input id="f-company" name="company" required autocomplete="organization"></label>
+      <label for="f-site">Website<input id="f-site" name="website" required placeholder="yourroofing.com"></label>
+      <label for="f-email">Work email<input id="f-email" name="email" type="email" required autocomplete="email"></label>
+      <button class="btn" type="submit">Test my lead response</button>
+      <p id="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer class="foot">
+    <div><b>MapDelta</b> · Missed-lead desk for roofing contractors<br>1321 Upland Dr. PMB 2574, Houston, TX 77043</div>
+    <div>Email: <span id="mail">billing@mapdeltahq.com</span><button class="copy" type="button" id="copy-mail">Copy</button><br><a href="privacy/">Privacy</a> · <a href="terms/">Terms</a> · <a href="freight/">Freight brokers</a></div>
   </footer>
+</div>
+
+<script>
+document.getElementById('lead-form').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=e.target,s=document.getElementById('form-status'),b=f.querySelector('button');
+  if(!f.checkValidity()){s.textContent='Please fill in your company, website and a valid email.';s.className='';return;}
+  var d=new FormData(f);d.append('_subject','Roofer lead-response test: '+d.get('company'));d.append('_template','table');d.append('_captcha','false');
+  b.disabled=true;s.className='';s.textContent='Sending...';
+  fetch('https://formsubmit.co/ajax/billing@mapdeltahq.com',{method:'POST',headers:{'Accept':'application/json'},body:d})
+    .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=='true')throw 0;})})
+    .then(function(){s.textContent='Thanks. We will test your form and email you within one business day.';s.className='ok-msg';f.reset();})
+    .catch(function(){s.textContent='That did not send. Please email billing@mapdeltahq.com instead.';})
+    .finally(function(){b.disabled=false;});
+});
+document.getElementById('copy-mail').addEventListener('click',function(){
+  var t=document.getElementById('mail').textContent,b=this;
+  var sel=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var w=getSelection();w.removeAllRanges();w.addRange(r);};
+  if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},sel)}else sel();
+});
+</script>
+
 </body>
 </html>

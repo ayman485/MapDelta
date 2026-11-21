@@ -1,3 +1,16 @@
+# MapDelta site: Missed-Lead Desk for roofing contractors (21 Nov 2026)
+
+The home page now sells the **MapDelta Missed-Lead Desk** to US roofing contractors: a text reply to every new lead in under 60 seconds, 7 days of follow-up, estimates booked on the roofer's calendar. 14 days free, then $600 a month, month to month; a month is free if fewer than 3 extra estimates are booked. The freight Billing Desk page moved to **/freight/** (asset paths and canonical updated), so links in freight outreach emails keep working.
+
+- `index.html`: new self-contained roofer page (Google Fonts, inline CSS/JS). Form posts to FormSubmit at billing@mapdeltahq.com, same endpoint as the freight form.
+- `freight/index.html`: previous home page, moved.
+- `tools/verify-sample.mjs`: now reads `freight/index.html`.
+- `sitemap.xml`: adds /freight/.
+
+Still to do (owner): Privacy and Terms still describe the billing desk; rewrite them for the roofer desk before heavy outreach. The texting service itself (number, A2P 10DLC registration, STOP handling) must exist before the 14-day trials start.
+
+---
+
 # MapDelta site: Billing Desk for freight brokers (November 2026)
 
 The home page now sells the **MapDelta Billing Desk** to small US freight brokerages, using the copy and offer from the "Freight Broker Billing Desk" brief (ten sections, pilot CTA). The earlier WIP-reporting page for electrical contractors moved to **/wip/** (unchanged apart from asset paths and the shared form script), so links in earlier contractor emails still reach it. Privacy and Terms were rewritten for the billing desk and mention /wip.

@@ -1,7 +1,7 @@
-// Checks that the illustrative Friday report on index.html is internally consistent.
-// Usage: node tools/verify-sample.mjs [path/to/index.html]
+// Checks that the illustrative Friday report on freight/index.html is internally consistent.
+// Usage: node tools/verify-sample.mjs [path/to/freight/index.html]
 import { readFileSync } from 'node:fs';
-const html = readFileSync(process.argv[2] || new URL('../index.html', import.meta.url), 'utf8');
+const html = readFileSync(process.argv[2] || new URL('../freight/index.html', import.meta.url), 'utf8');
 const fail = [];
 const eq = (what, got, want) => { if (got !== want) fail.push(`${what}: page ${got}, recomputed ${want}`); };
 const nums = (re) => [...html.matchAll(re)].map((m) => +m[1]);
